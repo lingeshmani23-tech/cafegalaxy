@@ -83,11 +83,13 @@ const Home = () => {
           <video
             autoPlay
             loop
-            muted={true}
+            muted
             playsInline
-            src="/videos/coffee.mp4"
+            poster="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1600&auto=format&fit=crop&q=80"
             className="w-full h-full object-cover opacity-40 scale-105"
-          />
+          >
+            <source src="/videos/coffee.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent"></div>
         </div>
 
