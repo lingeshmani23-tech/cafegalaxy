@@ -84,13 +84,11 @@ const Home = () => {
           <video
             autoPlay
             loop
-            muted
+            muted={true}
             playsInline
+            src={heroVideo}
             className="w-full h-full object-cover opacity-40 scale-105"
-          >
-            <source src={heroVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent"></div>
         </div>
 
