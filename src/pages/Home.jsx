@@ -14,7 +14,6 @@ import RippleButton from '../components/RippleButton';
 import AnimatedCounter from '../components/AnimatedCounter';
 import MenuCard from '../components/MenuCard';
 import { menuItems } from '../data/menuData';
-import heroVideo from '../assets/coffee.mp4';
 
 const Home = () => {
   // Filters for sub-sections
@@ -86,7 +85,7 @@ const Home = () => {
             loop
             muted={true}
             playsInline
-            src={heroVideo}
+            src="/videos/coffee.mp4"
             className="w-full h-full object-cover opacity-40 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent"></div>
