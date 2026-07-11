@@ -94,8 +94,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-[#FFC107] shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-[#FFC107] transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919360151808" className="hover:text-[#FFC107] transition-colors">
+                  +91 93601 51808
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -117,18 +117,9 @@ const Footer = () => {
                 <Clock size={16} className="text-[#FFC107] shrink-0 mt-0.5" />
                 <div>
                   <div className="flex justify-between gap-4">
-                    <span className="font-semibold text-[#FAFAFA]">Monday - Friday</span>
+                    <span className="font-semibold text-[#FAFAFA]">Monday - Sunday</span>
                   </div>
-                  <span className="text-[10px] text-[#FAFAFA]/50">09:00 AM - 10:30 PM</span>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock size={16} className="text-[#FFC107] shrink-0 mt-0.5" />
-                <div>
-                  <div className="flex justify-between gap-4">
-                    <span className="font-semibold text-[#FAFAFA]">Saturday - Sunday</span>
-                  </div>
-                  <span className="text-[10px] text-[#FAFAFA]/50">09:00 AM - 11:30 PM</span>
+                  <span className="text-[10px] text-[#FAFAFA]/50">06:30 AM - 10:00 PM</span>
                 </div>
               </li>
             </ul>

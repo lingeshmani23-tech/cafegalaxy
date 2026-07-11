@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "919876543210"; // Placeholder premium number
+  const phoneNumber = "919360151808"; // Premium number
   const message = encodeURIComponent("Hello Cafe Galaxy, I'd like to reserve a table or place an order!");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

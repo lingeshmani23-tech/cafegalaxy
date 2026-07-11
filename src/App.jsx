@@ -120,21 +120,15 @@ const App = () => {
                   "latitude": 10.394432,
                   "longitude": 77.962292
                 },
-                "telephone": "+919876543210",
+                "telephone": "+919360151808",
                 "priceRange": "$$",
                 "servesCuisine": "Coffee, Bakery, Fast Food, South Indian Snacks",
                 "openingHoursSpecification": [
                   {
                     "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    "opens": "09:00",
-                    "closes": "22:30"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Saturday", "Sunday"],
-                    "opens": "09:00",
-                    "closes": "23:30"
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                    "opens": "06:30",
+                    "closes": "22:00"
                   }
                 ]
               }

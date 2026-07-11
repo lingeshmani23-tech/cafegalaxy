@@ -27,8 +27,8 @@ const Contact = () => {
     {
       icon: <Phone className="text-[#FFC107]" size={20} />,
       title: 'Phone Number',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210',
+      value: '+91 93601 51808',
+      link: 'tel:+919360151808',
       label: 'Call us directly'
     },
     {
@@ -149,8 +149,7 @@ const Contact = () => {
                   <Clock size={16} /> Opening Hours
                 </h4>
                 <div className="text-xs text-[#FAFAFA]/75 space-y-1 font-light">
-                  <p><strong>Mon - Fri:</strong> 9:00 AM - 10:30 PM</p>
-                  <p><strong>Sat - Sun:</strong> 9:00 AM - 11:30 PM</p>
+                  <p><strong>Mon - Sun:</strong> 6:30 AM - 10:00 PM</p>
                 </div>
               </div>
 
@@ -179,7 +178,7 @@ const Contact = () => {
             {/* Direct WhatsApp Call Button */}
             <div className="pt-2">
               <a
-                href="https://wa.me/919876543210?text=Hi%20Cafe%20Galaxy,%20I'd%20like%20to%20place%20an%20order!"
+                href="https://wa.me/919360151808?text=Hi%20Cafe%20Galaxy,%20I'd%20like%20to%20place%20an%20order!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
@@ -269,7 +268,7 @@ const Contact = () => {
                       </label>
                       <input
                         type="tel"
-                        placeholder="E.g. +91 9876543210"
+                        placeholder="E.g. +91 93601 51808"
                         {...register('phone', {
                           required: 'Phone number is required',
                           pattern: {

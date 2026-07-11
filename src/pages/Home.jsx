@@ -492,12 +492,12 @@ const Home = () => {
                   <strong>Location:</strong> Bypass Junction, Palani Road, Dindigul, Tamil Nadu 624001
                 </p>
                 <p>
-                  <strong>Opening Hours:</strong> Mon-Sun: 9:00 AM - 11:00 PM
+                  <strong>Opening Hours:</strong> Mon-Sun: 6:30 AM - 10:00 PM
                 </p>
               </div>
 
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                <a href="tel:+919876543210" className="w-full sm:w-auto">
+                <a href="tel:+919360151808" className="w-full sm:w-auto">
                   <RippleButton className="w-full sm:w-auto px-6 py-3 bg-[#161616] hover:bg-[#FFC107]/10 text-[#FFC107] border border-[#FFC107]/30 font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2">
                     <PhoneCall size={14} /> Call Cafe Galaxy
                   </RippleButton>

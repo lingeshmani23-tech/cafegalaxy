@@ -15,46 +15,46 @@ const initialReviews = [
   {
     id: 1,
     name: 'Karthikeyan Ramasamy',
-    location: 'Dindigul, TN',
+    location: 'Vl Vadagai Pathirakadai, Dindigul',
     rating: 5,
     date: '2 weeks ago',
-    text: 'Cafe Galaxy is an absolute gem! Their Cold Coffee is easily the best in Dindigul—super creamy and not overly sweet. The ambience is incredibly premium and the seating is very comfortable. Perfect place to sit down with a laptop or catch up with friends.',
+    text: 'A fantastic spot in Dindigul! Cafe Galaxy is open early from 6:30 AM, which is perfect for my morning coffee run. The pastries are fresh and the staff is very welcoming. Definitely a 5-star experience!',
     photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
   },
   {
     id: 2,
     name: 'Priyadharshini G.',
-    location: 'Palani Road, Dindigul',
+    location: 'Dindigul',
     rating: 5,
     date: '1 month ago',
-    text: 'I ordered a custom Red Velvet Cake for my daughter’s birthday and it was exceptional! Moist layers and perfect cream cheese frosting. We also sat down for Veg Puff and Orange juice. Extremely hygienic kitchen and super polite staff!',
+    text: 'We always order their honey cake and doughnuts for family get-togethers. The home delivery is prompt and the food is always fresh. It’s hard to find such quality in town!',
     photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
   },
   {
     id: 3,
     name: 'Senthil Kumar',
-    location: 'Madurai Bypass, Dindigul',
+    location: 'Dindigul City',
     rating: 5,
     date: '3 weeks ago',
-    text: 'Their Double Chicken Burger is massive and incredibly juicy. Combined with their Green Apple Mocktail, it makes the perfect dinner. The service is fast even when the place is fully crowded. Highly recommend visiting with family!',
+    text: 'Great ambiance and excellent service. I usually visit in the evenings before they close at 10 PM. Their chicken snacks and tea are a must-try. The place truly deserves its high ratings.',
     photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'
   },
   {
     id: 4,
     name: 'Meera Krishnan',
-    location: 'Dindigul Town',
+    location: 'Vl Vadagai Pathirakadai',
     rating: 5,
     date: '2 months ago',
-    text: 'Beautiful glassmorphic decor and warm lighting. The White Sauce Pasta was rich and filled with fresh broccoli. I also love their traditional Samosa and Vadai—crisp and hot! It’s the perfect blend of local Tamil Nadu taste and western cafe style.',
+    text: 'Beautiful decor and very clean. I love their traditional snacks alongside modern cafe items. It’s the perfect blend of local taste and western cafe style.',
     photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80'
   },
   {
     id: 5,
     name: 'Ananthakrishnan J.',
-    location: 'Dindigul Bypass',
+    location: 'Dindigul',
     rating: 5,
     date: '5 days ago',
-    text: 'If you are looking for authentic cappuccino in Dindigul, this is the place. The baristas really know what they are doing. The foam thickness, roast depth, and presentation are stellar. Cozy, quiet, and highly hygienic.',
+    text: 'If you are looking for authentic cappuccino in Dindigul, this is the place. The baristas really know what they are doing. Cozy, quiet, and highly hygienic.',
     photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80'
   }
 ];

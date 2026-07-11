@@ -5,7 +5,7 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 const faqItems = [
   {
     question: 'What are the working hours of Cafe Galaxy?',
-    answer: 'We are open seven days a week. Our hours are Monday to Friday from 09:00 AM to 10:30 PM, and Saturday to Sunday from 09:00 AM to 11:30 PM.'
+    answer: 'We are open seven days a week. Our hours are Monday to Sunday from 06:30 AM to 10:00 PM.'
   },
   {
     question: 'Where is Cafe Galaxy located in Dindigul?',
