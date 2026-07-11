@@ -9,7 +9,6 @@ const galleryCategories = [
   'Bakery',
   'Pizza',
   'Burger',
-  'Cake',
   'Milkshake',
   'Cafe Interior',
   'Outdoor Seating',
@@ -32,13 +31,6 @@ const galleryImages = [
     title: 'Luxury Celestial Lighting',
     alt: 'Cafe interior with gold lighting fixtures',
     src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 3,
-    category: 'Cake',
-    title: 'Red Velvet Starry Glaze',
-    alt: 'Red Velvet cake with gourmet frosting',
-    src: 'https://images.unsplash.com/photo-1586985289688-ca9cf49d3ad7?w=800&auto=format&fit=crop&q=80'
   },
   {
     id: 4,

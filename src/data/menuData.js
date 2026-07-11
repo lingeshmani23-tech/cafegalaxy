@@ -12,7 +12,6 @@ export const menuCategories = [
   { id: 'pasta', name: '🍝 Pasta', value: 'Pasta' },
   { id: 'fried-rice', name: '🍚 Fried Rice', value: 'Fried Rice' },
   { id: 'noodles', name: '🍜 Noodles', value: 'Noodles' },
-  { id: 'cakes', name: '🍰 Cakes', value: 'Cakes' },
   { id: 'pastries', name: '🧁 Pastries', value: 'Pastries' },
   { id: 'bun', name: '🥖 Bun', value: 'Bun' },
   { id: 'puffs', name: '🥐 Puffs', value: 'Puffs' },
@@ -431,48 +430,6 @@ export const menuItems = [
     isVeg: false,
     isPopular: true,
     image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=500&auto=format&fit=crop&q=80'
-  },
-
-  // --- CAKES ---
-  {
-    id: 'ck1',
-    category: 'Cakes',
-    name: 'Black Forest Cake',
-    description: 'Rich layers of chocolate sponge cake soaked in cherry syrup, whipped cream, and chocolate flakes.',
-    price: 450,
-    isVeg: true,
-    isPopular: true,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'ck2',
-    category: 'Cakes',
-    name: 'Chocolate Cake',
-    description: 'Luxurious double chocolate truffle cake, smooth fudge layers, and chocolate glaze.',
-    price: 480,
-    isVeg: true,
-    isPopular: true,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'ck3',
-    category: 'Cakes',
-    name: 'Red Velvet Cake',
-    description: 'Vibrant red cake layers with rich hints of cocoa, stacked with velvety cream cheese frosting.',
-    price: 520,
-    isVeg: true,
-    isPopular: false,
-    image: 'https://images.unsplash.com/photo-1586985289688-ca9cf49d3ad7?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'ck4',
-    category: 'Cakes',
-    name: 'Fruit Cake',
-    description: 'Moist golden sponge cake topped with seasonal fresh fruits and apricot glaze.',
-    price: 420,
-    isVeg: true,
-    isPopular: false,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80'
   },
 
   // --- PASTRIES ---

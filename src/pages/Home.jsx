@@ -23,18 +23,18 @@ const Home = () => {
 
   // Today's Special Item
   const todaysSpecial = {
-    name: 'Cosmic Belgian Truffle Cake',
-    description: 'Freshly baked triple layer Dutch cocoa sponge filled with creamy Belgian milk chocolate truffle ganache and gold leaf garnish.',
-    price: 499,
-    originalPrice: 650,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=80',
-    tag: 'Pastry Chef Pick'
+    name: 'Woodfired Margherita Pizza',
+    description: 'Authentic Italian thin crust pizza baked in a wood-fired oven, topped with fresh mozzarella, basil, and our signature San Marzano tomato sauce.',
+    price: 399,
+    originalPrice: 499,
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80',
+    tag: 'Chef Pick'
   };
 
   const galleryPreviews = [
     { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', alt: 'Aromatic Espresso' },
     { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=80', alt: 'Luxurious Interior' },
-    { src: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80', alt: 'Premium Cakes' },
+    { src: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=80', alt: 'Fresh Bread' },
     { src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=80', alt: 'Gourmet Pizza' },
     { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=80', alt: 'Juicy Burgers' },
     { src: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=80', alt: 'Creamy Milkshakes' }
