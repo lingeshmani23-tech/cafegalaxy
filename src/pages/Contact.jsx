@@ -42,7 +42,7 @@ const Contact = () => {
       icon: <MapPin className="text-[#FFC107]" size={20} />,
       title: 'Our Location',
       value: '15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001',
-      link: 'https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001',
+      link: 'https://www.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001',
       label: 'Get Directions'
     }
   ];
@@ -131,7 +131,7 @@ const Contact = () => {
                   15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001
                 </p>
                 <a
-                  href="https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001"
+                  href="https://www.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-[#FFC107] hover:underline inline-block mt-2 font-bold"
@@ -408,7 +408,7 @@ const Contact = () => {
       {/* Google Map Section */}
       <section className="w-full h-[450px] border-t border-[#FFC107]/10 mt-16 overflow-hidden">
         <iframe
-          src="https://maps.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}

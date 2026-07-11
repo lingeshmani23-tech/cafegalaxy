@@ -489,7 +489,7 @@ const Home = () => {
               
               <div className="space-y-4 text-xs sm:text-sm text-[#FAFAFA]/80">
                 <p>
-                  <strong>Location:</strong> <a href="https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] hover:underline transition-all">15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001</a>
+                  <strong>Location:</strong> <a href="https://www.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] hover:underline transition-all">15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001</a>
                 </p>
                 <p>
                   <strong>Opening Hours:</strong> Mon-Sun: 6:30 AM - 10:00 PM
@@ -513,7 +513,7 @@ const Home = () => {
             {/* Google Map */}
             <div className="h-[280px] w-full rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-lg">
               <iframe
-                src="https://maps.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}

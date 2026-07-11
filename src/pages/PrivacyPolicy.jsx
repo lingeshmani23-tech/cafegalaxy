@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
             </p>
             <p>
               <strong>Cafe Galaxy</strong><br />
-              <a href="https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] hover:underline">15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001</a><br />
+              <a href="https://www.google.com/maps?q=Cafe+galaxy,+Central+Rd,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] hover:underline">15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001</a><br />
               Email: <a href="mailto:info@cafegalaxy.in" className="text-[#D4AF37] hover:underline">info@cafegalaxy.in</a><br />
               Phone: +91 93601 51808
             </p>
