@@ -196,16 +196,6 @@ const Home = () => {
             </Link>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-10 opacity-70">
-          <span className="text-[9px] uppercase tracking-[0.3em] text-[#FAFAFA]/40 font-semibold">Discover More</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1 h-5 bg-[#FFC107] rounded-full"
-          />
-        </div>
       </section>
 
       {/* 2. WHY CAFE GALAXY */}

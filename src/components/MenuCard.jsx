@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Check, Award } from 'lucide-react';
-import RippleButton from './RippleButton';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Award } from 'lucide-react';
 
 const MenuCard = ({ item }) => {
-  const [isAdded, setIsAdded] = useState(false);
-
-  const handleAdd = () => {
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 1500);
-  };
 
   return (
     <motion.div
@@ -70,41 +63,6 @@ const MenuCard = ({ item }) => {
           </p>
         </div>
 
-        {/* Add to Cart button */}
-        <div className="pt-2">
-          <RippleButton
-            onClick={handleAdd}
-            className={`w-full py-2.5 rounded-xl text-xs uppercase tracking-widest font-bold transition-all duration-300 ${
-              isAdded
-                ? 'bg-green-600 text-white hover:bg-green-700 shadow-lg'
-                : 'bg-transparent text-[#FFC107] hover:bg-[#FFC107] hover:text-[#0A0A0A] border border-[#FFC107]/45 hover:border-[#FFC107]'
-            }`}
-          >
-            <AnimatePresence mode="wait">
-              {isAdded ? (
-                <motion.span
-                  key="added"
-                  initial={{ scale: 0.6, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.6, opacity: 0 }}
-                  className="flex items-center gap-1.5"
-                >
-                  <Check size={13} strokeWidth={3} /> Added!
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="add"
-                  initial={{ scale: 0.6, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.6, opacity: 0 }}
-                  className="flex items-center gap-1.5"
-                >
-                  <ShoppingBag size={13} /> Add to Cart
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </RippleButton>
-        </div>
       </div>
     </motion.div>
   );
