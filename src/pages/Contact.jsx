@@ -48,7 +48,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', url: 'https://instagram.com', icon: <Instagram size={18} /> },
+    { name: 'Instagram', url: 'https://instagram.com/_cafe__galaxy_since_2025_', icon: <Instagram size={18} /> },
     { name: 'Facebook', url: 'https://facebook.com', icon: <Facebook size={18} /> }
   ];
 

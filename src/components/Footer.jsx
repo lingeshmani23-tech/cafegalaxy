@@ -39,7 +39,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 pt-2">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/_cafe__galaxy_since_2025_"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FFC107] hover:bg-[#FFC107] hover:text-[#0A0A0A] transition-all duration-300"
