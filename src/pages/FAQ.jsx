@@ -9,7 +9,7 @@ const faqItems = [
   },
   {
     question: 'Where is Cafe Galaxy located in Dindigul?',
-    answer: 'We are located at Palani Road, Bypass Junction, Dindigul, Tamil Nadu 624001. We are easily accessible with ample parking spaces.'
+    answer: 'We are located at 15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001. We are easily accessible with ample parking spaces.'
   },
   {
     question: 'Do you offer reservations for birthday parties or private events?',

@@ -489,7 +489,7 @@ const Home = () => {
               
               <div className="space-y-4 text-xs sm:text-sm text-[#FAFAFA]/80">
                 <p>
-                  <strong>Location:</strong> Bypass Junction, Palani Road, Dindigul, Tamil Nadu 624001
+                  <strong>Location:</strong> <a href="https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] hover:underline transition-all">15 A, Central Rd, near water tank, Begambur, Dindigul, Tamil Nadu 624001</a>
                 </p>
                 <p>
                   <strong>Opening Hours:</strong> Mon-Sun: 6:30 AM - 10:00 PM
@@ -513,13 +513,13 @@ const Home = () => {
             {/* Google Map */}
             <div className="h-[280px] w-full rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.3414995304677!2d77.96229197576579!3d10.394432189732126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00ab4357a79e65%3B%2sDindigul%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
                 allowFullScreen=""
                 loading="lazy"
-                title="Cafe Galaxy Bypass Junction Dindigul Map"
+                title="Cafe Galaxy Begambur Dindigul Map"
               ></iframe>
             </div>
           </div>

@@ -86,11 +86,11 @@ const Footer = () => {
             <ul className="space-y-4 text-xs text-[#FAFAFA]/75">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#FFC107] shrink-0 mt-0.5" />
-                <span>
+                <a href="https://www.google.com/maps?q=15+A,+Central+Rd,+near+water+tank,+Begambur,+Dindigul,+Tamil+Nadu+624001" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFC107] transition-colors">
                   <strong>Cafe Galaxy</strong><br />
-                  Palani Road, Bypass Junction,<br />
-                  Dindigul, Tamil Nadu 624001
-                </span>
+                  15 A, Central Rd, near water tank,<br />
+                  Begambur, Dindigul, Tamil Nadu 624001
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-[#FFC107] shrink-0" />

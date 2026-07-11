@@ -109,7 +109,7 @@ const App = () => {
                 "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&auto=format&fit=crop&q=80",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "Bypass Junction, Palani Road",
+                  "streetAddress": "15 A, Central Rd, near water tank, Begambur",
                   "addressLocality": "Dindigul",
                   "addressRegion": "Tamil Nadu",
                   "postalCode": "624001",
