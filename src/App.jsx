@@ -65,14 +65,10 @@ const AnimatedPages = () => {
 };
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Premium loading delay
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1800);
-    return () => clearTimeout(timer);
+    // Removed artificial loading delay to speed up hero load
   }, []);
 
   return (
