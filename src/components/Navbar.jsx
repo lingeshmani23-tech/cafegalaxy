@@ -91,7 +91,7 @@ const Navbar = () => {
             <div className="hidden lg:block">
               <Link to="/contact">
                 <RippleButton className="px-5 py-2.5 bg-gradient-to-r from-[#FFD54F] via-[#FFC107] to-[#FFB300] text-[#0A0A0A] font-bold text-xs uppercase tracking-widest rounded-xl hover:shadow-gold-glow hover:scale-105 transition-all">
-                  Reserve Table <CalendarDays size={14} className="ml-1.5" />
+                  Contact Us
                 </RippleButton>
               </Link>
             </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
                 <div className="pt-4 px-4">
                   <Link to="/contact" className="block w-full">
                     <RippleButton className="w-full py-3 bg-gradient-to-r from-[#FFD54F] via-[#FFC107] to-[#FFB300] text-[#0A0A0A] font-extrabold text-xs uppercase tracking-widest rounded-xl">
-                      Reserve Table
+                      Contact Us
                     </RippleButton>
                   </Link>
                 </div>

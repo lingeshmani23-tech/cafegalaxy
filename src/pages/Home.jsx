@@ -23,11 +23,11 @@ const Home = () => {
 
   // Today's Special Item
   const todaysSpecial = {
-    name: 'Woodfired Margherita Pizza',
-    description: 'Authentic Italian thin crust pizza baked in a wood-fired oven, topped with fresh mozzarella, basil, and our signature San Marzano tomato sauce.',
-    price: 399,
-    originalPrice: 499,
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80',
+    name: 'Double Chicken Burger',
+    description: 'Two crispy chicken patties loaded with melted cheese, caramelized onions, and house sauce.',
+    price: 199,
+    originalPrice: 240,
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80',
     tag: 'Chef Pick'
   };
 
@@ -35,7 +35,6 @@ const Home = () => {
     { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', alt: 'Aromatic Espresso' },
     { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=80', alt: 'Luxurious Interior' },
     { src: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=80', alt: 'Fresh Bread' },
-    { src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=80', alt: 'Gourmet Pizza' },
     { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=80', alt: 'Juicy Burgers' },
     { src: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=80', alt: 'Creamy Milkshakes' }
   ];
@@ -44,13 +43,13 @@ const Home = () => {
     { to: '15000', suffix: '+', label: 'Cups Brewed' },
     { to: '5000', suffix: '+', label: 'Happy Customers' },
     { to: '12', suffix: '+', label: 'Years Experience' },
-    { to: '40', suffix: '+', label: 'Premium Blends' }
+    { to: '40', suffix: '+', label: 'House Blends' }
   ];
 
   const features = [
     {
       icon: <Coffee className="text-[#FFC107]" size={28} />,
-      title: 'Premium Coffee Beans',
+      title: 'Quality Coffee Beans',
       desc: '100% organic Arabica beans slow-roasted to bring out rich, stellar flavor notes.'
     },
     {
@@ -175,7 +174,7 @@ const Home = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="mt-6 text-[10px] sm:text-xs lg:text-sm text-[#FAFAFA]/75 uppercase tracking-[0.25em] font-semibold"
           >
-            Premium Coffee &bull; Fresh Bakery &bull; Delicious Food &bull; Cozy Ambience
+            Quality Coffee &bull; Fresh Bakery &bull; Delicious Food &bull; Cozy Ambience
           </motion.p>
 
           <motion.div
@@ -208,7 +207,7 @@ const Home = () => {
             Why Cafe Galaxy?
           </h2>
           <p className="text-sm text-[#FAFAFA]/50 font-light max-w-xl mx-auto">
-            Combining state-of-the-art brewing, daily handcrafted pastry baking, and premium hospitality.
+            Combining great brewing, daily handcrafted pastry baking, and warm hospitality.
           </p>
         </div>
 
@@ -446,31 +445,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 9. RESERVATION CTA */}
-      <section className="py-24 bg-[#161616] border-y border-[#FFC107]/10 relative overflow-hidden">
-        {/* Glow backdrop particles */}
-        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-[#FFC107]/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-8 relative z-10 flex flex-col items-center">
-          <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold flex items-center gap-1.5">
-            <CalendarClock size={16} /> Table Bookings
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-[#FAFAFA] leading-tight">
-            Reserve Your Cosmic Table
-          </h2>
-          <p className="text-sm text-[#FAFAFA]/75 font-light leading-relaxed max-w-lg mx-auto">
-            Guarantee your spot in our luxury lounge. Book your table in advance for birthdays, dates, family get-togethers, or business meetings.
-          </p>
-          
-          <div className="pt-2">
-            <Link to="/contact">
-              <RippleButton className="px-8 py-4 bg-gradient-to-r from-[#FFD54F] via-[#FFC107] to-[#FFB300] text-[#0A0A0A] font-bold text-xs uppercase tracking-widest rounded-xl hover:scale-105 shadow-md">
-                Secure Booking Now
-              </RippleButton>
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* 10. CONTACT PREVIEW */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -484,7 +459,7 @@ const Home = () => {
                 Where Every Cup Meets The Galaxy
               </h2>
               <p className="text-sm text-[#FAFAFA]/75 font-light leading-relaxed">
-                We are located in Dindigul, Tamil Nadu. Visit us for specialty coffees, fresh pizza and burgers, or south Indian snacks.
+                We are located in Dindigul, Tamil Nadu. Visit us for specialty coffees, fresh burgers, or south Indian snacks.
               </p>
               
               <div className="space-y-4 text-xs sm:text-sm text-[#FAFAFA]/80">

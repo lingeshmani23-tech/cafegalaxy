@@ -6,7 +6,7 @@ import RippleButton from '../components/RippleButton';
 
 const Contact = () => {
   const [isSuccess, setIsSuccess] = useState(false);
-  const [formType, setFormType] = useState('reserve'); // 'reserve' | 'message'
+  const formType = 'message';
   const {
     register,
     handleSubmit,
@@ -68,10 +68,10 @@ const Contact = () => {
             Get In Touch
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-[#FAFAFA]">
-            Contact & Bookings
+            Contact Us
           </h1>
           <p className="text-xs sm:text-sm text-[#FAFAFA]/50 uppercase tracking-widest max-w-md mx-auto">
-            Book your cosmic table, reserve birthday cakes, or leave a message
+            Send us a message or inquiry
           </p>
         </div>
       </section>
@@ -192,27 +192,7 @@ const Contact = () => {
 
           {/* Right Column: Reservation / Messaging Form */}
           <div className="glass-card rounded-3xl p-8 border border-white/5 shadow-xl relative">
-            {/* Toggle form types */}
-            <div className="flex bg-[#0A0A0A] p-1.5 rounded-2xl border border-white/5 mb-8">
-              <button
-                type="button"
-                onClick={() => setFormType('reserve')}
-                className={`flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-all duration-300 ${
-                  formType === 'reserve' ? 'bg-[#FFC107] text-[#0A0A0A]' : 'text-[#FAFAFA]/65 hover:text-white'
-                }`}
-              >
-                Book Table
-              </button>
-              <button
-                type="button"
-                onClick={() => setFormType('message')}
-                className={`flex-1 py-3 text-xs font-bold uppercase tracking-wider rounded-xl cursor-pointer transition-all duration-300 ${
-                  formType === 'message' ? 'bg-[#FFC107] text-[#0A0A0A]' : 'text-[#FAFAFA]/65 hover:text-white'
-                }`}
-              >
-                Send Message
-              </button>
-            </div>
+
 
             <h3 className="font-serif text-2xl font-extrabold text-[#FAFAFA] mb-6 text-left">
               {formType === 'reserve' ? 'Secure Table Reservation' : 'Send us a Query'}

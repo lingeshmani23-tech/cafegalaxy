@@ -74,7 +74,7 @@ const Menu = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search coffee, pizza, desserts, burgers..."
+                placeholder="Search coffee, desserts, burgers..."
                 className="w-full bg-[#0A0A0A] text-[#FAFAFA] placeholder-[#FAFAFA]/30 pl-12 pr-4 py-3.5 rounded-2xl border border-white/10 focus:border-[#FFC107]/50 focus:outline-none transition-colors duration-300 text-sm"
               />
             </div>

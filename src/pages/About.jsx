@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: <ChefHat className="text-[#FFC107]" size={28} />,
       title: 'Experienced Chefs',
-      desc: 'Our culinary artists bring years of expertise from five-star establishments to curate fine flavours.'
+      desc: 'Our culinary artists bring years of experience to curate delicious, affordable flavours.'
     },
     {
       icon: <ShieldCheck className="text-[#FFC107]" size={28} />,
@@ -27,7 +27,7 @@ const About = () => {
     {
       icon: <Heart className="text-[#FFC107]" size={28} />,
       title: 'Fresh Ingredients',
-      desc: 'We source locally grown fresh vegetables and select premium organic coffee beans for every batch.'
+      desc: 'We source locally grown fresh vegetables and select quality coffee beans for every batch.'
     },
     {
       icon: <Smile className="text-[#FFC107]" size={28} />,
@@ -55,7 +55,7 @@ const About = () => {
             About Cafe Galaxy
           </h1>
           <p className="text-xs sm:text-sm uppercase tracking-widest max-w-lg mx-auto text-[#FAFAFA]/50 font-semibold" >
-            Discover the stellar story behind Dindigul's premium café brand
+            Discover the stellar story behind Dindigul's favorite neighborhood café
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ const About = () => {
             <img
               src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80"
               alt="Cozy Cafe Seating"
-              className="w-full h-[450px] object-cover rounded-3xl border border-[#FFC107]/20 shadow-premium"
+              className="w-full h-[450px] object-cover rounded-3xl border border-[#FFC107]/20 shadow-lg"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-45 rounded-3xl"></div>
           </motion.div>
@@ -92,13 +92,13 @@ const About = () => {
               Where Quality Meets Elegance
             </h2>
             <p className="text-sm text-[#FAFAFA]/75 font-light leading-relaxed">
-              Founded at the heart of Dindigul, Cafe Galaxy was conceptualized to solve a single ambition: to craft a luxurious, elegant sanctuary where friends, coffee lovers, and families can gather over heavenly beverages and delicious meals.
+              Founded at the heart of Dindigul, Cafe Galaxy was conceptualized to solve a single ambition: to craft a welcoming, budget-friendly space where friends, coffee lovers, and families can gather over heavenly beverages and delicious meals.
             </p>
             <p className="text-sm text-[#FAFAFA]/75 font-light leading-relaxed">
-              We take pride in selecting single-origin Arabica beans, maintaining rigorous hygienic cooking policies, and baking soft premium breads and cakes from scratch. The soft lighting, premium seating layout, and ambient coffee scents collectively establish a cosmic sanctuary.
+              We take pride in selecting single-origin Arabica beans, maintaining rigorous hygienic cooking policies, and baking soft fresh breads and cakes from scratch. The soft lighting, cozy seating layout, and ambient coffee scents collectively establish a cosmic sanctuary.
             </p>
             <p className="text-sm text-[#FAFAFA]/75 font-light leading-relaxed">
-              Whether you are here for a quick morning double espresso, a weekend family snack outing, or custom red velvet birthday cakes, Cafe Galaxy promises warmth, premium food presentation, and fast, friendly service.
+              Whether you are here for a quick morning double espresso, a weekend family snack outing, or custom red velvet birthday cakes, Cafe Galaxy promises warmth, great food presentation, and fast, friendly service.
             </p>
           </motion.div>
         </div>
@@ -122,7 +122,7 @@ const About = () => {
                 <h3 className="font-serif text-xl font-bold tracking-wide">Our Mission</h3>
               </div>
               <p className="text-sm text-[#FAFAFA]/70 font-light leading-relaxed">
-                To serve high-quality, ethically sourced coffee blends, hand-crafted bakery goods, and mouthwatering multi-cuisine items under stellar hygiene conditions. We aim to brighten every guest’s day, providing top-class customer support and creating a premium space for Dindigul's residents and visitors.
+                To serve high-quality, ethically sourced coffee blends, hand-crafted bakery goods, and mouthwatering multi-cuisine items under stellar hygiene conditions. We aim to brighten every guest’s day, providing top-class customer support and creating a welcoming space for Dindigul's residents and visitors.
               </p>
             </motion.div>
 
@@ -139,7 +139,7 @@ const About = () => {
                 <h3 className="font-serif text-xl font-bold tracking-wide text-[#FAFAFA]">Our Vision</h3>
               </div>
               <p className="text-sm text-[#FAFAFA]/70 font-light leading-relaxed">
-                To be recognized as the premier culinary destination and coffee house brand in Tamil Nadu, synonymous with luxurious café ambience, culinary excellence, organic farm sourcing, and highly memorable guest services.
+                To be recognized as the premier culinary destination and coffee house brand in Tamil Nadu, synonymous with cozy café ambience, culinary excellence, organic farm sourcing, and highly memorable guest services.
               </p>
             </motion.div>
 
@@ -151,7 +151,7 @@ const About = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center space-y-4 mb-16">
           <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold">
-            Premium Qualities
+            Our Core Qualities
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-[#FAFAFA]">
             What Defines the Galaxy Ambience

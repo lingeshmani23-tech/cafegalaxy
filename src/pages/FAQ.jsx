@@ -13,7 +13,7 @@ const faqItems = [
   },
   {
     question: 'Do you offer reservations for birthday parties or private events?',
-    answer: 'Yes! We have cozy lounge spaces that can be reserved for birthdays, family get-togethers, or corporate meetings. Please reach out via our contact form or call us directly to discuss event packages.'
+    answer: 'Yes! We have cozy lounge spaces for family get-togethers. Please reach out via our contact form or call us directly.'
   },
   {
     question: 'Are eggless cake and pastry options available?',

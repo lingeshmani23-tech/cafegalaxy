@@ -7,7 +7,6 @@ const galleryCategories = [
   'All',
   'Coffee',
   'Bakery',
-  'Pizza',
   'Burger',
   'Milkshake',
   'Cafe Interior',
@@ -31,13 +30,6 @@ const galleryImages = [
     title: 'Luxury Celestial Lighting',
     alt: 'Cafe interior with gold lighting fixtures',
     src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 4,
-    category: 'Pizza',
-    title: 'Woodfired Margherita',
-    alt: 'Pizza bubbling fresh out of the oven',
-    src: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80'
   },
   {
     id: 5,

@@ -82,21 +82,21 @@ const App = () => {
         
         {/* SEO Global Metadata Configuration */}
         <Helmet>
-          <title>Cafe Galaxy | Premium Café & Bakery in Dindigul, Tamil Nadu</title>
-          <meta name="description" content="Savor premium coffees, delicious multi-cuisine pizza, burgers, cakes, bakery and Tamil Nadu snacks at Cafe Galaxy in Dindigul." />
-          <meta name="keywords" content="Cafe Galaxy, Dindigul, Cafe, Coffee Shop Dindigul, Tamil Nadu, Restaurant, Pizza, Burgers, Bakery, Samosa, South Indian Snacks" />
+          <title>Cafe Galaxy | Welcoming Café & Bakery in Dindigul, Tamil Nadu</title>
+          <meta name="description" content="Savor quality coffees, delicious multi-cuisine burgers, cakes, bakery and Tamil Nadu snacks at Cafe Galaxy in Dindigul." />
+          <meta name="keywords" content="Cafe Galaxy, Dindigul, Cafe, Coffee Shop Dindigul, Tamil Nadu, Restaurant, Burgers, Bakery, Samosa, South Indian Snacks" />
           
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Cafe Galaxy - Where Every Cup Meets the Galaxy" />
-          <meta property="og:description" content="Discover premium roasted coffee, fresh hand-baked goods, and comfortable lounge seating in Dindigul, Tamil Nadu." />
+          <meta property="og:description" content="Discover quality roasted coffee, fresh hand-baked goods, and comfortable lounge seating in Dindigul, Tamil Nadu." />
           <meta property="og:url" content="https://cafegalaxy.in" />
           <meta property="og:image" content="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop&q=80" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Cafe Galaxy Dindigul" />
-          <meta name="twitter:description" content="Premium roasted coffee and gourmet foods at Dindigul's luxury cafe destination." />
+          <meta name="twitter:description" content="Quality roasted coffee and fresh foods at Dindigul's neighborhood cafe destination." />
           <meta name="twitter:image" content="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop&q=80" />
 
           {/* JSON-LD Structured Data Schema */}

@@ -37,14 +37,7 @@ const TermsConditions = () => {
             </ul>
 
             <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#D4AF37] mt-8">
-              2. Reservations & Event Bookings
-            </h2>
-            <p>
-              When booking seating space or reserving a birthday cake, please supply accurate phone, email, and name details. Any cancellation or rescheduling must be communicated at least 24 hours in advance.
-            </p>
-
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#D4AF37] mt-8">
-              3. Home Delivery Conditions
+              2. Home Delivery Conditions
             </h2>
             <p>
               Cafe Galaxy provides home delivery within select zones of Dindigul. While we strive for fast service, delivery times might vary due to traffic, weather conditions, or peak hours.
@@ -54,7 +47,7 @@ const TermsConditions = () => {
               4. Code of Conduct at Our Venue
             </h2>
             <p>
-              To maintain the premium, family-friendly atmosphere at Cafe Galaxy:
+              To maintain the welcoming, family-friendly atmosphere at Cafe Galaxy:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Guests are requested to cooperate with our staff and treat others with respect.</li>

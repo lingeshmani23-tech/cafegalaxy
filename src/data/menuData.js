@@ -6,7 +6,6 @@ export const menuCategories = [
   { id: 'milkshakes', name: '🥤 Milkshakes', value: 'Milkshakes' },
   { id: 'juice', name: '🍊 Fresh Juice', value: 'Fresh Juice' },
   { id: 'mocktails', name: '🍸 Mocktails', value: 'Mocktails' },
-  { id: 'pizza', name: '🍕 Pizza', value: 'Pizza' },
   { id: 'burger', name: '🍔 Burger', value: 'Burger' },
   { id: 'sandwich', name: '🌮 Sandwich', value: 'Sandwich' },
   { id: 'pasta', name: '🍝 Pasta', value: 'Pasta' },
@@ -218,48 +217,6 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=80'
-  },
-
-  // --- PIZZA ---
-  {
-    id: 'p1',
-    category: 'Pizza',
-    name: 'Margherita Pizza',
-    description: 'Classic artisanal dough topped with marinara sauce, fresh basil, and fresh mozzarella cheese.',
-    price: 240,
-    isVeg: true,
-    isPopular: true,
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'p2',
-    category: 'Pizza',
-    name: 'Veg Supreme Pizza',
-    description: 'Loaded with colored bell peppers, red onions, mushrooms, black olives, and sweet corn.',
-    price: 320,
-    isVeg: true,
-    isPopular: false,
-    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'p3',
-    category: 'Pizza',
-    name: 'Farm Fresh Pizza',
-    description: 'Crispy thin crust topped with fresh farm vegetables, baby corn, and extra mozzarella.',
-    price: 290,
-    isVeg: true,
-    isPopular: true,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'p4',
-    category: 'Pizza',
-    name: 'Chicken Pizza',
-    description: 'Premium grilled chicken breast chunks, spicy BBQ sauce, red onions, and melted cheese.',
-    price: 360,
-    isVeg: false,
-    isPopular: true,
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&auto=format&fit=crop&q=80'
   },
 
   // --- BURGER ---
