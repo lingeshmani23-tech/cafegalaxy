@@ -40,10 +40,10 @@ const Home = () => {
   ];
 
   const counters = [
-    { to: '15000', suffix: '+', label: 'Cups Brewed' },
-    { to: '5000', suffix: '+', label: 'Happy Customers' },
-    { to: '12', suffix: '+', label: 'Years Experience' },
-    { to: '40', suffix: '+', label: 'House Blends' }
+    { to: '5000', suffix: '+', label: 'Cups Brewed' },
+    { to: '2500', suffix: '+', label: 'Happy Customers' },
+    { to: '2', suffix: '+', label: 'Years Experience' },
+    { to: '30', suffix: '+', label: 'House Blends' }
   ];
 
   const features = [
