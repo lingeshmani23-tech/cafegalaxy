@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Coffee, ShieldCheck, Heart, Sparkles, Utensils, MessageSquare, PhoneCall, Award, CalendarClock } from 'lucide-react';
@@ -21,15 +21,33 @@ const Home = () => {
   const popularCoffee = menuItems.filter(item => item.category === 'Coffee').slice(0, 4);
   const bakerySpecials = menuItems.filter(item => item.category === 'Bakery' && item.isPopular).slice(0, 4);
 
-  // Today's Special Item
-  const todaysSpecial = {
+  // Today's Special Item (randomly rotating main dishes)
+  const mainDishes = useMemo(() => {
+    return menuItems.filter(item => 
+      ['Burgers', 'Sandwiches', 'Fried Chicken', 'Waffles'].includes(item.category)
+    );
+  }, []);
+
+  const [specialIndex, setSpecialIndex] = useState(0);
+
+  useEffect(() => {
+    if (mainDishes.length === 0) return;
+    const interval = setInterval(() => {
+      setSpecialIndex((prev) => (prev + 1) % mainDishes.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [mainDishes]);
+
+  const todaysSpecial = mainDishes[specialIndex] || {
+    id: 'special-default',
     name: 'Grilled Cheese Chicken Sandwich',
     description: 'Perfectly grilled chicken layered with melted cheese in a crispy toasted sandwich.',
     price: 110,
-    originalPrice: 140,
-    image: 'https://loremflickr.com/800/800/sandwich,grilled,chicken,cheese,food/all?lock=1001',
-    tag: 'Chef Pick'
+    image: '/images/menu/menu_8.jpg'
   };
+
+  const originalPrice = Math.round(todaysSpecial.price * 1.25);
+  const savePercent = 20;
 
   const galleryPreviews = [
     { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', alt: 'Aromatic Espresso' },
@@ -336,7 +354,13 @@ const Home = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Promo text */}
-            <div className="space-y-6">
+            <motion.div 
+              key={`text-${todaysSpecial.id}`}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="space-y-6"
+            >
               <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold flex items-center gap-1.5">
                 <Award size={14} /> Chef's Masterpiece
               </span>
@@ -352,10 +376,10 @@ const Home = () => {
                   ₹{todaysSpecial.price}
                 </span>
                 <span className="font-sans text-[#FAFAFA]/40 text-lg line-through">
-                  ₹{todaysSpecial.originalPrice}
+                  ₹{originalPrice}
                 </span>
                 <span className="bg-green-600/10 text-green-500 font-bold text-xs uppercase px-2.5 py-1 rounded">
-                  Save 23%
+                  Save {savePercent}%
                 </span>
               </div>
 
@@ -366,16 +390,22 @@ const Home = () => {
                   </RippleButton>
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Promo image with hover glow */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#FFC107]/10 shadow-lg">
+            <motion.div 
+              key={`img-${todaysSpecial.id}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="relative aspect-video rounded-2xl overflow-hidden border border-[#FFC107]/10 shadow-lg"
+            >
               <img
                 src={todaysSpecial.image}
                 alt={todaysSpecial.name}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
