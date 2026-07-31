@@ -17,6 +17,12 @@ const Contact = () => {
   const onSubmitForm = (data) => {
     console.log('Form submitted:', data);
     setIsSuccess(true);
+
+    const formattedText = `Hi Cafe Galaxy, I have a query:\n\n*Name:* ${data.name}\n*Phone:* ${data.phone}\n*Email:* ${data.email}\n*Message:* ${data.message}`;
+    const whatsappUrl = `https://wa.me/919360151808?text=${encodeURIComponent(formattedText)}`;
+    
+    window.open(whatsappUrl, '_blank');
+
     setTimeout(() => {
       setIsSuccess(false);
       reset();
