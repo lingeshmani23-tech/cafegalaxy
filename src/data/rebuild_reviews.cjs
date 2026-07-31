@@ -1,16 +1,6 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, Sparkles, Check, Loader2, AlertCircle } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+const fs = require('fs');
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import RippleButton from "../components/RippleButton";
-
-const initialReviews = [
+const initialReviews = `const initialReviews = [
   {
     id: 1,
     name: "jenisan Jeyaraj",
@@ -241,7 +231,21 @@ const initialReviews = [
     photo:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
   }
-];
+];`;
+
+const newCode = `import React, { useState, useEffect, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote, Sparkles, Check, Loader2, AlertCircle } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import RippleButton from "../components/RippleButton";
+
+${initialReviews}
 
 const Reviews = () => {
   // 9. Persist reviews so they are not lost after a page refresh
@@ -313,7 +317,7 @@ const Reviews = () => {
           rating: formRating,
           date: "Just now",
           text: trimmedReview,
-          photo: `https://ui-avatars.com/api/?name=${encodeURIComponent(trimmedName)}&background=FFC107&color=0A0A0A`,
+          photo: \`https://ui-avatars.com/api/?name=\${encodeURIComponent(trimmedName)}&background=FFC107&color=0A0A0A\`,
         };
 
         // 6. Display the newest reviews at the top
@@ -449,7 +453,7 @@ const Reviews = () => {
                     <div className="flex-1 h-2.5 bg-[#1a1a1a] rounded-full overflow-hidden border border-white/5 relative">
                       <motion.div 
                         initial={{ width: 0 }}
-                        animate={{ width: `${(stats.dist[star] / stats.total) * 100}%` }}
+                        animate={{ width: \`\${(stats.dist[star] / stats.total) * 100}%\` }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="absolute top-0 left-0 h-full bg-[#FFC107] rounded-full" 
                       />
@@ -539,11 +543,11 @@ const Reviews = () => {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mb-6 p-4 rounded-xl border ${
+                  className={\`mb-6 p-4 rounded-xl border \${
                     submitState.type === 'success' 
                     ? 'bg-green-500/10 border-green-500/30 text-green-400' 
                     : 'bg-red-500/10 border-red-500/30 text-red-400'
-                  } flex flex-col items-center justify-center text-center space-y-2`}
+                  } flex flex-col items-center justify-center text-center space-y-2\`}
                 >
                   {submitState.type === 'success' ? <Check size={20} /> : <AlertCircle size={20} />}
                   <p className="text-xs font-medium leading-relaxed">{submitState.message}</p>
@@ -638,3 +642,7 @@ const Reviews = () => {
 };
 
 export default Reviews;
+`;
+
+fs.writeFileSync('src/pages/Reviews.jsx', newCode);
+console.log('Reviews.jsx updated successfully.');
