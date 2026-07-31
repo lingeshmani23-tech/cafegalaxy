@@ -1,69 +1,254 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Quote, Sparkles, Check } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, Quote, Sparkles, Check } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import RippleButton from '../components/RippleButton';
+import RippleButton from "../components/RippleButton";
 
 const initialReviews = [
   {
     id: 1,
-    name: 'Karthikeyan Ramasamy',
-    location: 'Vl Vadagai Pathirakadai, Dindigul',
+    name: "jenisan Jeyaraj",
+    location: "Dindigul",
     rating: 5,
-    date: '2 weeks ago',
-    text: 'A fantastic spot in Dindigul! Cafe Galaxy is open early from 6:30 AM, which is perfect for my morning coffee run. The pastries are fresh and the staff is very welcoming. Definitely a 5-star experience!',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
+    date: "Recently",
+    text: "I have tried many products in this shop and I loved it. Especially chicken wings and Sulaimani tea are very tasty and it's my favorites must try.",
+    photo:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
   },
   {
     id: 2,
-    name: 'Priyadharshini G.',
-    location: 'Dindigul',
+    name: "Pravin",
+    location: "Dindigul",
     rating: 5,
-    date: '1 month ago',
-    text: 'We always order their honey cake and doughnuts for family get-togethers. The home delivery is prompt and the food is always fresh. It’s hard to find such quality in town!',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80'
+    date: "7 months ago",
+    text: "Cozy vibes ☕✨ Loved this small cafe near my place! Good tea, tasty snacks, and a chill atmosphere. Perfect spot to relax after a long day. Definitely coming back again ❤️",
+    photo:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
   },
   {
     id: 3,
-    name: 'Senthil Kumar',
-    location: 'Dindigul City',
+    name: "Shanmuga Raj",
+    location: "Dindigul",
     rating: 5,
-    date: '3 weeks ago',
-    text: 'Great ambiance and excellent service. I usually visit in the evenings before they close at 10 PM. Their chicken snacks and tea are a must-try. The place truly deserves its high ratings.',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80'
+    date: "7 months ago",
+    text: "Ambience was very good with tasty and yummy snack Must tryable and you will love it😋🤤",
+    photo:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
   },
   {
     id: 4,
-    name: 'Meera Krishnan',
-    location: 'Vl Vadagai Pathirakadai',
+    name: "Amrish rathnakumar",
+    location: "Dindigul",
     rating: 5,
-    date: '2 months ago',
-    text: 'Beautiful decor and very clean. I love their traditional snacks alongside modern cafe items. It’s the perfect blend of local taste and western cafe style.',
-    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80'
+    date: "7 months ago",
+    text: "Quality of the food was Good and delicious, service was excellent. Time taken for preparation of food was reasonable. Ambient of the shop was wonderful.",
+    photo:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80",
   },
   {
     id: 5,
-    name: 'Ananthakrishnan J.',
-    location: 'Dindigul',
+    name: "Vivek Ayyanathan Raja",
+    location: "Dindigul",
     rating: 5,
-    date: '5 days ago',
-    text: 'If you are looking for authentic cappuccino in Dindigul, this is the place. The baristas really know what they are doing. Cozy, quiet, and highly hygienic.',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80'
-  }
+    date: "11 months ago",
+    text: "Best milk shake, burger and fries and a best service. Kid-friendliness: Lots of kids friendly menu",
+    photo:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 6,
+    name: "Vishwa K",
+    location: "Dindigul",
+    rating: 5,
+    date: "11 months ago",
+    text: "Great cafe! Tasty food, friendly service, cozy atmosphere, and very affordable. Definitely worth visiting again.",
+    photo:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 7,
+    name: "21UCOAT54 Gliffton lewis",
+    location: "Dindigul",
+    rating: 5,
+    date: "7 months ago",
+    text: "Its a worthy experience , food tastes good , especially i like chocolate tea 🤤",
+    photo:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 8,
+    name: "Sankari Selvaraj",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "If you are a tea lover, just visit this place. This cafe worth your time and money. Anyone will get addicted to this cafe's dishes",
+    photo:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 9,
+    name: "Peace Hrt",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Delivered in time , chickens are very crispy and milkshakes are very delicious and sulaimani tea is my favourite Just loved it",
+    photo:
+      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 10,
+    name: "Saranya Balan",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "The place was peaceful .ambience was also good. The food was very economically affordable everything under 130₹.The food was delicious .",
+    photo:
+      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 11,
+    name: "Rekha R",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Delicious food rendered with warm service makes them unique.Excellent",
+    photo:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 12,
+    name: "Teddy Tharun",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Unique dishes and best cafe in Dindigul.",
+    photo:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 13,
+    name: "sruthi meera",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Amazing tea and a must visit if you are in that area!!",
+    photo:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 14,
+    name: "Laxmi Priya",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Wonderful experience 🥰🥰 Must visit cafe❤️",
+    photo:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 15,
+    name: "Vyshnav. T",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Affordable spot and worth visiting",
+    photo:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 16,
+    name: "Senthil Kumar",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Very Hot and spicy tease",
+    photo:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 17,
+    name: "Mohammed Asif",
+    location: "Dindigul",
+    rating: 5,
+    date: "6 months ago",
+    text: "Good",
+    photo:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 18,
+    name: "Vaishnavi S",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "A Hidden Gem with Heartwarming Vibes!",
+    photo:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 19,
+    name: "nagavinothi nagavinothini",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Very tasty and healthy",
+    photo:
+      "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 20,
+    name: "Bourna Bala",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Nice place to enjoy with yummy food",
+    photo:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 21,
+    name: "Annapoorani M",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Coffee super nice place",
+    photo:
+      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 22,
+    name: "Vaishnavi",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "Best in taste",
+    photo:
+      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 23,
+    name: "RAJA THALAMUTHU",
+    location: "Dindigul",
+    rating: 5,
+    date: "a year ago",
+    text: "A nice hangout spot",
+    photo:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
+  },
 ];
 
 const Reviews = () => {
   const [reviews, setReviews] = useState(initialReviews);
-  const [formName, setFormName] = useState('');
+  const [formName, setFormName] = useState("");
   const [formRating, setFormRating] = useState(5);
-  const [formReview, setFormReview] = useState('');
+  const [formReview, setFormReview] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmitReview = (e) => {
@@ -73,18 +258,19 @@ const Reviews = () => {
     const newReviewItem = {
       id: reviews.length + 1,
       name: formName,
-      location: 'Dindigul Guest',
+      location: "Dindigul Guest",
       rating: formRating,
-      date: 'Just now',
+      date: "Just now",
       text: formReview,
-      photo: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80'
+      photo:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
     };
 
     setReviews([newReviewItem, ...reviews]);
     setFormSubmitted(true);
     setTimeout(() => {
-      setFormName('');
-      setFormReview('');
+      setFormName("");
+      setFormReview("");
       setFormRating(5);
       setFormSubmitted(false);
     }, 3000);
@@ -109,7 +295,8 @@ const Reviews = () => {
             Cosmic Reviews
           </h1>
           <p className="text-xs sm:text-sm text-[#FAFAFA]/50 uppercase tracking-widest max-w-md mx-auto">
-            Read what our wonderful guests in Dindigul say about their Cafe Galaxy experience
+            Read what our wonderful guests in Dindigul say about their Cafe
+            Galaxy experience
           </p>
         </div>
       </section>
@@ -152,8 +339,8 @@ const Reviews = () => {
                         size={16}
                         className={
                           i < rev.rating
-                            ? 'text-[#FFC107] fill-[#FFC107]'
-                            : 'text-[#FAFAFA]/20'
+                            ? "text-[#FFC107] fill-[#FFC107]"
+                            : "text-[#FAFAFA]/20"
                         }
                       />
                     ))}
@@ -184,7 +371,7 @@ const Reviews = () => {
             <h3 className="font-serif text-2xl font-bold text-[#FAFAFA] border-b border-white/5 pb-3">
               Guest Feedback Feed
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {reviews.map((rev) => (
                 <motion.div
@@ -204,8 +391,8 @@ const Reviews = () => {
                             size={12}
                             className={
                               i < rev.rating
-                                ? 'text-[#FFC107] fill-[#FFC107]'
-                                : 'text-[#FAFAFA]/10'
+                                ? "text-[#FFC107] fill-[#FFC107]"
+                                : "text-[#FAFAFA]/10"
                             }
                           />
                         ))}
@@ -214,7 +401,7 @@ const Reviews = () => {
                         {rev.date}
                       </span>
                     </div>
-                    
+
                     <p className="text-xs text-[#FAFAFA]/70 font-light leading-relaxed">
                       {rev.text}
                     </p>
@@ -261,9 +448,12 @@ const Reviews = () => {
                   <div className="w-16 h-16 rounded-full bg-green-600/10 border border-green-600 flex items-center justify-center text-green-500 mx-auto">
                     <Check size={28} />
                   </div>
-                  <h4 className="font-serif text-[#FAFAFA] text-lg font-bold">Review Shared!</h4>
+                  <h4 className="font-serif text-[#FAFAFA] text-lg font-bold">
+                    Review Shared!
+                  </h4>
                   <p className="text-xs text-[#FAFAFA]/60 font-light leading-relaxed max-w-[200px] mx-auto">
-                    Thank you! Your feedback has been appended to our feed successfully.
+                    Thank you! Your feedback has been appended to our feed
+                    successfully.
                   </p>
                 </motion.div>
               ) : (
@@ -304,8 +494,8 @@ const Reviews = () => {
                             size={16}
                             className={
                               star <= formRating
-                                ? 'fill-[#FFC107]'
-                                : 'text-[#FAFAFA]/25'
+                                ? "fill-[#FFC107]"
+                                : "text-[#FAFAFA]/25"
                             }
                           />
                         </button>
