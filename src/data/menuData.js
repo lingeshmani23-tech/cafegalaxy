@@ -91,7 +91,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_1.jpg"
   },
   {
     "id": "menu_2",
@@ -101,7 +101,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_2.jpg"
   },
   {
     "id": "menu_3",
@@ -111,7 +111,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_3.jpg"
   },
   {
     "id": "menu_4",
@@ -121,7 +121,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_4.jpg"
   },
   {
     "id": "menu_5",
@@ -131,7 +131,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_5.jpg"
   },
   {
     "id": "menu_6",
@@ -141,7 +141,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_6.jpg"
   },
   {
     "id": "menu_7",
@@ -151,7 +151,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_7.jpg"
   },
   {
     "id": "menu_8",
@@ -161,7 +161,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_8.jpg"
   },
   {
     "id": "menu_9",
@@ -171,7 +171,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_9.jpg"
   },
   {
     "id": "menu_10",
@@ -181,7 +181,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_10.jpg"
   },
   {
     "id": "menu_11",
@@ -191,7 +191,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_11.jpg"
   },
   {
     "id": "menu_12",
@@ -201,7 +201,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_12.jpg"
   },
   {
     "id": "menu_13",
@@ -211,7 +211,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_13.jpg"
   },
   {
     "id": "menu_14",
@@ -221,7 +221,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_14.jpg"
   },
   {
     "id": "menu_15",
@@ -231,7 +231,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_15.jpg"
   },
   {
     "id": "menu_16",
@@ -241,7 +241,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_16.jpg"
   },
   {
     "id": "menu_17",
@@ -251,7 +251,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_17.jpg"
   },
   {
     "id": "menu_18",
@@ -261,7 +261,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_18.jpg"
   },
   {
     "id": "menu_19",
@@ -271,7 +271,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_19.jpg"
   },
   {
     "id": "menu_20",
@@ -281,7 +281,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_20.jpg"
   },
   {
     "id": "menu_21",
@@ -291,7 +291,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_21.jpg"
   },
   {
     "id": "menu_22",
@@ -301,7 +301,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_22.jpg"
   },
   {
     "id": "menu_23",
@@ -311,7 +311,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_23.jpg"
   },
   {
     "id": "menu_24",
@@ -321,7 +321,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_24.jpg"
   },
   {
     "id": "menu_25",
@@ -331,7 +331,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_25.jpg"
   },
   {
     "id": "menu_26",
@@ -341,7 +341,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_26.jpg"
   },
   {
     "id": "menu_27",
@@ -351,7 +351,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_27.jpg"
   },
   {
     "id": "menu_28",
@@ -361,7 +361,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_28.jpg"
   },
   {
     "id": "menu_29",
@@ -371,7 +371,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_29.jpg"
   },
   {
     "id": "menu_30",
@@ -381,7 +381,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_30.jpg"
   },
   {
     "id": "menu_31",
@@ -391,7 +391,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_31.jpg"
   },
   {
     "id": "menu_32",
@@ -401,7 +401,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_32.jpg"
   },
   {
     "id": "menu_33",
@@ -411,7 +411,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_33.jpg"
   },
   {
     "id": "menu_34",
@@ -421,7 +421,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_34.jpg"
   },
   {
     "id": "menu_35",
@@ -431,7 +431,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_35.jpg"
   },
   {
     "id": "menu_36",
@@ -441,7 +441,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_36.jpg"
   },
   {
     "id": "menu_37",
@@ -451,7 +451,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_37.jpg"
   },
   {
     "id": "menu_38",
@@ -461,7 +461,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_38.jpg"
   },
   {
     "id": "menu_39",
@@ -471,7 +471,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_39.jpg"
   },
   {
     "id": "menu_40",
@@ -481,7 +481,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_40.jpg"
   },
   {
     "id": "menu_41",
@@ -491,7 +491,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_41.jpg"
   },
   {
     "id": "menu_42",
@@ -501,7 +501,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_42.jpg"
   },
   {
     "id": "menu_43",
@@ -511,7 +511,7 @@ export const menuItems = [
     "price": 30,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_43.jpg"
   },
   {
     "id": "menu_44",
@@ -521,7 +521,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_44.jpg"
   },
   {
     "id": "menu_45",
@@ -531,7 +531,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_45.jpg"
   },
   {
     "id": "menu_46",
@@ -541,7 +541,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_46.jpg"
   },
   {
     "id": "menu_47",
@@ -551,7 +551,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_47.jpg"
   },
   {
     "id": "menu_48",
@@ -561,7 +561,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_48.jpg"
   },
   {
     "id": "menu_49",
@@ -571,7 +571,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_49.jpg"
   },
   {
     "id": "menu_50",
@@ -581,7 +581,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_50.jpg"
   },
   {
     "id": "menu_51",
@@ -591,7 +591,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_51.jpg"
   },
   {
     "id": "menu_52",
@@ -601,7 +601,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_52.jpg"
   },
   {
     "id": "menu_53",
@@ -611,7 +611,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_53.jpg"
   },
   {
     "id": "menu_54",
@@ -621,7 +621,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_54.jpg"
   },
   {
     "id": "menu_55",
@@ -631,7 +631,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_55.jpg"
   },
   {
     "id": "menu_56",
@@ -641,7 +641,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_56.jpg"
   },
   {
     "id": "menu_57",
@@ -651,7 +651,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_57.jpg"
   },
   {
     "id": "menu_58",
@@ -661,7 +661,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_58.jpg"
   },
   {
     "id": "menu_59",
@@ -671,7 +671,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_59.jpg"
   },
   {
     "id": "menu_60",
@@ -681,7 +681,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_60.jpg"
   },
   {
     "id": "menu_61",
@@ -691,7 +691,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_61.jpg"
   },
   {
     "id": "menu_62",
@@ -701,7 +701,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_62.jpg"
   },
   {
     "id": "menu_63",
@@ -711,7 +711,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_63.jpg"
   },
   {
     "id": "menu_64",
@@ -721,7 +721,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_64.jpg"
   },
   {
     "id": "menu_65",
@@ -731,7 +731,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_65.jpg"
   },
   {
     "id": "menu_66",
@@ -741,7 +741,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_66.jpg"
   },
   {
     "id": "menu_67",
@@ -751,7 +751,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_67.jpg"
   },
   {
     "id": "menu_68",
@@ -761,7 +761,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_68.jpg"
   },
   {
     "id": "menu_69",
@@ -771,7 +771,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": false,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_69.jpg"
   },
   {
     "id": "menu_70",
@@ -781,7 +781,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_70.jpg"
   },
   {
     "id": "menu_71",
@@ -791,7 +791,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_71.jpg"
   },
   {
     "id": "menu_72",
@@ -801,7 +801,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_72.jpg"
   },
   {
     "id": "menu_73",
@@ -811,7 +811,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_73.jpg"
   },
   {
     "id": "menu_74",
@@ -821,7 +821,7 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_74.jpg"
   },
   {
     "id": "menu_75",
@@ -831,6 +831,6 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": ""
+    "image": "/images/menu/menu_75.jpg"
   }
 ];
