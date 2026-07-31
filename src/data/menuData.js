@@ -91,7 +91,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,veg,food/all?lock=1000"
   },
   {
     "id": "menu_2",
@@ -101,7 +101,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Potato%20Tikki%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,potato,food/all?lock=1001"
   },
   {
     "id": "menu_3",
@@ -111,7 +111,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Grilled%20Veg%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,grilled,food/all?lock=1002"
   },
   {
     "id": "menu_4",
@@ -121,7 +121,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Grilled%20Veg%20Cheese%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,cheese,food/all?lock=1003"
   },
   {
     "id": "menu_5",
@@ -131,7 +131,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chicken%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,chicken,food/all?lock=1004"
   },
   {
     "id": "menu_6",
@@ -141,7 +141,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chicken%20Cheese%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,chicken,cheese,food/all?lock=1005"
   },
   {
     "id": "menu_7",
@@ -151,7 +151,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Grilled%20Chicken%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,grilled,chicken,food/all?lock=1006"
   },
   {
     "id": "menu_8",
@@ -161,7 +161,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Grilled%20Chicken%20Cheese%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,grilled,chicken,cheese,food/all?lock=1007"
   },
   {
     "id": "menu_9",
@@ -171,7 +171,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Corn%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,corn,food/all?lock=1008"
   },
   {
     "id": "menu_10",
@@ -181,7 +181,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Corn%20Cheese%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,corn,cheese,food/all?lock=1009"
   },
   {
     "id": "menu_11",
@@ -191,7 +191,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Club%20Sandwich%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/sandwich,club,food/all?lock=1010"
   },
   {
     "id": "menu_12",
@@ -201,7 +201,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20French%20Fries%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fries,potato,food/all?lock=1011"
   },
   {
     "id": "menu_13",
@@ -211,7 +211,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Smiles%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fries,potato,food/all?lock=1012"
   },
   {
     "id": "menu_14",
@@ -221,7 +221,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Potato%20Bites%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fries,potato,food/all?lock=1013"
   },
   {
     "id": "menu_15",
@@ -231,7 +231,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Cheesy%20Fries%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fries,cheese,food/all?lock=1014"
   },
   {
     "id": "menu_16",
@@ -241,7 +241,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Peri%20Peri%20Fries%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fries,spicy,food/all?lock=1015"
   },
   {
     "id": "menu_17",
@@ -251,7 +251,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Potato%20Wedges%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/wedges,potato,food/all?lock=1016"
   },
   {
     "id": "menu_18",
@@ -261,7 +261,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Spicy%20Garlic%20Wedges%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/wedges,garlic,food/all?lock=1017"
   },
   {
     "id": "menu_19",
@@ -271,7 +271,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,veg,food/all?lock=1018"
   },
   {
     "id": "menu_20",
@@ -281,7 +281,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Cheese%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,cheese,food/all?lock=1019"
   },
   {
     "id": "menu_21",
@@ -291,7 +291,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Potato%20Tikki%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,potato,food/all?lock=1020"
   },
   {
     "id": "menu_22",
@@ -301,7 +301,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Twin%20Patty%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,double,food/all?lock=1021"
   },
   {
     "id": "menu_23",
@@ -311,7 +311,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chicken%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,chicken,food/all?lock=1022"
   },
   {
     "id": "menu_24",
@@ -321,7 +321,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chicken%20Cheese%20Burger%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/burger,chicken,cheese,food/all?lock=1023"
   },
   {
     "id": "menu_25",
@@ -331,7 +331,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Vanilla%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,vanilla,food/all?lock=1024"
   },
   {
     "id": "menu_26",
@@ -341,7 +341,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Butterscotch%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,food/all?lock=1025"
   },
   {
     "id": "menu_27",
@@ -351,7 +351,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Strawberry%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,strawberry,food/all?lock=1026"
   },
   {
     "id": "menu_28",
@@ -361,7 +361,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Blue%20Berry%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,blueberry,food/all?lock=1027"
   },
   {
     "id": "menu_29",
@@ -371,7 +371,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chocolate%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,chocolate,food/all?lock=1028"
   },
   {
     "id": "menu_30",
@@ -381,7 +381,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Oreo%20Milkshake%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/milkshake,oreo,food/all?lock=1029"
   },
   {
     "id": "menu_31",
@@ -391,7 +391,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Mint%20Mojito%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/mojito,mint,food/all?lock=1030"
   },
   {
     "id": "menu_32",
@@ -401,7 +401,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Blu%20Bleed%20Mojito%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/mojito,blue,food/all?lock=1031"
   },
   {
     "id": "menu_33",
@@ -411,7 +411,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Strawberry%20Mojito%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/mojito,strawberry,food/all?lock=1032"
   },
   {
     "id": "menu_34",
@@ -421,7 +421,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Blueberry%20Mojito%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/mojito,blueberry,food/all?lock=1033"
   },
   {
     "id": "menu_35",
@@ -431,7 +431,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Momos%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/momo,veg,food/all?lock=1034"
   },
   {
     "id": "menu_36",
@@ -441,7 +441,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Paneer%20Momos%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/momo,paneer,food/all?lock=1035"
   },
   {
     "id": "menu_37",
@@ -451,7 +451,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Corn%20Momos%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/momo,corn,food/all?lock=1036"
   },
   {
     "id": "menu_38",
@@ -461,7 +461,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chicken%20Momos%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/momo,chicken,food/all?lock=1037"
   },
   {
     "id": "menu_39",
@@ -471,7 +471,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Hot%20%26%20Crunchy%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fried,chicken,food/all?lock=1038"
   },
   {
     "id": "menu_40",
@@ -481,7 +481,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Hot%20Strips%20(3%20Pieces)%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fried,chicken,food/all?lock=1039"
   },
   {
     "id": "menu_41",
@@ -491,7 +491,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Lollipop%20(3%20Pieces)%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fried,chicken,lollipop,food/all?lock=1040"
   },
   {
     "id": "menu_42",
@@ -501,7 +501,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Pop%20Corn%20Chicken%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/fried,chicken,popcorn,food/all?lock=1041"
   },
   {
     "id": "menu_43",
@@ -511,7 +511,7 @@ export const menuItems = [
     "price": 30,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Lemon%20Juice%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/lemon,juice,food/all?lock=1042"
   },
   {
     "id": "menu_44",
@@ -521,7 +521,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Rose%20Milk%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/rose,milk,food/all?lock=1043"
   },
   {
     "id": "menu_45",
@@ -531,7 +531,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Plain%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,food/all?lock=1044"
   },
   {
     "id": "menu_46",
@@ -541,7 +541,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Masala%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,masala,food/all?lock=1045"
   },
   {
     "id": "menu_47",
@@ -551,7 +551,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Ginger%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,ginger,food/all?lock=1046"
   },
   {
     "id": "menu_48",
@@ -561,7 +561,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Elachi%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,cardamom,food/all?lock=1047"
   },
   {
     "id": "menu_49",
@@ -571,7 +571,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chocolate%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,chocolate,food/all?lock=1048"
   },
   {
     "id": "menu_50",
@@ -581,7 +581,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Nattu%20Shakarai%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,brown,sugar,food/all?lock=1049"
   },
   {
     "id": "menu_51",
@@ -591,7 +591,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Karupatti%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,palm,sugar,food/all?lock=1050"
   },
   {
     "id": "menu_52",
@@ -601,7 +601,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chukku%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,dry,ginger,food/all?lock=1051"
   },
   {
     "id": "menu_53",
@@ -611,7 +611,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Hibiscus%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,hibiscus,food/all?lock=1052"
   },
   {
     "id": "menu_54",
@@ -621,7 +621,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Green%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,green,food/all?lock=1053"
   },
   {
     "id": "menu_55",
@@ -631,7 +631,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Black%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,black,food/all?lock=1054"
   },
   {
     "id": "menu_56",
@@ -641,7 +641,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Lemon%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,lemon,food/all?lock=1055"
   },
   {
     "id": "menu_57",
@@ -651,7 +651,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Lemon%20Ginger%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,lemon,ginger,food/all?lock=1056"
   },
   {
     "id": "menu_58",
@@ -661,7 +661,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Lemon%20Mint%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,lemon,mint,food/all?lock=1057"
   },
   {
     "id": "menu_59",
@@ -671,7 +671,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Sulaimani%20Tea%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/tea,spiced,black,food/all?lock=1058"
   },
   {
     "id": "menu_60",
@@ -681,7 +681,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Hot%20Milk%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/hot,milk,food/all?lock=1059"
   },
   {
     "id": "menu_61",
@@ -691,7 +691,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Badham%20Milk%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/almond,milk,food/all?lock=1060"
   },
   {
     "id": "menu_62",
@@ -701,7 +701,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Boost%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/chocolate,milk,food/all?lock=1061"
   },
   {
     "id": "menu_63",
@@ -711,7 +711,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Filter%20Kappi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/filter,coffee,food/all?lock=1062"
   },
   {
     "id": "menu_64",
@@ -721,7 +721,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Sukku%20Kappi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/dry,ginger,coffee,food/all?lock=1063"
   },
   {
     "id": "menu_65",
@@ -731,7 +731,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Black%20Kappi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/black,coffee,food/all?lock=1064"
   },
   {
     "id": "menu_66",
@@ -741,7 +741,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chocolate%20Kappi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/chocolate,coffee,food/all?lock=1065"
   },
   {
     "id": "menu_67",
@@ -751,7 +751,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Karupatti%20Kappi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/palm,sugar,coffee,food/all?lock=1066"
   },
   {
     "id": "menu_68",
@@ -761,7 +761,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Puff%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/puff,pastry,veg,food/all?lock=1067"
   },
   {
     "id": "menu_69",
@@ -771,7 +771,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Egg%20Puff%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/puff,pastry,egg,food/all?lock=1068"
   },
   {
     "id": "menu_70",
@@ -781,7 +781,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Masala%20Maggi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/maggi,noodles,masala,food/all?lock=1069"
   },
   {
     "id": "menu_71",
@@ -791,7 +791,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Veg%20Maggi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/maggi,noodles,veg,food/all?lock=1070"
   },
   {
     "id": "menu_72",
@@ -801,7 +801,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Corn%20Maggi%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/maggi,noodles,corn,food/all?lock=1071"
   },
   {
     "id": "menu_73",
@@ -811,7 +811,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Dark%20Chocolate%20Waffle%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/waffle,dark,chocolate,food/all?lock=1072"
   },
   {
     "id": "menu_74",
@@ -821,7 +821,7 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20Chocolate%20Overloaded%20Waffle%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/waffle,chocolate,food/all?lock=1073"
   },
   {
     "id": "menu_75",
@@ -831,6 +831,6 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://image.pollinations.ai/prompt/Simple%20clean%20realistic%20food%20photography%20of%20KitKat%20Filled%20Waffle%2C%20white%20background%2C%20swiggy%20zomato%20delivery%20app%20style%2C%20high%20quality%20real%20food%20photograph%2C%20no%20text?width=250&height=250&nologo=true&model=flux"
+    "image": "https://loremflickr.com/400/400/waffle,kitkat,food/all?lock=1074"
   }
 ];

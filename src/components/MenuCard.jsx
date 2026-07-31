@@ -4,6 +4,10 @@ import { Award } from 'lucide-react';
 
 const MenuCard = ({ item }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  // Category specific fallback logic
+  const fallbackUrl = `https://placehold.co/600x400/222222/FFC107?text=${encodeURIComponent(item.category)}`;
 
   return (
     <motion.div
@@ -14,18 +18,22 @@ const MenuCard = ({ item }) => {
       transition={{ duration: 0.4 }}
       className="glass-card rounded-xl overflow-hidden flex flex-col h-full group shadow-sm hover:shadow-md transition-shadow duration-300 bg-[#161616]"
     >
-      {/* Image Container with 1:1 aspect ratio and 12px rounded corners (handled by parent overflow) */}
-      <div className="relative overflow-hidden aspect-square w-full shrink-0 bg-[#f5f5f5]">
+      {/* Image Container with width: 100%, height: 220px */}
+      <div className="relative overflow-hidden w-full h-[220px] shrink-0 bg-[#f5f5f5]">
         {/* Skeleton Loader */}
-        {!imageLoaded && (
+        {!imageLoaded && !imageError && (
           <div className="absolute inset-0 bg-[#e0e0e0] animate-pulse"></div>
         )}
         
         <img
-          src={item.image}
+          src={imageError ? fallbackUrl : item.image}
           alt={item.name}
           loading="lazy"
           onLoad={() => setImageLoaded(true)}
+          onError={() => {
+            setImageError(true);
+            setImageLoaded(true); // Stop skeleton loader
+          }}
           className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
             imageLoaded ? 'opacity-100' : 'opacity-0 transition-opacity duration-700'
           }`}
