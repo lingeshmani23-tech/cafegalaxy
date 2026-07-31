@@ -29,7 +29,6 @@ export const menuCategories = [
   { id: "mojito", name: "🍹 Mojito", value: "Mojito" },
   { id: "fried-momos", name: "🥟 Fried Momos", value: "Fried Momos" },
   { id: "fried-chicken", name: "🍗 Fried Chicken", value: "Fried Chicken" },
-  ,
   { id: "soft-drinks", name: "🥤 Soft Drinks", value: "Soft Drinks" },
 ];
 
@@ -851,6 +850,17 @@ export const menuItems = [
 
   // --- PUFFS ---
   {
+    id: "new_1026_mushroom",
+    category: "Puffs",
+    name: "Mushroom Puff",
+    description: "Delicious Mushroom Puff made fresh.",
+    price: 20,
+    isVeg: true,
+    isPopular: false,
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=80",
+  },
+  {
     id: "new_1024",
     category: "Puffs",
     name: "Veg Puff",
@@ -1284,6 +1294,28 @@ export const menuItems = [
   },
 
   // --- FRIED MOMOS ---
+  {
+    id: "new_1063_mush",
+    category: "Fried Momos",
+    name: "Mushroom Momos",
+    description: "Delicious Mushroom Momos made fresh.",
+    price: 75,
+    isVeg: true,
+    isPopular: false,
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=80",
+  },
+  {
+    id: "new_1063_fried",
+    category: "Fried Momos",
+    name: "Fried Momos",
+    description: "Delicious Fried Momos made fresh.",
+    price: 85,
+    isVeg: false,
+    isPopular: true,
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=80",
+  },
   {
     id: "new_1063",
     category: "Fried Momos",
