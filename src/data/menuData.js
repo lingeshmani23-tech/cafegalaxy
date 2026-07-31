@@ -91,7 +91,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Fresh%2CVeg%2CSandwich,food/all?lock=6632"
+    "image": ""
   },
   {
     "id": "menu_2",
@@ -101,7 +101,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Aloo%2CTikki%2CSandwich,food/all?lock=3322"
+    "image": ""
   },
   {
     "id": "menu_3",
@@ -111,7 +111,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Grilled%2CVegetable%2CSandwich,food/all?lock=1066"
+    "image": ""
   },
   {
     "id": "menu_4",
@@ -121,7 +121,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Grilled%2CCheese%2CVegetable%2CSandwich,food/all?lock=8926"
+    "image": ""
   },
   {
     "id": "menu_5",
@@ -131,7 +131,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CSandwich,food/all?lock=4629"
+    "image": ""
   },
   {
     "id": "menu_6",
@@ -141,7 +141,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CCheese%2CSandwich,food/all?lock=5748"
+    "image": ""
   },
   {
     "id": "menu_7",
@@ -151,7 +151,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Grilled%2CChicken%2CSandwich,food/all?lock=2537"
+    "image": ""
   },
   {
     "id": "menu_8",
@@ -161,7 +161,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Grilled%2CChicken%2CCheese%2CSandwich,food/all?lock=1660"
+    "image": ""
   },
   {
     "id": "menu_9",
@@ -171,7 +171,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Sweet%2CCorn%2CSandwich,food/all?lock=8736"
+    "image": ""
   },
   {
     "id": "menu_10",
@@ -181,7 +181,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Corn%2CCheese%2CSandwich,food/all?lock=1871"
+    "image": ""
   },
   {
     "id": "menu_11",
@@ -191,7 +191,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Club%2CSandwich,food/all?lock=6036"
+    "image": ""
   },
   {
     "id": "menu_12",
@@ -201,7 +201,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Crispy%2CFrench%2CFries,food/all?lock=3718"
+    "image": ""
   },
   {
     "id": "menu_13",
@@ -211,7 +211,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Potato%2CSmiley%2CFries,food/all?lock=7348"
+    "image": ""
   },
   {
     "id": "menu_14",
@@ -221,7 +221,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Crispy%2CPotato%2CBites,food/all?lock=9737"
+    "image": ""
   },
   {
     "id": "menu_15",
@@ -231,7 +231,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Cheese%2CLoaded%2CFries,food/all?lock=8434"
+    "image": ""
   },
   {
     "id": "menu_16",
@@ -241,7 +241,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Peri%2CPeri%2CFrench%2CFries,food/all?lock=3720"
+    "image": ""
   },
   {
     "id": "menu_17",
@@ -251,7 +251,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Potato%2CWedges,food/all?lock=7151"
+    "image": ""
   },
   {
     "id": "menu_18",
@@ -261,7 +261,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Garlic%2CPotato%2CWedges,food/all?lock=5218"
+    "image": ""
   },
   {
     "id": "menu_19",
@@ -271,7 +271,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Veg%2CBurger,food/all?lock=2455"
+    "image": ""
   },
   {
     "id": "menu_20",
@@ -281,7 +281,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Veg%2CCheese%2CBurger,food/all?lock=6521"
+    "image": ""
   },
   {
     "id": "menu_21",
@@ -291,7 +291,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Aloo%2CTikki%2CBurger,food/all?lock=7626"
+    "image": ""
   },
   {
     "id": "menu_22",
@@ -301,7 +301,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Double%2CPatty%2CBurger,food/all?lock=8292"
+    "image": ""
   },
   {
     "id": "menu_23",
@@ -311,7 +311,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Crispy%2CChicken%2CBurger,food/all?lock=7592"
+    "image": ""
   },
   {
     "id": "menu_24",
@@ -321,7 +321,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CCheese%2CBurger,food/all?lock=6774"
+    "image": ""
   },
   {
     "id": "menu_25",
@@ -331,7 +331,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Vanilla%2CMilkshake,food/all?lock=601"
+    "image": ""
   },
   {
     "id": "menu_26",
@@ -341,7 +341,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Butterscotch%2CMilkshake,food/all?lock=8932"
+    "image": ""
   },
   {
     "id": "menu_27",
@@ -351,7 +351,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Strawberry%2CMilkshake,food/all?lock=8817"
+    "image": ""
   },
   {
     "id": "menu_28",
@@ -361,7 +361,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Blueberry%2CMilkshake,food/all?lock=7604"
+    "image": ""
   },
   {
     "id": "menu_29",
@@ -371,7 +371,7 @@ export const menuItems = [
     "price": 70,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chocolate%2CMilkshake,food/all?lock=6461"
+    "image": ""
   },
   {
     "id": "menu_30",
@@ -381,7 +381,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Oreo%2CMilkshake,food/all?lock=131"
+    "image": ""
   },
   {
     "id": "menu_31",
@@ -391,7 +391,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Mint%2CMojito,food/all?lock=4806"
+    "image": ""
   },
   {
     "id": "menu_32",
@@ -401,7 +401,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Blue%2CCuracao%2CMojito,food/all?lock=8913"
+    "image": ""
   },
   {
     "id": "menu_33",
@@ -411,7 +411,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Strawberry%2CMojito,food/all?lock=2039"
+    "image": ""
   },
   {
     "id": "menu_34",
@@ -421,7 +421,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Blueberry%2CMojito,food/all?lock=2091"
+    "image": ""
   },
   {
     "id": "menu_35",
@@ -431,7 +431,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Veg%2CMomos,food/all?lock=4904"
+    "image": ""
   },
   {
     "id": "menu_36",
@@ -441,7 +441,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Paneer%2CMomos,food/all?lock=9852"
+    "image": ""
   },
   {
     "id": "menu_37",
@@ -451,7 +451,7 @@ export const menuItems = [
     "price": 90,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Corn%2CMomos,food/all?lock=2623"
+    "image": ""
   },
   {
     "id": "menu_38",
@@ -461,7 +461,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CMomos,food/all?lock=3123"
+    "image": ""
   },
   {
     "id": "menu_39",
@@ -471,7 +471,7 @@ export const menuItems = [
     "price": 80,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Crispy%2CFried%2CChicken,food/all?lock=4509"
+    "image": ""
   },
   {
     "id": "menu_40",
@@ -481,7 +481,7 @@ export const menuItems = [
     "price": 100,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CStrips,food/all?lock=7352"
+    "image": ""
   },
   {
     "id": "menu_41",
@@ -491,7 +491,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chicken%2CLollipop,food/all?lock=4946"
+    "image": ""
   },
   {
     "id": "menu_42",
@@ -501,7 +501,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Popcorn%2CChicken,food/all?lock=8716"
+    "image": ""
   },
   {
     "id": "menu_43",
@@ -511,7 +511,7 @@ export const menuItems = [
     "price": 30,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Fresh%2CLemon%2CJuice,food/all?lock=5433"
+    "image": ""
   },
   {
     "id": "menu_44",
@@ -521,7 +521,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/South%2CIndian%2CRose%2CMilk,food/all?lock=6742"
+    "image": ""
   },
   {
     "id": "menu_45",
@@ -531,7 +531,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Indian%2CTea,food/all?lock=2896"
+    "image": ""
   },
   {
     "id": "menu_46",
@@ -541,7 +541,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Masala%2CChai,food/all?lock=9912"
+    "image": ""
   },
   {
     "id": "menu_47",
@@ -551,7 +551,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Ginger%2CTea,food/all?lock=6841"
+    "image": ""
   },
   {
     "id": "menu_48",
@@ -561,7 +561,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Cardamom%2CTea,food/all?lock=1787"
+    "image": ""
   },
   {
     "id": "menu_49",
@@ -571,7 +571,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chocolate%2CTea,food/all?lock=9796"
+    "image": ""
   },
   {
     "id": "menu_50",
@@ -581,7 +581,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Palm%2CSugar%2CTea,food/all?lock=7486"
+    "image": ""
   },
   {
     "id": "menu_51",
@@ -591,7 +591,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Karupatti%2CTea,food/all?lock=3110"
+    "image": ""
   },
   {
     "id": "menu_52",
@@ -601,7 +601,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Dry%2CGinger%2CTea,food/all?lock=2815"
+    "image": ""
   },
   {
     "id": "menu_53",
@@ -611,7 +611,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Hibiscus%2CTea,food/all?lock=3848"
+    "image": ""
   },
   {
     "id": "menu_54",
@@ -621,7 +621,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Green%2CTea,food/all?lock=4645"
+    "image": ""
   },
   {
     "id": "menu_55",
@@ -631,7 +631,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Black%2CTea,food/all?lock=959"
+    "image": ""
   },
   {
     "id": "menu_56",
@@ -641,7 +641,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Lemon%2CTea,food/all?lock=3068"
+    "image": ""
   },
   {
     "id": "menu_57",
@@ -651,7 +651,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Lemon%2CGinger%2CTea,food/all?lock=1704"
+    "image": ""
   },
   {
     "id": "menu_58",
@@ -661,7 +661,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Lemon%2CMint%2CTea,food/all?lock=6198"
+    "image": ""
   },
   {
     "id": "menu_59",
@@ -671,7 +671,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Sulaimani%2CTea,food/all?lock=6896"
+    "image": ""
   },
   {
     "id": "menu_60",
@@ -681,7 +681,7 @@ export const menuItems = [
     "price": 10,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Hot%2CMilk,food/all?lock=6735"
+    "image": ""
   },
   {
     "id": "menu_61",
@@ -691,7 +691,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Badam%2CMilk,food/all?lock=1386"
+    "image": ""
   },
   {
     "id": "menu_62",
@@ -701,7 +701,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Boost%2CDrink,food/all?lock=3942"
+    "image": ""
   },
   {
     "id": "menu_63",
@@ -711,7 +711,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/South%2CIndian%2CFilter%2CCoffee,food/all?lock=5671"
+    "image": ""
   },
   {
     "id": "menu_64",
@@ -721,7 +721,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Sukku%2CCoffee,food/all?lock=8367"
+    "image": ""
   },
   {
     "id": "menu_65",
@@ -731,7 +731,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Black%2CCoffee,food/all?lock=2608"
+    "image": ""
   },
   {
     "id": "menu_66",
@@ -741,7 +741,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chocolate%2CCoffee,food/all?lock=9354"
+    "image": ""
   },
   {
     "id": "menu_67",
@@ -751,7 +751,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Palm%2CJaggery%2CCoffee,food/all?lock=3884"
+    "image": ""
   },
   {
     "id": "menu_68",
@@ -761,7 +761,7 @@ export const menuItems = [
     "price": 15,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Veg%2CPuff%2CPastry,food/all?lock=4417"
+    "image": ""
   },
   {
     "id": "menu_69",
@@ -771,7 +771,7 @@ export const menuItems = [
     "price": 20,
     "isVeg": false,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Egg%2CPuff%2CPastry,food/all?lock=5725"
+    "image": ""
   },
   {
     "id": "menu_70",
@@ -781,7 +781,7 @@ export const menuItems = [
     "price": 40,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Masala%2CMaggi,food/all?lock=5028"
+    "image": ""
   },
   {
     "id": "menu_71",
@@ -791,7 +791,7 @@ export const menuItems = [
     "price": 50,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Vegetable%2CMaggi,food/all?lock=7115"
+    "image": ""
   },
   {
     "id": "menu_72",
@@ -801,7 +801,7 @@ export const menuItems = [
     "price": 60,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Corn%2CMaggi,food/all?lock=1510"
+    "image": ""
   },
   {
     "id": "menu_73",
@@ -811,7 +811,7 @@ export const menuItems = [
     "price": 110,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Dark%2CChocolate%2CWaffle,food/all?lock=6253"
+    "image": ""
   },
   {
     "id": "menu_74",
@@ -821,7 +821,7 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/Chocolate%2CLoaded%2CWaffle,food/all?lock=5153"
+    "image": ""
   },
   {
     "id": "menu_75",
@@ -831,6 +831,6 @@ export const menuItems = [
     "price": 130,
     "isVeg": true,
     "isPopular": false,
-    "image": "https://loremflickr.com/500/500/KitKat%2CWaffle,food/all?lock=5586"
+    "image": ""
   }
 ];
