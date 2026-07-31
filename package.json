@@ -13,6 +13,7 @@
     "cheerio": "^1.2.0",
     "duckduckgo-images-api": "^1.0.5",
     "framer-motion": "^12.42.2",
+    "googlethis": "^1.8.0",
     "lucide-react": "^0.400.0",
     "playwright": "^1.62.1",
     "puppeteer": "^25.4.0",
