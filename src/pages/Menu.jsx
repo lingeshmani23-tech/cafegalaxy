@@ -114,7 +114,7 @@ const Menu = () => {
           </div>
 
           {/* Category Tabs (Scrollable on small screens) */}
-          <div className="border-t border-white/5 pt-6">
+          <div className="border-t border-white/5 pt-6 sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-md pb-4 -mx-4 px-4 sm:-mx-8 sm:px-8 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]">
             <h3 className="text-xs uppercase tracking-widest text-[#FAFAFA]/40 font-bold mb-4 flex items-center gap-2">
               <SlidersHorizontal size={12} /> Filter by Category
             </h3>

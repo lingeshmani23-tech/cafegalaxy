@@ -87,7 +87,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20veg%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_2",
@@ -99,7 +99,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20aloo%20tikki%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_3",
@@ -111,7 +111,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20grilled%20vegetable%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_4",
@@ -123,7 +123,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20grilled%20cheese%20vegetable%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_5",
@@ -135,7 +135,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20sweet%20corn%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_6",
@@ -147,7 +147,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20corn%20cheese%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_7",
@@ -159,7 +159,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20club%20sandwich%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_8",
@@ -170,7 +170,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20crispy%20french%20fries%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_9",
@@ -181,7 +181,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20potato%20smileys%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_10",
@@ -192,7 +192,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20crispy%20potato%20bites%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_11",
@@ -203,7 +203,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20cheese%20loaded%20fries%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_12",
@@ -215,7 +215,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20peri%20peri%20fries%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_13",
@@ -227,7 +227,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20potato%20wedges%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_14",
@@ -239,7 +239,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20garlic%20potato%20wedges%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_15",
@@ -250,7 +250,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20veg%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_16",
@@ -262,7 +262,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20cheese%20veg%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_17",
@@ -274,7 +274,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20aloo%20tikki%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_18",
@@ -286,7 +286,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20double%20patty%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_19",
@@ -298,7 +298,7 @@ export const menuItems = [
     isVeg: false,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20crispy%20chicken%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_20",
@@ -310,7 +310,7 @@ export const menuItems = [
     isVeg: false,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20chicken%20cheese%20burger%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_21",
@@ -322,7 +322,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20vanilla%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_22",
@@ -334,7 +334,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20butterscotch%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_23",
@@ -346,7 +346,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20strawberry%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_24",
@@ -358,7 +358,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20blueberry%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_25",
@@ -370,7 +370,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20chocolate%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_26",
@@ -382,7 +382,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20Oreo%20milkshake%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_27",
@@ -393,7 +393,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20mint%20mojito%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_28",
@@ -405,7 +405,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20blue%20mojito%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_29",
@@ -417,7 +417,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20strawberry%20mojito%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_30",
@@ -429,7 +429,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20blueberry%20mojito%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_31",
@@ -440,7 +440,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20fried%20veg%20momos%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_32",
@@ -452,7 +452,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20mushroom%20momos%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_33",
@@ -463,7 +463,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20paneer%20momos%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_34",
@@ -474,7 +474,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20crispy%20fried%20momos%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_35",
@@ -486,7 +486,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20crispy%20fried%20chicken%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_36",
@@ -522,7 +522,7 @@ export const menuItems = [
     isVeg: false,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20popcorn%20chicken%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_39",
@@ -533,7 +533,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20Indian%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_40",
@@ -544,7 +544,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20masala%20chai%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_41",
@@ -555,7 +555,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20ginger%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_42",
@@ -566,7 +566,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20cardamom%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_43",
@@ -578,7 +578,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20chocolate%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_44",
@@ -590,7 +590,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20palm%20sugar%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_45",
@@ -602,7 +602,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20karupatti%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_46",
@@ -613,7 +613,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20dry%20ginger%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_47",
@@ -624,7 +624,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20hibiscus%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_48",
@@ -635,7 +635,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20green%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_49",
@@ -646,7 +646,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20black%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_50",
@@ -657,7 +657,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20lemon%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_51",
@@ -669,7 +669,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20lemon%20ginger%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_52",
@@ -681,7 +681,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20lemon%20mint%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_53",
@@ -693,7 +693,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20sulaimani%20tea%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_54",
@@ -704,7 +704,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20hot%20milk%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_55",
@@ -715,7 +715,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20badam%20milk%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_56",
@@ -726,7 +726,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20boost%20milk%20drink%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_57",
@@ -737,7 +737,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20South%20Indian%20filter%20coffee%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_58",
@@ -748,7 +748,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20sukku%20coffee%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_59",
@@ -759,7 +759,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20black%20coffee%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_60",
@@ -771,7 +771,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20chocolate%20coffee%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_61",
@@ -783,7 +783,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20karupatti%20coffee%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_62",
@@ -794,7 +794,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20vegetable%20puff%20pastry%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_63",
@@ -805,7 +805,7 @@ export const menuItems = [
     isVeg: false,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20egg%20puff%20pastry%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_64",
@@ -817,7 +817,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20mushroom%20puff%20pastry%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_65",
@@ -828,7 +828,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20masala%20Maggi%20noodles%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_66",
@@ -839,7 +839,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20vegetable%20Maggi%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_67",
@@ -850,7 +850,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20corn%20Maggi%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_68",
@@ -862,7 +862,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: true,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20dark%20chocolate%20waffle%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_69",
@@ -874,7 +874,7 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20chocolate%20loaded%20waffle%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
   {
     id: "menu_70",
@@ -886,6 +886,6 @@ export const menuItems = [
     isVeg: true,
     isPopular: false,
     image:
-      "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&auto=format&fit=crop&q=80",
+      "https://image.pollinations.ai/prompt/Professional%20KitKat%20waffle%20photography%20authentic%20DSLR%20food%20photography%20shallow%20depth%20of%20field%20white%20background%20no%20text%208k?width=800&height=600&nologo=true",
   },
 ];
