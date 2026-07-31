@@ -23,11 +23,11 @@ const Home = () => {
 
   // Today's Special Item
   const todaysSpecial = {
-    name: 'Double Chicken Burger',
-    description: 'Two crispy chicken patties loaded with melted cheese, caramelized onions, and house sauce.',
-    price: 199,
-    originalPrice: 240,
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80',
+    name: 'Grilled Cheese Chicken Sandwich',
+    description: 'Perfectly grilled chicken layered with melted cheese in a crispy toasted sandwich.',
+    price: 110,
+    originalPrice: 140,
+    image: 'https://loremflickr.com/800/800/sandwich,grilled,chicken,cheese,food/all?lock=1001',
     tag: 'Chef Pick'
   };
 
