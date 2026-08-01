@@ -50,11 +50,12 @@ const Home = () => {
   const savePercent = 20;
 
   const galleryPreviews = [
-    { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', alt: 'Aromatic Espresso' },
-    { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=80', alt: 'Luxurious Interior' },
-    { src: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=80', alt: 'Fresh Bread' },
-    { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=80', alt: 'Juicy Burgers' },
-    { src: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=80', alt: 'Creamy Milkshakes' }
+    { src: '/images/ambience/ambience_4.jpg', title: 'Cosmic Dining Space', alt: 'Cafe Galaxy Indoor Dining & Seating' },
+    { src: '/images/ambience/ambience_1.jpg', title: 'Welcome Entrance', alt: 'Cafe Galaxy Storefront & Entrance' },
+    { src: '/images/ambience/ambience_3.jpg', title: 'Beverage & Prep Counter', alt: 'Cafe Galaxy Kitchen & Counter Area' },
+    { src: '/images/ambience/ambience_2.jpg', title: 'Main Highway Signboard', alt: 'Cafe Galaxy Highway Signboard & Offers' },
+    { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', title: 'Signature Espresso', alt: 'Aromatic Espresso' },
+    { src: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=80', title: 'Creamy Shakes', alt: 'Creamy Milkshakes' }
   ];
 
   const counters = [
@@ -441,9 +442,12 @@ const Home = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-[#0A0A0A]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="font-serif text-[#FFC107] text-xs uppercase tracking-widest font-bold border-b border-[#FFC107] pb-1">
-                    Expand Grid
+                <div className="absolute inset-0 bg-[#0A0A0A]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
+                  <span className="font-serif text-[#FAFAFA] text-sm font-bold mb-1">
+                    {img.title}
+                  </span>
+                  <span className="font-serif text-[#FFC107] text-[10px] uppercase tracking-widest font-bold border-b border-[#FFC107] pb-0.5">
+                    View in Gallery
                   </span>
                 </div>
               </motion.div>

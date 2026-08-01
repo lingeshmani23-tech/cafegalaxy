@@ -68,14 +68,48 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="grid grid-cols-2 gap-3"
           >
-            <img
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop&q=80"
-              alt="Cozy Cafe Seating"
-              className="w-full h-[450px] object-cover rounded-3xl border border-[#FFC107]/20 shadow-lg"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-45 rounded-3xl"></div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">
+              <img
+                src="/images/ambience/ambience_4.jpg"
+                alt="Cafe Galaxy Indoor Dining"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent flex items-end p-3">
+                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Indoor Seating</span>
+              </div>
+            </div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">
+              <img
+                src="/images/ambience/ambience_3.jpg"
+                alt="Cafe Galaxy Counter"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent flex items-end p-3">
+                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Beverage Counter</span>
+              </div>
+            </div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">
+              <img
+                src="/images/ambience/ambience_1.jpg"
+                alt="Cafe Galaxy Facade"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent flex items-end p-3">
+                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Store Entrance</span>
+              </div>
+            </div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">
+              <img
+                src="/images/ambience/ambience_2.jpg"
+                alt="Cafe Galaxy Signboard"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent flex items-end p-3">
+                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Roadside Signboard</span>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

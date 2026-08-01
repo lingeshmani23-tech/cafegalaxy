@@ -5,18 +5,47 @@ import ImageLightbox from '../components/ImageLightbox';
 
 const galleryCategories = [
   'All',
+  'Ambience',
+  'Cafe Interior',
+  'Outdoor Seating',
   'Coffee',
   'Bakery',
   'Burger',
   'Milkshake',
-  'Cafe Interior',
-  'Outdoor Seating',
   'Desserts',
   'Customers',
   'Kitchen'
 ];
 
 const galleryImages = [
+  {
+    id: 101,
+    category: ['Ambience', 'Cafe Interior'],
+    title: 'Warm Celestial Dining Space',
+    alt: 'Cafe Galaxy cozy indoor seating area with marble walls and ambient ceiling lights',
+    src: '/images/ambience/ambience_4.jpg'
+  },
+  {
+    id: 102,
+    category: ['Ambience', 'Kitchen'],
+    title: 'Beverage & Prep Counter Area',
+    alt: 'Cafe Galaxy beverage prep area and service counter with warm ceiling lights',
+    src: '/images/ambience/ambience_3.jpg'
+  },
+  {
+    id: 103,
+    category: ['Ambience', 'Outdoor Seating'],
+    title: 'Storefront Facade & Welcome Entrance',
+    alt: 'Storefront exterior view of Cafe Galaxy showing entrance and Dairy Day banner',
+    src: '/images/ambience/ambience_1.jpg'
+  },
+  {
+    id: 104,
+    category: ['Ambience', 'Outdoor Seating'],
+    title: 'Roadside Promotional Billboard & Special Combos',
+    alt: 'Cafe Galaxy roadside promo billboard highlighting combo deals and ice cream offers',
+    src: '/images/ambience/ambience_2.jpg'
+  },
   {
     id: 1,
     category: 'Coffee',
@@ -110,7 +139,11 @@ const Gallery = () => {
   // Filter images based on category
   const filteredImages = useMemo(() => {
     if (selectedCategory === 'All') return galleryImages;
-    return galleryImages.filter((img) => img.category === selectedCategory);
+    return galleryImages.filter((img) =>
+      Array.isArray(img.category)
+        ? img.category.includes(selectedCategory)
+        : img.category === selectedCategory
+    );
   }, [selectedCategory]);
 
   const handlePrev = () => {
@@ -127,9 +160,9 @@ const Gallery = () => {
       <section className="relative py-16 bg-[#161616] border-b border-[#FFC107]/10 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&auto=format&fit=crop&q=80"
+            src="/images/ambience/ambience_4.jpg"
             alt="Interior Cafe Design background"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-15"
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
@@ -194,7 +227,7 @@ const Gallery = () => {
                   
                   <div>
                     <span className="text-[#FFC107] text-[9px] uppercase font-black tracking-widest flex items-center gap-1.5 mb-1">
-                      <Camera size={10} /> {img.category}
+                      <Camera size={10} /> {Array.isArray(img.category) ? img.category.join(' • ') : img.category}
                     </span>
                     <h3 className="font-serif text-[#FAFAFA] text-base font-bold tracking-wide">
                       {img.title}
