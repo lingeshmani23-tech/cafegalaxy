@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-[#FAFAFA]/50">
           <div className="flex flex-col items-center md:items-start gap-1.5">
             <p>© {currentYear} Cafe Galaxy. All Rights Reserved.</p>
-            <p>Powered by <a href="https://rek.co.in" target="_blank" rel="noopener noreferrer" className="text-[#FAFAFA] hover:text-[#FFC107] font-medium transition-colors duration-300">rek.co.in</a></p>
+            <p>Powered by <a href="https://rek.co.in" target="_blank" rel="noopener noreferrer" className="text-[#FAFAFA] hover:text-[#FFC107] font-semibold tracking-wide transition-colors duration-300">REK</a></p>
           </div>
           <div className="flex gap-6">
             {policyLinks.map((link) => (
