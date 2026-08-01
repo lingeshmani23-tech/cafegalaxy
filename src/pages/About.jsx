@@ -82,12 +82,12 @@ const About = () => {
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">
               <img
-                src="/images/ambience/ambience_3.jpg"
-                alt="Cafe Galaxy Counter"
+                src="/images/ambience/ambience_5.jpg"
+                alt="Cafe Galaxy Perspective Seating"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent flex items-end p-3">
-                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Beverage Counter</span>
+                <span className="text-[11px] font-serif text-[#FAFAFA] font-bold">Dining Perspective</span>
               </div>
             </div>
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-[#FFC107]/20 shadow-md group">

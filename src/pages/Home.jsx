@@ -120,7 +120,7 @@ const Home = () => {
             muted
             playsInline
             preload="auto"
-            poster="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=1200&auto=format&fit=crop&q=60"
+            poster="/images/ambience/ambience_4.jpg"
             className="w-full h-full object-cover opacity-40 scale-105"
           >
             <source src="/videos/coffee.mp4" type="video/mp4" />
