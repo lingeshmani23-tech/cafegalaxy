@@ -90,7 +90,7 @@ export const menuItems = [
     "description": "Premium Veg Sandwich crafted with perfection at Cafe Galaxy.",
     "price": 50,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_1.jpg"
   },
   {
@@ -120,7 +120,7 @@ export const menuItems = [
     "description": "Premium Grilled Veg Cheese Sandwich crafted with perfection at Cafe Galaxy.",
     "price": 70,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_4.jpg"
   },
   {
@@ -200,7 +200,7 @@ export const menuItems = [
     "description": "Premium French Fries crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_12.jpg"
   },
   {
@@ -270,7 +270,7 @@ export const menuItems = [
     "description": "Premium Veg Burger crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_19.jpg"
   },
   {
@@ -330,7 +330,7 @@ export const menuItems = [
     "description": "Premium Vanilla Milkshake crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_25.jpg"
   },
   {
@@ -570,7 +570,7 @@ export const menuItems = [
     "description": "Premium Chocolate Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_49.jpg"
   },
   {
@@ -710,7 +710,7 @@ export const menuItems = [
     "description": "Premium Filter Kappi crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_63.jpg"
   },
   {
@@ -720,7 +720,7 @@ export const menuItems = [
     "description": "Premium Sukku Kappi crafted with perfection at Cafe Galaxy.",
     "price": 15,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_64.jpg"
   },
   {
@@ -740,7 +740,7 @@ export const menuItems = [
     "description": "Premium Chocolate Kappi crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_66.jpg"
   },
   {
@@ -760,7 +760,7 @@ export const menuItems = [
     "description": "Premium Veg Puff crafted with perfection at Cafe Galaxy.",
     "price": 15,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_68.jpg"
   },
   {
@@ -770,7 +770,7 @@ export const menuItems = [
     "description": "Premium Egg Puff crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": false,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_69.jpg"
   },
   {
@@ -810,7 +810,7 @@ export const menuItems = [
     "description": "Premium Dark Chocolate Waffle crafted with perfection at Cafe Galaxy.",
     "price": 110,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_73.jpg"
   },
   {
@@ -820,7 +820,7 @@ export const menuItems = [
     "description": "Premium Chocolate Overloaded Waffle crafted with perfection at Cafe Galaxy.",
     "price": 130,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_74.jpg"
   },
   {

@@ -17,9 +17,26 @@ import { menuItems } from '../data/menuData';
 
 const Home = () => {
   // Filters for sub-sections
-  const featuredItems = menuItems.filter(item => item.isPopular).slice(0, 6);
-  const popularCoffee = menuItems.filter(item => item.category === 'Coffee').slice(0, 4);
-  const bakerySpecials = menuItems.filter(item => item.category === 'Bakery' && item.isPopular).slice(0, 4);
+  const featuredItems = useMemo(() => {
+    const items = menuItems.filter(item => item.isPopular);
+    return items.length >= 4 ? items.slice(0, 6) : menuItems.slice(0, 6);
+  }, []);
+
+  const popularCoffee = useMemo(() => {
+    const coffeeCategories = ['Kappi', 'Daisy Tea', 'Black Tea', 'Tea'];
+    const items = menuItems
+      .filter(item => coffeeCategories.includes(item.category))
+      .sort((a, b) => (a.category === 'Kappi' ? -1 : b.category === 'Kappi' ? 1 : 0));
+    return items.length > 0 ? items.slice(0, 4) : menuItems.slice(0, 4);
+  }, []);
+
+  const bakerySpecials = useMemo(() => {
+    const bakeryCategories = ['Puffs', 'Waffles', 'Sandwiches'];
+    const items = menuItems
+      .filter(item => bakeryCategories.includes(item.category))
+      .sort((a, b) => (a.category === 'Puffs' || a.category === 'Waffles' ? -1 : 1));
+    return items.length > 0 ? items.slice(0, 4) : menuItems.slice(4, 8);
+  }, []);
 
   // Today's Special Item (randomly rotating main dishes)
   const mainDishes = useMemo(() => {
