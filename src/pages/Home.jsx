@@ -53,9 +53,7 @@ const Home = () => {
     { src: '/images/ambience/ambience_4.jpg', title: 'Cosmic Dining Space', alt: 'Cafe Galaxy Indoor Dining & Seating' },
     { src: '/images/ambience/ambience_1.jpg', title: 'Welcome Entrance', alt: 'Cafe Galaxy Storefront & Entrance' },
     { src: '/images/ambience/ambience_3.jpg', title: 'Beverage & Prep Counter', alt: 'Cafe Galaxy Kitchen & Counter Area' },
-    { src: '/images/ambience/ambience_2.jpg', title: 'Main Highway Signboard', alt: 'Cafe Galaxy Highway Signboard & Offers' },
-    { src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=500&auto=format&fit=crop&q=80', title: 'Signature Espresso', alt: 'Aromatic Espresso' },
-    { src: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=80', title: 'Creamy Shakes', alt: 'Creamy Milkshakes' }
+    { src: '/images/ambience/ambience_2.jpg', title: 'Roadside Signboard', alt: 'Cafe Galaxy Highway Signboard & Offers' }
   ];
 
   const counters = [
@@ -426,7 +424,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {galleryPreviews.map((img, idx) => (
               <motion.div
                 key={idx}

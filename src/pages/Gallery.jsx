@@ -51,7 +51,7 @@ const galleryImages = [
     category: 'Coffee',
     title: 'Precision Espresso Pull',
     alt: 'Barista pulling espresso shot',
-    src: 'https://images.unsplash.com/photo-1510972527409-cef7e2b761c3?w=800&auto=format&fit=crop&q=80'
+    src: '/images/menu/menu_41.jpg'
   },
   {
     id: 2,
