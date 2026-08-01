@@ -68,9 +68,10 @@ const Home = () => {
 
   const galleryPreviews = [
     { src: '/images/ambience/ambience_4.jpg', title: 'Cosmic Dining Space', alt: 'Cafe Galaxy Indoor Dining & Seating' },
-    { src: '/images/ambience/ambience_1.jpg', title: 'Welcome Entrance', alt: 'Cafe Galaxy Storefront & Entrance' },
-    { src: '/images/ambience/ambience_3.jpg', title: 'Beverage & Prep Counter', alt: 'Cafe Galaxy Kitchen & Counter Area' },
-    { src: '/images/ambience/ambience_2.jpg', title: 'Roadside Signboard', alt: 'Cafe Galaxy Highway Signboard & Offers' }
+    { src: '/images/ambience/ambience_5.jpg', title: 'Perspective Seating', alt: 'Cafe Galaxy Interior Seating' },
+    { src: '/images/ambience/ambience_3.jpg', title: 'Astronaut Storefront', alt: 'Cafe Galaxy Store Entrance' },
+    { src: '/images/ambience/ambience_2.jpg', title: 'Roadside Signboard', alt: 'Cafe Galaxy Highway Signboard & Offers' },
+    { src: '/images/ambience/ambience_1.jpg', title: 'Exterior Facade', alt: 'Cafe Galaxy Building Facade' }
   ];
 
   const counters = [
@@ -441,7 +442,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {galleryPreviews.map((img, idx) => (
               <motion.div
                 key={idx}

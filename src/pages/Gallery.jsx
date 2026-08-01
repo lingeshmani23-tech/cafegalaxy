@@ -21,30 +21,37 @@ const galleryImages = [
   {
     id: 101,
     category: ['Ambience', 'Cafe Interior'],
-    title: 'Warm Celestial Dining Space',
-    alt: 'Cafe Galaxy cozy indoor seating area with marble walls and ambient ceiling lights',
+    title: 'Warm Celestial Indoor Seating',
+    alt: 'Cafe Galaxy cozy indoor seating area with marble walls and ambient ceiling strip lights',
     src: '/images/ambience/ambience_4.jpg'
   },
   {
     id: 102,
-    category: ['Ambience', 'Kitchen'],
-    title: 'Beverage & Prep Counter Area',
-    alt: 'Cafe Galaxy beverage prep area and service counter with warm ceiling lights',
-    src: '/images/ambience/ambience_3.jpg'
+    category: ['Ambience', 'Cafe Interior'],
+    title: 'Indoor Dining Perspective',
+    alt: 'Cafe Galaxy perspective indoor dining view showing wooden tables and warm strip lighting',
+    src: '/images/ambience/ambience_5.jpg'
   },
   {
     id: 103,
     category: ['Ambience', 'Outdoor Seating'],
-    title: 'Storefront Facade & Welcome Entrance',
-    alt: 'Storefront exterior view of Cafe Galaxy showing entrance and Dairy Day banner',
-    src: '/images/ambience/ambience_1.jpg'
+    title: 'Storefront Entrance & Astronaut Logo',
+    alt: 'Close up entrance view of Cafe Galaxy showing yellow astronaut sign and front seating',
+    src: '/images/ambience/ambience_3.jpg'
   },
   {
     id: 104,
     category: ['Ambience', 'Outdoor Seating'],
-    title: 'Roadside Promotional Billboard & Special Combos',
+    title: 'Roadside Promotional Billboard',
     alt: 'Cafe Galaxy roadside promo billboard highlighting combo deals and ice cream offers',
     src: '/images/ambience/ambience_2.jpg'
+  },
+  {
+    id: 105,
+    category: ['Ambience', 'Outdoor Seating'],
+    title: 'Storefront Facade & Exterior View',
+    alt: 'Wide exterior view of Cafe Galaxy building showing facade, Dairy Day board and road',
+    src: '/images/ambience/ambience_1.jpg'
   },
   {
     id: 1,
