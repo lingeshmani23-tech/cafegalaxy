@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, Sparkles, Check, Loader2, AlertCircle, Cloud, ExternalLink } from "lucide-react";
+import { Star, Quote, Sparkles, Check, Loader2, AlertCircle, Cloud, ExternalLink, ChevronDown } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -11,8 +11,15 @@ import "swiper/css/navigation";
 import RippleButton from "../components/RippleButton";
 import InitialsAvatar from "../components/InitialsAvatar";
 import GoogleIcon from "../components/GoogleIcon";
+import ReviewCard from "../components/ReviewCard";
+import ReviewSkeleton from "../components/ReviewSkeleton";
 import { formatReviewDate } from "../utils/formatDate";
-import { subscribeToCloudReviews, postCloudReview } from "../services/reviewsService";
+import {
+  subscribeToCloudReviews,
+  postCloudReview,
+  getCachedCloudReviews,
+  fetchMoreCloudReviews
+} from "../services/reviewsService";
 import { fetchGooglePlacesReviews, GOOGLE_MAPS_BUSINESS_URL } from "../services/googleReviewsService";
 
 const seedReviewsFallback = [
@@ -34,27 +41,36 @@ const seedReviewsFallback = [
   }
 ];
 
+const INITIAL_VISIBLE_COUNT = 10;
+
 const Reviews = () => {
-  // State variables for Google API & Cloud Database
+  // Stale-While-Revalidate: Load cached reviews instantly for <100ms response
+  const [cloudReviews, setCloudReviews] = useState(() => getCachedCloudReviews() || []);
   const [googleData, setGoogleData] = useState({
     rating: 4.9,
     userRatingsTotal: 48,
     googleUrl: GOOGLE_MAPS_BUSINESS_URL,
     reviews: []
   });
-  const [cloudReviews, setCloudReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  
+  // Instant load state if cache exists
+  const [isLoading, setIsLoading] = useState(() => (getCachedCloudReviews() ? false : true));
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [lastDocState, setLastDocState] = useState(null);
+  const [hasMoreCloud, setHasMoreCloud] = useState(true);
+  const [visibleLimit, setVisibleLimit] = useState(INITIAL_VISIBLE_COUNT);
+  
   const [activeTab, setActiveTab] = useState("all"); // 'all' | 'google' | 'community'
 
   const [formName, setFormName] = useState("");
   const [formRating, setFormRating] = useState(5);
   const [formReview, setFormReview] = useState("");
   
-  // Loading and Error States
+  // Form submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState({ type: null, message: "" });
 
-  // 1. Fetch Google Places API Reviews (with 24h cache)
+  // 1. Prefetch Google Places API Reviews (24h cache)
   useEffect(() => {
     let isMounted = true;
     const loadGoogleReviews = async () => {
@@ -71,23 +87,31 @@ const Reviews = () => {
     return () => { isMounted = false; };
   }, []);
 
-  // 2. Subscribe to real-time Cloud Database reviews
+  // 2. Real-time Cloud Database Listener (Fast 10-item query)
   useEffect(() => {
-    setIsLoading(true);
+    let isMounted = true;
     const unsubscribe = subscribeToCloudReviews(
-      (fetchedCloudReviews) => {
+      (fetchedCloudReviews, lastDoc) => {
+        if (!isMounted) return;
         setCloudReviews(fetchedCloudReviews);
+        setLastDocState(lastDoc);
         setIsLoading(false);
       },
       (error) => {
         console.error("Cloud DB Listener Error:", error);
-        setCloudReviews(seedReviewsFallback);
+        if (!cloudReviews.length) {
+          setCloudReviews(seedReviewsFallback);
+        }
         setIsLoading(false);
       },
-      seedReviewsFallback
+      seedReviewsFallback,
+      10
     );
 
-    return () => unsubscribe();
+    return () => {
+      isMounted = false;
+      unsubscribe();
+    };
   }, []);
 
   // 3. Combined & Filtered Reviews List
@@ -101,7 +125,6 @@ const Reviews = () => {
     } else if (activeTab === "community") {
       combined = communityReviewsList;
     } else {
-      // Prioritize Google Reviews at top, followed by Community Reviews
       combined = [...googleReviewsList, ...communityReviewsList];
     }
 
@@ -111,6 +134,11 @@ const Reviews = () => {
       return timeB - timeA;
     });
   }, [googleData.reviews, cloudReviews, activeTab]);
+
+  // Paginated slice for instant smooth rendering
+  const paginatedReviews = useMemo(() => {
+    return displayedReviews.slice(0, visibleLimit);
+  }, [displayedReviews, visibleLimit]);
 
   // Total stats computation
   const stats = useMemo(() => {
@@ -124,7 +152,30 @@ const Reviews = () => {
     return { totalCount, avgRating, dist };
   }, [googleData, cloudReviews]);
 
-  const handleSubmitReview = async (e) => {
+  // Load More Handler (Instant client expansion + background pagination)
+  const handleLoadMore = useCallback(async () => {
+    if (visibleLimit < displayedReviews.length) {
+      setVisibleLimit(prev => prev + 10);
+      return;
+    }
+
+    if (lastDocState && hasMoreCloud) {
+      setIsLoadingMore(true);
+      const { reviews: newItems, lastDoc, hasMore } = await fetchMoreCloudReviews(lastDocState, 10);
+      if (newItems.length > 0) {
+        setCloudReviews(prev => [...prev, ...newItems]);
+        setLastDocState(lastDoc);
+        setHasMoreCloud(hasMore);
+        setVisibleLimit(prev => prev + newItems.length);
+      } else {
+        setHasMoreCloud(false);
+      }
+      setIsLoadingMore(false);
+    }
+  }, [visibleLimit, displayedReviews.length, lastDocState, hasMoreCloud]);
+
+  // Optimistic UI Review Submission (< 100ms Instant Feedback)
+  const handleSubmitReview = useCallback(async (e) => {
     e.preventDefault();
     setSubmitState({ type: null, message: "" });
 
@@ -145,9 +196,28 @@ const Reviews = () => {
       return;
     }
 
+    // 1. Optimistic UI Item: Appears instantly (<50ms) on screen!
+    const tempId = `opt_${Date.now()}`;
+    const optimisticReview = {
+      id: tempId,
+      name: trimmedName,
+      text: trimmedReview,
+      rating: formRating,
+      location: "Dindigul Guest",
+      createdAt: new Date().toISOString(),
+      isOptimistic: true
+    };
+
+    // Prepend optimistic review immediately
+    setCloudReviews(prev => [optimisticReview, ...prev]);
     setIsSubmitting(true);
+    setFormName("");
+    setFormReview("");
+    setFormRating(5);
+    setSubmitState({ type: "success", message: "Posting review live..." });
 
     try {
+      // 2. Post to Cloud Database in background
       await postCloudReview({
         name: trimmedName,
         text: trimmedReview,
@@ -155,18 +225,21 @@ const Reviews = () => {
         location: "Dindigul Guest"
       });
 
-      setSubmitState({ type: "success", message: "Review posted live to cloud database!" });
-      setFormName("");
-      setFormReview("");
-      setFormRating(5);
+      // Remove temporary optimistic item (real-time listener will sync full doc)
+      setCloudReviews(prev => prev.filter(item => item.id !== tempId));
+      setSubmitState({ type: "success", message: "Review posted live! Visible to all visitors." });
       setTimeout(() => setSubmitState({ type: null, message: "" }), 5000);
     } catch (err) {
-      console.error("Failed to post review:", err);
-      setSubmitState({ type: "error", message: "Failed to post review. Please try again." });
+      console.error("Optimistic submission error:", err);
+      // Rollback optimistic review on error
+      setCloudReviews(prev => prev.filter(item => item.id !== tempId));
+      setFormName(trimmedName);
+      setFormReview(trimmedReview);
+      setSubmitState({ type: "error", message: "Failed to post review. Please check your connection." });
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [formName, formReview, formRating, cloudReviews]);
 
   return (
     <div className="w-full pt-28 pb-20 bg-[#0A0A0A]">
@@ -181,20 +254,20 @@ const Reviews = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
           <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold flex items-center justify-center gap-2">
-            <GoogleIcon size={16} /> Verified Google Business Profile
+            <GoogleIcon size={16} /> High-Performance Real-Time Reviews
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-[#FAFAFA]">
             Cosmic Reviews
           </h1>
           <p className="text-xs sm:text-sm text-[#FAFAFA]/50 uppercase tracking-widest max-w-md mx-auto">
-            Official Google Reviews & real-time guest feedback for Cafe Galaxy Dindigul
+            Instant live feedback synced in real-time across all devices
           </p>
         </div>
       </section>
 
       {/* Hero Carousel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {isLoading ? (
+        {isLoading && !displayedReviews.length ? (
           <div className="glass-card rounded-3xl p-12 text-center border border-white/5 flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto">
             <Loader2 size={36} className="animate-spin text-[#FFC107]" />
             <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-wider uppercase">Loading verified reviews...</p>
@@ -329,7 +402,7 @@ const Reviews = () => {
             <div className="flex flex-wrap items-center justify-between border-b border-white/5 pb-4 gap-4">
               <div className="flex gap-2 bg-[#161616] p-1.5 rounded-2xl border border-white/10">
                 <button
-                  onClick={() => setActiveTab("all")}
+                  onClick={() => { setActiveTab("all"); setVisibleLimit(INITIAL_VISIBLE_COUNT); }}
                   className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all ${
                     activeTab === "all"
                       ? "bg-[#FFC107] text-[#0A0A0A] shadow-md"
@@ -339,7 +412,7 @@ const Reviews = () => {
                   ✨ All ({stats.totalCount})
                 </button>
                 <button
-                  onClick={() => setActiveTab("google")}
+                  onClick={() => { setActiveTab("google"); setVisibleLimit(INITIAL_VISIBLE_COUNT); }}
                   className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-1.5 ${
                     activeTab === "google"
                       ? "bg-blue-600 text-white shadow-md"
@@ -349,7 +422,7 @@ const Reviews = () => {
                   <GoogleIcon size={14} /> Google ({googleData.reviews?.length || 10})
                 </button>
                 <button
-                  onClick={() => setActiveTab("community")}
+                  onClick={() => { setActiveTab("community"); setVisibleLimit(INITIAL_VISIBLE_COUNT); }}
                   className={`px-4 py-2 rounded-xl text-xs uppercase tracking-wider font-bold transition-all flex items-center gap-1.5 ${
                     activeTab === "community"
                       ? "bg-[#FFC107] text-[#0A0A0A] shadow-md"
@@ -361,15 +434,14 @@ const Reviews = () => {
               </div>
 
               <span className="text-xs text-[#FAFAFA]/40 font-light">
-                Showing {displayedReviews.length} reviews
+                Showing {paginatedReviews.length} of {displayedReviews.length} reviews
               </span>
             </div>
 
-            {/* Review Cards Feed Grid */}
-            {isLoading ? (
-              <div className="text-center py-16 glass-card rounded-2xl border border-white/5 space-y-3">
-                <Loader2 size={32} className="animate-spin text-[#FFC107] mx-auto" />
-                <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-widest uppercase">Fetching public Google reviews...</p>
+            {/* Review Cards Feed Grid with Skeleton Loaders */}
+            {isLoading && !displayedReviews.length ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[1, 2, 3, 4].map(i => <ReviewSkeleton key={i} />)}
               </div>
             ) : displayedReviews.length === 0 ? (
               <div className="text-center py-16 glass-card rounded-2xl border border-white/5 space-y-3">
@@ -380,73 +452,35 @@ const Reviews = () => {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <AnimatePresence>
-                  {displayedReviews.map((rev) => (
-                    <motion.div
-                      layout
-                      key={rev.id}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.4 }}
-                      className="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/5 h-full space-y-4 hover:border-[#FFC107]/20 hover:shadow-xl transition-all duration-300 relative group"
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <AnimatePresence mode="popLayout">
+                    {paginatedReviews.map((rev) => (
+                      <ReviewCard key={rev.id} rev={rev} />
+                    ))}
+                  </AnimatePresence>
+                </div>
+
+                {/* Load More Button */}
+                {(visibleLimit < displayedReviews.length || (hasMoreCloud && lastDocState)) && (
+                  <div className="text-center pt-4">
+                    <button
+                      onClick={handleLoadMore}
+                      disabled={isLoadingMore}
+                      className="px-8 py-3.5 bg-[#161616] hover:bg-[#FFC107]/10 text-[#FFC107] border border-[#FFC107]/30 hover:border-[#FFC107] font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 mx-auto disabled:opacity-50 cursor-pointer shadow-md"
                     >
-                      <div className="space-y-3">
-                        {/* Top Header: Rating (Left), Timestamp (Right) */}
-                        <div className="flex justify-between items-center gap-2">
-                          <div className="flex gap-0.5">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <Star
-                                key={i}
-                                size={14}
-                                className={
-                                  i < rev.rating
-                                    ? "text-[#FFC107] fill-[#FFC107]"
-                                    : "text-[#FAFAFA]/10"
-                                }
-                              />
-                            ))}
-                          </div>
-                          <span className="text-[12px] font-medium text-[#9CA3AF] tracking-wide shrink-0">
-                            {formatReviewDate(rev.createdAt || rev.relativeTime)}
-                          </span>
-                        </div>
-
-                        {/* Review Badge */}
-                        <div>
-                          {rev.isGoogle ? (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                              <GoogleIcon size={12} /> Verified Google Review
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#FFC107]/10 text-[#FFC107] border border-[#FFC107]/20">
-                              <Cloud size={12} /> Website Guest Review
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Review Body */}
-                        <p className="text-xs text-[#FAFAFA]/75 font-light leading-relaxed">
-                          "{rev.text}"
-                        </p>
-                      </div>
-
-                      {/* Bottom Author Row: Initials Avatar + Name + Location */}
-                      <div className="flex items-center gap-3 border-t border-white/5 pt-3">
-                        <InitialsAvatar name={rev.name} />
-                        <div className="text-left">
-                          <h4 className="text-xs font-bold text-[#FAFAFA]">
-                            {rev.name}
-                          </h4>
-                          <p className="text-[10px] text-[#FAFAFA]/40 font-light uppercase tracking-wider">
-                            {rev.location}
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+                      {isLoadingMore ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" /> Loading More...
+                        </>
+                      ) : (
+                        <>
+                          Load More Reviews <ChevronDown size={14} />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -547,7 +581,7 @@ const Reviews = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 size={16} className="animate-spin" />
-                    Posting Review...
+                    Posting...
                   </>
                 ) : (
                   "Submit Review"

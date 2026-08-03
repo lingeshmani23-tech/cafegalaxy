@@ -58,6 +58,17 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [mainDishes]);
 
+  // Background prefetch for reviews to guarantee sub-second load when opening Reviews page
+  useEffect(() => {
+    const prefetch = async () => {
+      try {
+        const { fetchGooglePlacesReviews } = await import('../services/googleReviewsService');
+        fetchGooglePlacesReviews();
+      } catch (e) {}
+    };
+    prefetch();
+  }, []);
+
   const todaysSpecial = mainDishes[specialIndex] || {
     id: 'special-default',
     name: 'Grilled Cheese Chicken Sandwich',
