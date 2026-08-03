@@ -17,7 +17,6 @@ import { formatReviewDate } from "../utils/formatDate";
 import {
   subscribeToCloudReviews,
   postCloudReview,
-  getCachedCloudReviews,
   fetchMoreCloudReviews
 } from "../services/reviewsService";
 import { fetchGooglePlacesReviews, GOOGLE_MAPS_BUSINESS_URL } from "../services/googleReviewsService";
@@ -44,8 +43,8 @@ const seedReviewsFallback = [
 const INITIAL_VISIBLE_COUNT = 10;
 
 const Reviews = () => {
-  // Stale-While-Revalidate: Load cached reviews instantly for <100ms response
-  const [cloudReviews, setCloudReviews] = useState(() => getCachedCloudReviews() || []);
+  // State variables - ALL data is synced directly with Firebase Firestore Cloud Database
+  const [cloudReviews, setCloudReviews] = useState([]);
   const [googleData, setGoogleData] = useState({
     rating: 4.9,
     userRatingsTotal: 48,
@@ -53,8 +52,7 @@ const Reviews = () => {
     reviews: []
   });
   
-  // Instant load state if cache exists
-  const [isLoading, setIsLoading] = useState(() => (getCachedCloudReviews() ? false : true));
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [lastDocState, setLastDocState] = useState(null);
   const [hasMoreCloud, setHasMoreCloud] = useState(true);
@@ -70,7 +68,7 @@ const Reviews = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState({ type: null, message: "" });
 
-  // 1. Prefetch Google Places API Reviews (24h cache)
+  // 1. Fetch Google Places API Reviews (24h cache)
   useEffect(() => {
     let isMounted = true;
     const loadGoogleReviews = async () => {
@@ -87,9 +85,12 @@ const Reviews = () => {
     return () => { isMounted = false; };
   }, []);
 
-  // 2. Real-time Cloud Database Listener (Fast 10-item query)
+  // 2. Real-time Cloud Database Listener (Firestore onSnapshot)
+  // Ensures every visitor on every device sees identical live updates
   useEffect(() => {
     let isMounted = true;
+    setIsLoading(true);
+
     const unsubscribe = subscribeToCloudReviews(
       (fetchedCloudReviews, lastDoc) => {
         if (!isMounted) return;
@@ -98,14 +99,14 @@ const Reviews = () => {
         setIsLoading(false);
       },
       (error) => {
-        console.error("Cloud DB Listener Error:", error);
+        console.error("Cloud DB Connection Error:", error);
         if (!cloudReviews.length) {
           setCloudReviews(seedReviewsFallback);
         }
         setIsLoading(false);
       },
       seedReviewsFallback,
-      10
+      20
     );
 
     return () => {
@@ -135,7 +136,7 @@ const Reviews = () => {
     });
   }, [googleData.reviews, cloudReviews, activeTab]);
 
-  // Paginated slice for instant smooth rendering
+  // Paginated slice for smooth rendering
   const paginatedReviews = useMemo(() => {
     return displayedReviews.slice(0, visibleLimit);
   }, [displayedReviews, visibleLimit]);
@@ -152,7 +153,7 @@ const Reviews = () => {
     return { totalCount, avgRating, dist };
   }, [googleData, cloudReviews]);
 
-  // Load More Handler (Instant client expansion + background pagination)
+  // Load More Handler (Cursor-based pagination from Firestore)
   const handleLoadMore = useCallback(async () => {
     if (visibleLimit < displayedReviews.length) {
       setVisibleLimit(prev => prev + 10);
@@ -174,7 +175,8 @@ const Reviews = () => {
     }
   }, [visibleLimit, displayedReviews.length, lastDocState, hasMoreCloud]);
 
-  // Optimistic UI Review Submission (< 100ms Instant Feedback)
+  // Direct Cloud Database Write Handler
+  // Saves to Firebase Cloud Database first, then displays write confirmation
   const handleSubmitReview = useCallback(async (e) => {
     e.preventDefault();
     setSubmitState({ type: null, message: "" });
@@ -188,7 +190,7 @@ const Reviews = () => {
     }
 
     const isDuplicate = cloudReviews.some(
-      (rev) => rev.name.toLowerCase() === trimmedName.toLowerCase() && rev.text.toLowerCase() === trimmedReview.toLowerCase()
+      (rev) => rev.name.toLowerCase() === trimmedName.toLowerCase() && (rev.text || rev.review || "").toLowerCase() === trimmedReview.toLowerCase()
     );
 
     if (isDuplicate) {
@@ -196,28 +198,10 @@ const Reviews = () => {
       return;
     }
 
-    // 1. Optimistic UI Item: Appears instantly (<50ms) on screen!
-    const tempId = `opt_${Date.now()}`;
-    const optimisticReview = {
-      id: tempId,
-      name: trimmedName,
-      text: trimmedReview,
-      rating: formRating,
-      location: "Dindigul Guest",
-      createdAt: new Date().toISOString(),
-      isOptimistic: true
-    };
-
-    // Prepend optimistic review immediately
-    setCloudReviews(prev => [optimisticReview, ...prev]);
     setIsSubmitting(true);
-    setFormName("");
-    setFormReview("");
-    setFormRating(5);
-    setSubmitState({ type: "success", message: "Posting review live..." });
 
     try {
-      // 2. Post to Cloud Database in background
+      // 1. Post to Firebase Firestore Cloud Database first
       await postCloudReview({
         name: trimmedName,
         text: trimmedReview,
@@ -225,17 +209,15 @@ const Reviews = () => {
         location: "Dindigul Guest"
       });
 
-      // Remove temporary optimistic item (real-time listener will sync full doc)
-      setCloudReviews(prev => prev.filter(item => item.id !== tempId));
-      setSubmitState({ type: "success", message: "Review posted live! Visible to all visitors." });
+      // 2. Database write confirmed
+      setSubmitState({ type: "success", message: "Review saved to Cloud Database! Synced live across all devices." });
+      setFormName("");
+      setFormReview("");
+      setFormRating(5);
       setTimeout(() => setSubmitState({ type: null, message: "" }), 5000);
     } catch (err) {
-      console.error("Optimistic submission error:", err);
-      // Rollback optimistic review on error
-      setCloudReviews(prev => prev.filter(item => item.id !== tempId));
-      setFormName(trimmedName);
-      setFormReview(trimmedReview);
-      setSubmitState({ type: "error", message: "Failed to post review. Please check your connection." });
+      console.error("Firestore database write failure:", err);
+      setSubmitState({ type: "error", message: "Failed to save review to Cloud Database. Please check your internet connection." });
     } finally {
       setIsSubmitting(false);
     }
@@ -254,13 +236,13 @@ const Reviews = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
           <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold flex items-center justify-center gap-2">
-            <GoogleIcon size={16} /> High-Performance Real-Time Reviews
+            <GoogleIcon size={16} /> Multi-Device Cloud Database Sync
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-[#FAFAFA]">
             Cosmic Reviews
           </h1>
           <p className="text-xs sm:text-sm text-[#FAFAFA]/50 uppercase tracking-widest max-w-md mx-auto">
-            Instant live feedback synced in real-time across all devices
+            Live reviews stored in central cloud database & synchronized across all devices
           </p>
         </div>
       </section>
@@ -270,7 +252,7 @@ const Reviews = () => {
         {isLoading && !displayedReviews.length ? (
           <div className="glass-card rounded-3xl p-12 text-center border border-white/5 flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto">
             <Loader2 size={36} className="animate-spin text-[#FFC107]" />
-            <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-wider uppercase">Loading verified reviews...</p>
+            <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-wider uppercase">Loading live reviews from Cloud Database...</p>
           </div>
         ) : (
           <Swiper
@@ -328,7 +310,7 @@ const Reviews = () => {
                     </div>
 
                     <p className="font-serif italic text-base sm:text-lg text-[#FAFAFA]/80 leading-relaxed font-light">
-                      "{rev.text}"
+                      "{rev.text || rev.review}"
                     </p>
 
                     <div>
@@ -581,7 +563,7 @@ const Reviews = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 size={16} className="animate-spin" />
-                    Posting...
+                    Saving to Cloud DB...
                   </>
                 ) : (
                   "Submit Review"
