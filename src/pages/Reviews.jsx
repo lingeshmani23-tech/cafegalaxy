@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import RippleButton from "../components/RippleButton";
+import InitialsAvatar from "../components/InitialsAvatar";
 
 const initialReviews = [
   {
@@ -313,7 +314,6 @@ const Reviews = () => {
           rating: formRating,
           date: "Just now",
           text: trimmedReview,
-          photo: `https://ui-avatars.com/api/?name=${encodeURIComponent(trimmedName)}&background=FFC107&color=0A0A0A`,
         };
 
         // 6. Display the newest reviews at the top
@@ -383,10 +383,9 @@ const Reviews = () => {
                 {/* Avatar */}
                 <div className="shrink-0 relative">
                   <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#FFC107]/40 scale-105 animate-pulse-slow"></div>
-                  <img
-                    src={rev.photo}
-                    alt={rev.name}
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover border border-[#FFC107]/20 shadow-lg"
+                  <InitialsAvatar
+                    name={rev.name}
+                    className="!w-24 !h-24 sm:!w-28 sm:!h-28 !text-3xl sm:!text-4xl shadow-lg border border-[#FFC107]/30"
                   />
                 </div>
 
@@ -502,14 +501,9 @@ const Reviews = () => {
                     </div>
 
                     <div className="flex items-center gap-3 border-t border-white/5 pt-3">
-                      <img
-                        src={rev.photo}
-                        alt={rev.name}
-                        loading="lazy"
-                        className="w-8 h-8 rounded-full object-cover border border-[#FFC107]/10"
-                      />
+                      <InitialsAvatar name={rev.name} />
                       <div className="text-left">
-                        <h4 className="text-xs font-semibold text-[#FAFAFA]">
+                        <h4 className="text-xs font-bold text-[#FAFAFA]">
                           {rev.name}
                         </h4>
                         <p className="text-[10px] text-[#FAFAFA]/40 font-light uppercase tracking-wider">
