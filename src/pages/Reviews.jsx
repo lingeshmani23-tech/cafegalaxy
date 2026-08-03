@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, Sparkles, Check, Loader2, AlertCircle } from "lucide-react";
+import { Star, Quote, Sparkles, Check, Loader2, AlertCircle, Cloud } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -11,10 +11,11 @@ import "swiper/css/navigation";
 import RippleButton from "../components/RippleButton";
 import InitialsAvatar from "../components/InitialsAvatar";
 import { formatReviewDate } from "../utils/formatDate";
+import { subscribeToCloudReviews, postCloudReview } from "../services/reviewsService";
 
 const initialReviews = [
   {
-    id: 1,
+    id: "seed_1",
     name: "jenisan Jeyaraj",
     location: "Dindigul",
     rating: 5,
@@ -22,7 +23,7 @@ const initialReviews = [
     text: "I have tried many products in this shop and I loved it. Especially chicken wings and Sulaimani tea are very tasty and it's my favorites must try."
   },
   {
-    id: 2,
+    id: "seed_2",
     name: "Pravin",
     location: "Dindigul",
     rating: 5,
@@ -30,7 +31,7 @@ const initialReviews = [
     text: "Cozy vibes ☕✨ Loved this small cafe near my place! Good tea, tasty snacks, and a chill atmosphere. Perfect spot to relax after a long day. Definitely coming back again ❤️"
   },
   {
-    id: 3,
+    id: "seed_3",
     name: "Shanmuga Raj",
     location: "Dindigul",
     rating: 5,
@@ -38,7 +39,7 @@ const initialReviews = [
     text: "Ambience was very good with tasty and yummy snack Must tryable and you will love it😋🤤"
   },
   {
-    id: 4,
+    id: "seed_4",
     name: "Amrish rathnakumar",
     location: "Dindigul",
     rating: 5,
@@ -46,7 +47,7 @@ const initialReviews = [
     text: "Quality of the food was Good and delicious, service was excellent. Time taken for preparation of food was reasonable. Ambient of the shop was wonderful."
   },
   {
-    id: 5,
+    id: "seed_5",
     name: "Vivek Ayyanathan Raja",
     location: "Dindigul",
     rating: 5,
@@ -54,7 +55,7 @@ const initialReviews = [
     text: "Best milk shake, burger and fries and a best service. Kid-friendliness: Lots of kids friendly menu"
   },
   {
-    id: 6,
+    id: "seed_6",
     name: "Vishwa K",
     location: "Dindigul",
     rating: 5,
@@ -62,7 +63,7 @@ const initialReviews = [
     text: "Great cafe! Tasty food, friendly service, cozy atmosphere, and very affordable. Definitely worth visiting again."
   },
   {
-    id: 7,
+    id: "seed_7",
     name: "21UCOAT54 Gliffton lewis",
     location: "Dindigul",
     rating: 5,
@@ -70,7 +71,7 @@ const initialReviews = [
     text: "Its a worthy experience , food tastes good , especially i like chocolate tea 🤤"
   },
   {
-    id: 8,
+    id: "seed_8",
     name: "Sankari Selvaraj",
     location: "Dindigul",
     rating: 5,
@@ -78,7 +79,7 @@ const initialReviews = [
     text: "If you are a tea lover, just visit this place. This cafe worth your time and money. Anyone will get addicted to this cafe's dishes"
   },
   {
-    id: 9,
+    id: "seed_9",
     name: "Peace Hrt",
     location: "Dindigul",
     rating: 5,
@@ -86,7 +87,7 @@ const initialReviews = [
     text: "Delivered in time , chickens are very crispy and milkshakes are very delicious and sulaimani tea is my favourite Just loved it"
   },
   {
-    id: 10,
+    id: "seed_10",
     name: "Saranya Balan",
     location: "Dindigul",
     rating: 5,
@@ -94,7 +95,7 @@ const initialReviews = [
     text: "The place was peaceful .ambience was also good. The food was very economically affordable everything under 130₹.The food was delicious ."
   },
   {
-    id: 11,
+    id: "seed_11",
     name: "Rekha R",
     location: "Dindigul",
     rating: 5,
@@ -102,7 +103,7 @@ const initialReviews = [
     text: "Delicious food rendered with warm service makes them unique.Excellent"
   },
   {
-    id: 12,
+    id: "seed_12",
     name: "Teddy Tharun",
     location: "Dindigul",
     rating: 5,
@@ -110,7 +111,7 @@ const initialReviews = [
     text: "Unique dishes and best cafe in Dindigul."
   },
   {
-    id: 13,
+    id: "seed_13",
     name: "sruthi meera",
     location: "Dindigul",
     rating: 5,
@@ -118,7 +119,7 @@ const initialReviews = [
     text: "Amazing tea and a must visit if you are in that area!!"
   },
   {
-    id: 14,
+    id: "seed_14",
     name: "Laxmi Priya",
     location: "Dindigul",
     rating: 5,
@@ -126,7 +127,7 @@ const initialReviews = [
     text: "Wonderful experience 🥰🥰 Must visit cafe❤️"
   },
   {
-    id: 15,
+    id: "seed_15",
     name: "Vyshnav. T",
     location: "Dindigul",
     rating: 5,
@@ -134,7 +135,7 @@ const initialReviews = [
     text: "Affordable spot and worth visiting"
   },
   {
-    id: 16,
+    id: "seed_16",
     name: "Senthil Kumar",
     location: "Dindigul",
     rating: 5,
@@ -142,7 +143,7 @@ const initialReviews = [
     text: "Very Hot and spicy tease"
   },
   {
-    id: 17,
+    id: "seed_17",
     name: "Mohammed Asif",
     location: "Dindigul",
     rating: 5,
@@ -150,7 +151,7 @@ const initialReviews = [
     text: "Good"
   },
   {
-    id: 18,
+    id: "seed_18",
     name: "Vaishnavi S",
     location: "Dindigul",
     rating: 5,
@@ -158,7 +159,7 @@ const initialReviews = [
     text: "A Hidden Gem with Heartwarming Vibes!"
   },
   {
-    id: 19,
+    id: "seed_19",
     name: "nagavinothi nagavinothini",
     location: "Dindigul",
     rating: 5,
@@ -166,7 +167,7 @@ const initialReviews = [
     text: "Very tasty and healthy"
   },
   {
-    id: 20,
+    id: "seed_20",
     name: "Bourna Bala",
     location: "Dindigul",
     rating: 5,
@@ -174,7 +175,7 @@ const initialReviews = [
     text: "Nice place to enjoy with yummy food"
   },
   {
-    id: 21,
+    id: "seed_21",
     name: "Annapoorani M",
     location: "Dindigul",
     rating: 5,
@@ -182,7 +183,7 @@ const initialReviews = [
     text: "Coffee super nice place"
   },
   {
-    id: 22,
+    id: "seed_22",
     name: "Vaishnavi",
     location: "Dindigul",
     rating: 5,
@@ -190,7 +191,7 @@ const initialReviews = [
     text: "Best in taste"
   },
   {
-    id: 23,
+    id: "seed_23",
     name: "RAJA THALAMUTHU",
     location: "Dindigul",
     rating: 5,
@@ -200,24 +201,9 @@ const initialReviews = [
 ];
 
 const Reviews = () => {
-  // Persist reviews so they are not lost after a page refresh
-  const [reviews, setReviews] = useState(() => {
-    try {
-      const saved = localStorage.getItem("galaxy_reviews");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed.map((item, idx) => ({
-            ...item,
-            createdAt: item.createdAt || initialReviews[idx]?.createdAt || new Date().toISOString()
-          }));
-        }
-      }
-    } catch (e) {
-      console.error("Failed to parse reviews from local storage");
-    }
-    return initialReviews;
-  });
+  // State variables for real-time cloud database
+  const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [formName, setFormName] = useState("");
   const [formRating, setFormRating] = useState(5);
@@ -227,10 +213,25 @@ const Reviews = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState({ type: null, message: "" });
 
-  // Sync state to local storage automatically
+  // Subscribe to real-time updates from Cloud Firestore Database
   useEffect(() => {
-    localStorage.setItem("galaxy_reviews", JSON.stringify(reviews));
-  }, [reviews]);
+    setIsLoading(true);
+    const unsubscribe = subscribeToCloudReviews(
+      (fetchedReviews) => {
+        setReviews(fetchedReviews);
+        setIsLoading(false);
+      },
+      (error) => {
+        console.error("Cloud DB Listener Error:", error);
+        // Fallback to initial reviews array if offline or network fails
+        setReviews(initialReviews);
+        setIsLoading(false);
+      },
+      initialReviews
+    );
+
+    return () => unsubscribe();
+  }, []);
 
   // Sort reviews by newest first
   const sortedReviews = useMemo(() => {
@@ -241,7 +242,7 @@ const Reviews = () => {
     });
   }, [reviews]);
 
-  // Calculations for average and distribution
+  // Calculations for average and rating distribution
   const stats = useMemo(() => {
     const total = sortedReviews.length;
     const avg = total > 0 ? (sortedReviews.reduce((acc, rev) => acc + rev.rating, 0) / total).toFixed(1) : 0;
@@ -273,39 +274,32 @@ const Reviews = () => {
       return;
     }
 
-    // Loading state
     setIsSubmitting(true);
 
-    // Simulate network delay
-    setTimeout(() => {
-      try {
-        const newReviewItem = {
-          id: Date.now(),
-          name: trimmedName,
-          location: "Dindigul Guest",
-          rating: formRating,
-          createdAt: new Date().toISOString(),
-          text: trimmedReview,
-        };
+    try {
+      // Save permanently to Cloud Database
+      await postCloudReview({
+        name: trimmedName,
+        text: trimmedReview,
+        rating: formRating,
+        location: "Dindigul Guest"
+      });
 
-        // Display the newest reviews at the top
-        setReviews([newReviewItem, ...reviews]);
-        
-        // Show appropriate success message
-        setSubmitState({ type: "success", message: "Review shared successfully!" });
-        
-        // Clear the form after a successful submission
-        setFormName("");
-        setFormReview("");
-        setFormRating(5);
-        
-        setTimeout(() => setSubmitState({ type: null, message: "" }), 4000);
-      } catch (err) {
-        setSubmitState({ type: "error", message: "Failed to post review. Please try again." });
-      } finally {
-        setIsSubmitting(false);
-      }
-    }, 1200);
+      // Success feedback
+      setSubmitState({ type: "success", message: "Review posted live! Visible to all visitors across devices." });
+      
+      // Clear form inputs
+      setFormName("");
+      setFormReview("");
+      setFormRating(5);
+      
+      setTimeout(() => setSubmitState({ type: null, message: "" }), 5000);
+    } catch (err) {
+      console.error("Failed to post review to Cloud DB:", err);
+      setSubmitState({ type: "error", message: "Failed to post review to Cloud Database. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -320,82 +314,89 @@ const Reviews = () => {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
-          <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold">
-            Testimonials
+          <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold flex items-center justify-center gap-1.5">
+            <Cloud size={14} /> Real-Time Cloud Database
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-[#FAFAFA]">
             Cosmic Reviews
           </h1>
           <p className="text-xs sm:text-sm text-[#FAFAFA]/50 uppercase tracking-widest max-w-md mx-auto">
-            Read what our wonderful guests in Dindigul say about their Cafe Galaxy experience
+            Live feedback shared by guests across Dindigul and synced instantly worldwide
           </p>
         </div>
       </section>
 
       {/* Hero Carousel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={40}
-          slidesPerView={1}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          className="pb-14"
-        >
-          {sortedReviews.slice(0, 3).map((rev) => (
-            <SwiperSlide key={rev.id}>
-              <div className="glass-card rounded-3xl p-8 sm:p-12 border border-[#FFC107]/15 max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center relative">
-                {/* Quote Icon */}
-                <span className="absolute top-6 right-8 text-[#FFC107]/10 pointer-events-none">
-                  <Quote size={80} className="fill-current" />
-                </span>
+        {isLoading ? (
+          <div className="glass-card rounded-3xl p-12 text-center border border-white/5 flex flex-col items-center justify-center space-y-4 max-w-4xl mx-auto">
+            <Loader2 size={36} className="animate-spin text-[#FFC107]" />
+            <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-wider uppercase">Loading live reviews from Cloud Database...</p>
+          </div>
+        ) : (
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={40}
+            slidesPerView={1}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation
+            className="pb-14"
+          >
+            {sortedReviews.slice(0, 3).map((rev) => (
+              <SwiperSlide key={rev.id}>
+                <div className="glass-card rounded-3xl p-8 sm:p-12 border border-[#FFC107]/15 max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center relative">
+                  {/* Quote Icon */}
+                  <span className="absolute top-6 right-8 text-[#FFC107]/10 pointer-events-none">
+                    <Quote size={80} className="fill-current" />
+                  </span>
 
-                {/* Avatar */}
-                <div className="shrink-0 relative">
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#FFC107]/40 scale-105 animate-pulse-slow"></div>
-                  <InitialsAvatar
-                    name={rev.name}
-                    className="!w-24 !h-24 sm:!w-28 sm:!h-28 !text-3xl sm:!text-4xl shadow-lg border border-[#FFC107]/30"
-                  />
-                </div>
+                  {/* Initials Avatar */}
+                  <div className="shrink-0 relative">
+                    <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#FFC107]/40 scale-105 animate-pulse-slow"></div>
+                    <InitialsAvatar
+                      name={rev.name}
+                      className="!w-24 !h-24 sm:!w-28 sm:!h-28 !text-3xl sm:!text-4xl shadow-lg border border-[#FFC107]/30"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="space-y-4 text-center md:text-left flex-grow w-full">
-                  <div className="flex justify-between items-center w-full gap-4">
-                    <div className="flex justify-center md:justify-start gap-1">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star
-                          key={i}
-                          size={16}
-                          className={
-                            i < rev.rating
-                              ? "text-[#FFC107] fill-[#FFC107]"
-                              : "text-[#FAFAFA]/20"
-                          }
-                        />
-                      ))}
+                  {/* Content */}
+                  <div className="space-y-4 text-center md:text-left flex-grow w-full">
+                    <div className="flex justify-between items-center w-full gap-4">
+                      <div className="flex justify-center md:justify-start gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star
+                            key={i}
+                            size={16}
+                            className={
+                              i < rev.rating
+                                ? "text-[#FFC107] fill-[#FFC107]"
+                                : "text-[#FAFAFA]/20"
+                            }
+                          />
+                        ))}
+                      </div>
+                      <span className="text-[12px] font-medium text-[#9CA3AF] shrink-0">
+                        {formatReviewDate(rev.createdAt)}
+                      </span>
                     </div>
-                    <span className="text-[12px] font-medium text-[#9CA3AF] shrink-0">
-                      {formatReviewDate(rev.createdAt || rev.date)}
-                    </span>
-                  </div>
-                  <p className="font-serif italic text-base sm:text-lg text-[#FAFAFA]/80 leading-relaxed font-light">
-                    "{rev.text}"
-                  </p>
-                  <div>
-                    <h4 className="font-serif text-[#FFC107] text-base font-bold tracking-wide">
-                      {rev.name}
-                    </h4>
-                    <p className="text-xs text-[#FAFAFA]/50 tracking-wider font-light uppercase">
-                      {rev.location}
+                    <p className="font-serif italic text-base sm:text-lg text-[#FAFAFA]/80 leading-relaxed font-light">
+                      "{rev.text}"
                     </p>
+                    <div>
+                      <h4 className="font-serif text-[#FFC107] text-base font-bold tracking-wide">
+                        {rev.name}
+                      </h4>
+                      <p className="text-xs text-[#FAFAFA]/50 tracking-wider font-light uppercase">
+                        {rev.location}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </section>
 
       {/* Grid of reviews and Submission Form */}
@@ -435,65 +436,87 @@ const Reviews = () => {
               </div>
             </div>
 
-            <h3 className="font-serif text-2xl font-bold text-[#FAFAFA] border-b border-white/5 pb-3">
-              Guest Feedback Feed
-            </h3>
+            <div className="flex items-center justify-between border-b border-white/5 pb-3">
+              <h3 className="font-serif text-2xl font-bold text-[#FAFAFA]">
+                Live Guest Feed
+              </h3>
+              <span className="text-[11px] text-[#FFC107] font-semibold flex items-center gap-1.5 bg-[#FFC107]/10 px-3 py-1 rounded-full border border-[#FFC107]/20">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                Real-Time Cloud Synced
+              </span>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <AnimatePresence>
-                {sortedReviews.map((rev) => (
-                  <motion.div
-                    layout
-                    key={rev.id}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/5 h-full space-y-4 hover:border-[#FFC107]/15 hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="space-y-3">
-                      {/* Top Header: 5 Stars on Left, Formatted Timestamp on Right */}
-                      <div className="flex justify-between items-center gap-2">
-                        <div className="flex gap-0.5">
-                          {Array.from({ length: 5 }).map((_, i) => (
-                            <Star
-                              key={i}
-                              size={14}
-                              className={
-                                i < rev.rating
-                                  ? "text-[#FFC107] fill-[#FFC107]"
-                                  : "text-[#FAFAFA]/10"
-                              }
-                            />
-                          ))}
+            {/* Loading Indicator / Empty State / Reviews Feed Grid */}
+            {isLoading ? (
+              <div className="text-center py-16 glass-card rounded-2xl border border-white/5 space-y-3">
+                <Loader2 size={32} className="animate-spin text-[#FFC107] mx-auto" />
+                <p className="text-xs text-[#FAFAFA]/60 font-medium tracking-widest uppercase">Fetching live reviews from central database...</p>
+              </div>
+            ) : sortedReviews.length === 0 ? (
+              <div className="text-center py-16 glass-card rounded-2xl border border-white/5 space-y-3">
+                <Cloud size={36} className="text-[#FFC107] mx-auto opacity-80" />
+                <h4 className="font-serif text-lg font-bold text-[#FAFAFA]">No reviews found in cloud database</h4>
+                <p className="text-xs text-[#FAFAFA]/50 font-light max-w-sm mx-auto">
+                  Be the very first guest to share your Cafe Galaxy experience! Write a review using the form on the right.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <AnimatePresence>
+                  {sortedReviews.map((rev) => (
+                    <motion.div
+                      layout
+                      key={rev.id}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.4 }}
+                      className="glass-card rounded-2xl p-6 flex flex-col justify-between border border-white/5 h-full space-y-4 hover:border-[#FFC107]/15 hover:shadow-xl transition-all duration-300"
+                    >
+                      <div className="space-y-3">
+                        {/* Top Header: 5 Stars on Left, Formatted Timestamp on Right */}
+                        <div className="flex justify-between items-center gap-2">
+                          <div className="flex gap-0.5">
+                            {Array.from({ length: 5 }).map((_, i) => (
+                              <Star
+                                key={i}
+                                size={14}
+                                className={
+                                  i < rev.rating
+                                    ? "text-[#FFC107] fill-[#FFC107]"
+                                    : "text-[#FAFAFA]/10"
+                                }
+                              />
+                            ))}
+                          </div>
+                          <span className="text-[12px] font-medium text-[#9CA3AF] tracking-wide shrink-0">
+                            {formatReviewDate(rev.createdAt)}
+                          </span>
                         </div>
-                        <span className="text-[12px] font-medium text-[#9CA3AF] tracking-wide shrink-0">
-                          {formatReviewDate(rev.createdAt || rev.date)}
-                        </span>
-                      </div>
 
-                      {/* Review Text Body */}
-                      <p className="text-xs text-[#FAFAFA]/70 font-light leading-relaxed">
-                        {rev.text}
-                      </p>
-                    </div>
-
-                    {/* Bottom Reviewer Info: Initials Avatar + Name + Location */}
-                    <div className="flex items-center gap-3 border-t border-white/5 pt-3">
-                      <InitialsAvatar name={rev.name} />
-                      <div className="text-left">
-                        <h4 className="text-xs font-bold text-[#FAFAFA]">
-                          {rev.name}
-                        </h4>
-                        <p className="text-[10px] text-[#FAFAFA]/40 font-light uppercase tracking-wider">
-                          {rev.location}
+                        {/* Review Text Body */}
+                        <p className="text-xs text-[#FAFAFA]/70 font-light leading-relaxed">
+                          {rev.text}
                         </p>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
+
+                      {/* Bottom Reviewer Info: Initials Avatar + Name + Location */}
+                      <div className="flex items-center gap-3 border-t border-white/5 pt-3">
+                        <InitialsAvatar name={rev.name} />
+                        <div className="text-left">
+                          <h4 className="text-xs font-bold text-[#FAFAFA]">
+                            {rev.name}
+                          </h4>
+                          <p className="text-[10px] text-[#FAFAFA]/40 font-light uppercase tracking-wider">
+                            {rev.location}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            )}
           </div>
 
           {/* Review form Column */}
@@ -596,7 +619,7 @@ const Reviews = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 size={16} className="animate-spin" />
-                    Submitting...
+                    Posting to Cloud...
                   </>
                 ) : (
                   "Submit Review"

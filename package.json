@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio": "^1.2.0",
     "duckduckgo-images-api": "^1.0.5",
+    "firebase": "^12.17.0",
     "framer-motion": "^12.42.2",
     "googlethis": "^1.8.0",
     "lucide-react": "^0.400.0",
