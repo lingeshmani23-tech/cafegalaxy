@@ -23,20 +23,23 @@ const Home = () => {
   }, []);
 
   const popularCoffee = useMemo(() => {
+    const featuredIds = new Set(featuredItems.map(item => item.id));
     const coffeeCategories = ['Kappi', 'Daisy Tea', 'Black Tea', 'Tea'];
     const items = menuItems
-      .filter(item => coffeeCategories.includes(item.category))
+      .filter(item => coffeeCategories.includes(item.category) && !featuredIds.has(item.id))
       .sort((a, b) => (a.category === 'Kappi' ? -1 : b.category === 'Kappi' ? 1 : 0));
-    return items.length > 0 ? items.slice(0, 4) : menuItems.slice(0, 4);
-  }, []);
+    return items.length > 0 ? items.slice(0, 4) : menuItems.filter(item => !featuredIds.has(item.id)).slice(0, 4);
+  }, [featuredItems]);
 
   const bakerySpecials = useMemo(() => {
+    const featuredIds = new Set(featuredItems.map(item => item.id));
+    const coffeeIds = new Set(popularCoffee.map(item => item.id));
     const bakeryCategories = ['Puffs', 'Waffles', 'Sandwiches'];
     const items = menuItems
-      .filter(item => bakeryCategories.includes(item.category))
+      .filter(item => bakeryCategories.includes(item.category) && !featuredIds.has(item.id) && !coffeeIds.has(item.id))
       .sort((a, b) => (a.category === 'Puffs' || a.category === 'Waffles' ? -1 : 1));
-    return items.length > 0 ? items.slice(0, 4) : menuItems.slice(4, 8);
-  }, []);
+    return items.length > 0 ? items.slice(0, 4) : menuItems.filter(item => !featuredIds.has(item.id) && !coffeeIds.has(item.id)).slice(0, 4);
+  }, [featuredItems, popularCoffee]);
 
   // Today's Special Item (randomly rotating main dishes)
   const mainDishes = useMemo(() => {
