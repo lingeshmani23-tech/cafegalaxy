@@ -17,7 +17,8 @@ import { formatReviewDate } from "../utils/formatDate";
 import {
   subscribeToCloudReviews,
   postCloudReview,
-  fetchMoreCloudReviews
+  fetchMoreCloudReviews,
+  verifyFirebaseEnv
 } from "../services/reviewsService";
 import { fetchGooglePlacesReviews, GOOGLE_MAPS_BUSINESS_URL } from "../services/googleReviewsService";
 
@@ -67,10 +68,12 @@ const Reviews = () => {
   // Form submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState({ type: null, message: "" });
+  const [firestorePermissionError, setFirestorePermissionError] = useState(null);
 
-  // 1. Fetch Google Places API Reviews (24h cache)
+  // 1. Verify Environment Variables & Fetch Google Places API Reviews
   useEffect(() => {
     let isMounted = true;
+    verifyFirebaseEnv();
     const loadGoogleReviews = async () => {
       try {
         const data = await fetchGooglePlacesReviews();
@@ -91,22 +94,29 @@ const Reviews = () => {
     let isMounted = true;
     setIsLoading(true);
 
+    console.log("Subscribing to Firestore Cloud Database onSnapshot...");
+
     const unsubscribe = subscribeToCloudReviews(
       (fetchedCloudReviews, lastDoc) => {
         if (!isMounted) return;
+        console.log(`Loaded ${fetchedCloudReviews.length} reviews from Firestore`);
         setCloudReviews(fetchedCloudReviews);
         setLastDocState(lastDoc);
+        setFirestorePermissionError(null);
         setIsLoading(false);
       },
       (error) => {
         console.error("Cloud DB Connection Error:", error);
+        if (error?.code === "permission-denied" || error?.message?.includes("PERMISSION_DENIED")) {
+          setFirestorePermissionError("Firestore Security Rules PERMISSION_DENIED: Please allow public read/create rules on 'reviews' collection.");
+        }
         if (!cloudReviews.length) {
           setCloudReviews(seedReviewsFallback);
         }
         setIsLoading(false);
       },
       seedReviewsFallback,
-      20
+      50
     );
 
     return () => {
@@ -199,25 +209,28 @@ const Reviews = () => {
     }
 
     setIsSubmitting(true);
+    console.log("Submitting review...");
 
     try {
       // 1. Post to Firebase Firestore Cloud Database first
-      await postCloudReview({
+      const savedResult = await postCloudReview({
         name: trimmedName,
         text: trimmedReview,
         rating: formRating,
         location: "Dindigul Guest"
       });
 
+      console.log("Generated document ID:", savedResult.id);
+
       // 2. Database write confirmed
-      setSubmitState({ type: "success", message: "Review saved to Cloud Database! Synced live across all devices." });
+      setSubmitState({ type: "success", message: `Review saved to Cloud Database! Doc ID: ${savedResult.id}` });
       setFormName("");
       setFormReview("");
       setFormRating(5);
-      setTimeout(() => setSubmitState({ type: null, message: "" }), 5000);
+      setTimeout(() => setSubmitState({ type: null, message: "" }), 6000);
     } catch (err) {
-      console.error("Firestore database write failure:", err);
-      setSubmitState({ type: "error", message: "Failed to save review to Cloud Database. Please check your internet connection." });
+      console.error("Firestore database write error:", err.code, err.message, err);
+      setSubmitState({ type: "error", message: `Failed to save review: ${err.message || "Permission Denied"}` });
     } finally {
       setIsSubmitting(false);
     }
@@ -331,6 +344,25 @@ const Reviews = () => {
 
       {/* Main Grid: Reviews & Form */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {firestorePermissionError && (
+          <div className="mb-8 p-6 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-300 space-y-2">
+            <h4 className="font-bold flex items-center gap-2 text-sm"><AlertCircle size={18} /> Firestore Security Rules Configuration Notice</h4>
+            <p className="text-xs leading-relaxed text-amber-200/90">
+              Firebase returned <code>PERMISSION_DENIED</code>. Update the Firestore Security Rules in the Firebase Console to allow public read/write access:
+            </p>
+            <pre className="bg-black/60 p-3 rounded-lg text-[11px] text-amber-400 font-mono overflow-x-auto">
+{`service cloud.firestore {
+  match /databases/{database}/documents {
+    match /reviews/{document} {
+      allow read: if true;
+      allow create: if true;
+    }
+  }
+}`}
+            </pre>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           
           {/* Left Column: Google Header & Feed */}

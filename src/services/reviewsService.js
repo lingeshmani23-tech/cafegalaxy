@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { getInitials } from "../components/InitialsAvatar";
 
-// Firebase Configuration for Cafe Galaxy Cloud Database
+// Read Firebase Configuration from environment variables
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyCafegalaxyRealtimeKey2026Db",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "cafegalaxy-dindigul.firebaseapp.com",
@@ -22,10 +22,34 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:9360151808:web:cafegalaxy2026db"
 };
 
-// Initialize Firebase instance safely
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-export const db = getFirestore(app);
+// Verify presence of environment variables
+export const verifyFirebaseEnv = () => {
+  const requiredKeys = [
+    "VITE_FIREBASE_API_KEY",
+    "VITE_FIREBASE_PROJECT_ID",
+    "VITE_FIREBASE_APP_ID",
+    "VITE_FIREBASE_AUTH_DOMAIN",
+    "VITE_FIREBASE_STORAGE_BUCKET"
+  ];
+  const missing = requiredKeys.filter((key) => !import.meta.env[key]);
+  if (missing.length > 0) {
+    console.warn("Missing Firebase environment variables:", missing.join(", "));
+  } else {
+    console.log("All Firebase environment variables verified.");
+  }
+  return missing;
+};
 
+// Initialize Firebase App instance
+let app;
+try {
+  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+  console.log("Firebase App Initialized successfully with Project ID:", firebaseConfig.projectId);
+} catch (e) {
+  console.error("Firebase Initialization Error:", e);
+}
+
+export const db = getFirestore(app);
 const REVIEWS_COLLECTION = "reviews";
 
 /**
@@ -33,7 +57,7 @@ const REVIEWS_COLLECTION = "reviews";
  * - NO localStorage or sessionStorage used.
  * - Streams live updates to every connected visitor on every device instantly via Firestore onSnapshot.
  */
-export const subscribeToCloudReviews = (onSuccess, onError, initialSeed = [], pageSize = 20) => {
+export const subscribeToCloudReviews = (onSuccess, onError, initialSeed = [], pageSize = 50) => {
   try {
     const reviewsRef = collection(db, REVIEWS_COLLECTION);
     const q = query(reviewsRef, orderBy("createdAt", "desc"), limit(pageSize));
@@ -43,7 +67,7 @@ export const subscribeToCloudReviews = (onSuccess, onError, initialSeed = [], pa
     const unsubscribe = onSnapshot(
       q,
       async (snapshot) => {
-        console.log(`Firestore onSnapshot received ${snapshot.docs.length} documents from Cloud Database.`);
+        console.log(`Loaded ${snapshot.docs.length} reviews from Firestore.`);
 
         if (snapshot.empty && initialSeed.length > 0) {
           console.log("Database is empty. Seeding initial verified reviews to Cloud Database...");
@@ -90,7 +114,7 @@ export const subscribeToCloudReviews = (onSuccess, onError, initialSeed = [], pa
         onSuccess(reviewsList, snapshot.docs[snapshot.docs.length - 1]);
       },
       (error) => {
-        console.error("Firestore real-time connection error:", error);
+        console.error("Firestore onSnapshot error:", error.code, error.message);
         if (onError) onError(error);
       }
     );
@@ -168,9 +192,13 @@ export const postCloudReview = async (reviewData) => {
     source: "website"
   };
 
-  console.log("Submitting review directly to Firebase Cloud Database...", payload);
-  const docRef = await addDoc(reviewsRef, payload);
-  console.log("Successfully saved review to Firebase Cloud Database with Doc ID:", docRef.id);
-  
-  return { id: docRef.id, ...payload };
+  console.log("Submitting review...", payload);
+  try {
+    const docRef = await addDoc(reviewsRef, payload);
+    console.log("Successfully written to Firebase Cloud Database with Doc ID:", docRef.id);
+    return { id: docRef.id, ...payload };
+  } catch (err) {
+    console.error("Firestore write failure:", err.code, err.message, err);
+    throw err;
+  }
 };
