@@ -109,19 +109,27 @@ const Reviews = () => {
     };
   }, []);
 
-  // 3. Combined & Filtered Reviews List with Deduplication
-  const displayedReviews = useMemo(() => {
-    const rawGoogle = (googleData.reviews || []).map(r => ({ ...r, isGoogle: true }));
-    const googleReviewsList = deduplicateGoogleReviews(rawGoogle, cloudReviews);
-    const communityReviewsList = cloudReviews.map(r => ({ ...r, isGoogle: false }));
+  // 3. Google & Community Reviews Separation and Filtering
+  const googleReviewsList = useMemo(() => {
+    return (googleData.reviews || []).map(r => ({ ...r, isGoogle: true, source: "Google" }));
+  }, [googleData.reviews]);
 
+  const communityReviewsList = useMemo(() => {
+    return cloudReviews
+      .filter(r => r.source !== "Google")
+      .map(r => ({ ...r, isGoogle: false }));
+  }, [cloudReviews]);
+
+  const displayedReviews = useMemo(() => {
     let combined = [];
     if (activeTab === "google") {
       combined = googleReviewsList;
     } else if (activeTab === "community") {
       combined = communityReviewsList;
     } else {
-      combined = [...googleReviewsList, ...communityReviewsList];
+      const communityTexts = new Set(communityReviewsList.map(r => (r.text || r.review || "").toLowerCase().trim()));
+      const uniqueGoogle = googleReviewsList.filter(g => !communityTexts.has((g.text || g.review || "").toLowerCase().trim()));
+      combined = [...uniqueGoogle, ...communityReviewsList];
     }
 
     return combined.sort((a, b) => {
@@ -129,7 +137,7 @@ const Reviews = () => {
       const timeB = new Date(b.createdAt || 0).getTime();
       return timeB - timeA;
     });
-  }, [googleData.reviews, cloudReviews, activeTab]);
+  }, [googleReviewsList, communityReviewsList, activeTab]);
 
   // Paginated slice for smooth rendering
   const paginatedReviews = useMemo(() => {
@@ -138,15 +146,17 @@ const Reviews = () => {
 
   // Total stats computation
   const stats = useMemo(() => {
-    const totalCount = (googleData.reviews?.length || 0) + cloudReviews.length;
+    const googleCount = googleReviewsList.length;
+    const communityCount = communityReviewsList.length;
+    const totalCount = googleCount + communityCount;
     const avgRating = googleData.rating || 4.9;
     const dist = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
-    [...(googleData.reviews || []), ...cloudReviews].forEach(rev => {
+    [...googleReviewsList, ...communityReviewsList].forEach(rev => {
       const r = Math.round(rev.rating) || 5;
       dist[r] = (dist[r] || 0) + 1;
     });
-    return { totalCount, avgRating, dist };
-  }, [googleData, cloudReviews]);
+    return { googleCount, communityCount, totalCount, avgRating, dist };
+  }, [googleReviewsList, communityReviewsList, googleData]);
 
   // Load More Handler (Cursor-based pagination from Supabase)
   const handleLoadMore = useCallback(async () => {
@@ -422,7 +432,7 @@ const Reviews = () => {
                       : "text-[#FAFAFA]/60 hover:text-white"
                   }`}
                 >
-                  <GoogleIcon size={14} /> Google ({googleData.reviews?.length || 10})
+                  <GoogleIcon size={14} /> Google ({stats.googleCount})
                 </button>
                 <button
                   onClick={() => { setActiveTab("community"); setVisibleLimit(INITIAL_VISIBLE_COUNT); }}
@@ -432,7 +442,7 @@ const Reviews = () => {
                       : "text-[#FAFAFA]/60 hover:text-white"
                   }`}
                 >
-                  <Cloud size={14} /> Community ({cloudReviews.length})
+                  <Cloud size={14} /> Community ({stats.communityCount})
                 </button>
               </div>
 
