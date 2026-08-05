@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /**
  * Helper to extract uppercase initials from a name string.
@@ -26,8 +26,20 @@ export const getInitials = (name) => {
   return `${firstInitial}${lastInitial}`;
 };
 
-const InitialsAvatar = ({ name, className = "" }) => {
+const InitialsAvatar = ({ name, photoUrl, className = "" }) => {
+  const [imageError, setImageError] = useState(false);
   const initials = getInitials(name);
+
+  if (photoUrl && !imageError) {
+    return (
+      <img
+        src={photoUrl}
+        alt={name || "Reviewer"}
+        onError={() => setImageError(true)}
+        className={`w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full object-cover shrink-0 shadow-md border border-[#FFC107]/30 ${className}`}
+      />
+    );
+  }
 
   return (
     <div

@@ -34,7 +34,7 @@ const ReviewCard = React.memo(({ rev }) => {
             ))}
           </div>
           <span className="text-[12px] font-medium text-[#9CA3AF] tracking-wide shrink-0">
-            {rev.isOptimistic ? "Posting..." : formatReviewDate(rev.createdAt || rev.relativeTime)}
+            {rev.isOptimistic ? "Posting..." : (rev.relativeTime || formatReviewDate(rev.createdAt))}
           </span>
         </div>
 
@@ -53,13 +53,13 @@ const ReviewCard = React.memo(({ rev }) => {
 
         {/* Review Body */}
         <p className="text-xs text-[#FAFAFA]/75 font-light leading-relaxed">
-          "{rev.text}"
+          "{rev.text || rev.review}"
         </p>
       </div>
 
-      {/* Bottom Author Row: Initials Avatar + Name + Location */}
+      {/* Bottom Author Row: Initials/Photo Avatar + Name + Location */}
       <div className="flex items-center gap-3 border-t border-white/5 pt-3">
-        <InitialsAvatar name={rev.name} />
+        <InitialsAvatar name={rev.name} photoUrl={rev.photoUrl || rev.profilePhoto || rev.avatarUrl} />
         <div className="text-left">
           <h4 className="text-xs font-bold text-[#FAFAFA]">
             {rev.name}

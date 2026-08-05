@@ -20,31 +20,18 @@ import {
   fetchMoreCloudReviews,
   verifyFirebaseEnv
 } from "../services/reviewsService";
-import { fetchGooglePlacesReviews, GOOGLE_MAPS_BUSINESS_URL } from "../services/googleReviewsService";
+import {
+  fetchGooglePlacesReviews,
+  deduplicateGoogleReviews,
+  GOOGLE_MAPS_BUSINESS_URL
+} from "../services/googleReviewsService";
 
-const seedReviewsFallback = [
-  {
-    id: "seed_1",
-    name: "jenisan Jeyaraj",
-    location: "Dindigul",
-    rating: 5,
-    createdAt: "2026-08-03T20:45:00Z",
-    text: "I have tried many products in this shop and I loved it. Especially chicken wings and Sulaimani tea are very tasty and it's my favorites must try."
-  },
-  {
-    id: "seed_2",
-    name: "Pravin",
-    location: "Dindigul",
-    rating: 5,
-    createdAt: "2026-08-02T18:30:00Z",
-    text: "Cozy vibes ☕✨ Loved this small cafe near my place! Good tea, tasty snacks, and a chill atmosphere. Perfect spot to relax after a long day. Definitely coming back again ❤️"
-  }
-];
+const seedReviewsFallback = [];
 
 const INITIAL_VISIBLE_COUNT = 10;
 
 const Reviews = () => {
-  // State variables - ALL data is synced directly with Firebase Firestore Cloud Database
+  // State variables - ALL data is synced directly with Supabase Cloud Database
   const [cloudReviews, setCloudReviews] = useState([]);
   const [googleData, setGoogleData] = useState({
     rating: 4.9,
@@ -122,9 +109,10 @@ const Reviews = () => {
     };
   }, []);
 
-  // 3. Combined & Filtered Reviews List
+  // 3. Combined & Filtered Reviews List with Deduplication
   const displayedReviews = useMemo(() => {
-    const googleReviewsList = (googleData.reviews || []).map(r => ({ ...r, isGoogle: true }));
+    const rawGoogle = (googleData.reviews || []).map(r => ({ ...r, isGoogle: true }));
+    const googleReviewsList = deduplicateGoogleReviews(rawGoogle, cloudReviews);
     const communityReviewsList = cloudReviews.map(r => ({ ...r, isGoogle: false }));
 
     let combined = [];

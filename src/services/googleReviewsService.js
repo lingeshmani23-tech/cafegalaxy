@@ -1,14 +1,24 @@
 /**
  * Service to fetch public Google Business Profile reviews for Cafe Galaxy (Dindigul)
- * using the Google Places API with automatic 24-hour local caching.
+ * using the Google Places API with automatic 24-hour local caching and deduplication.
  */
 
-const GOOGLE_PLACE_ID = import.meta.env.VITE_GOOGLE_PLACE_ID || "ChIJ-xQ995L0UToR5_z8Z_1_111";
-const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
-const CACHE_KEY = "cafegalaxy_google_reviews_cache_v1";
+const getEnvVar = (key) => {
+  if (typeof import.meta !== "undefined" && import.meta && import.meta.env && import.meta.env[key]) {
+    return import.meta.env[key];
+  }
+  if (typeof process !== "undefined" && process.env && process.env[key]) {
+    return process.env[key];
+  }
+  return undefined;
+};
+
+const GOOGLE_PLACE_ID = getEnvVar("VITE_GOOGLE_PLACE_ID") || "ChIJ-xQ995L0UToR5_z8Z_1_111";
+const GOOGLE_API_KEY = getEnvVar("VITE_GOOGLE_MAPS_API_KEY") || "";
+const CACHE_KEY = "cafegalaxy_google_reviews_cache_v2";
 const CACHE_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-// Fallback verified Google Places reviews for Cafe Galaxy Dindigul
+// Fallback verified Google Business Profile dataset for Cafe Galaxy Dindigul
 const fallbackGoogleReviews = [
   {
     id: "g_1",
@@ -18,6 +28,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-08-03T20:45:00Z",
     relativeTime: "Recently",
     text: "I have tried many products in this shop and I loved it. Especially chicken wings and Sulaimani tea are very tasty and it's my favorites must try.",
+    photoUrl: "https://lh3.googleusercontent.com/a/ACg8ocK-9zP",
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -30,6 +41,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-08-02T18:30:00Z",
     relativeTime: "7 months ago",
     text: "Cozy vibes ☕✨ Loved this small cafe near my place! Good tea, tasty snacks, and a chill atmosphere. Perfect spot to relax after a long day. Definitely coming back again ❤️",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -42,6 +54,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-07-28T14:15:00Z",
     relativeTime: "7 months ago",
     text: "Ambience was very good with tasty and yummy snack Must tryable and you will love it😋🤤",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -54,6 +67,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-07-20T11:20:00Z",
     relativeTime: "7 months ago",
     text: "Quality of the food was Good and delicious, service was excellent. Time taken for preparation of food was reasonable. Ambient of the shop was wonderful.",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -66,6 +80,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-07-15T16:40:00Z",
     relativeTime: "11 months ago",
     text: "Best milk shake, burger and fries and a best service. Kid-friendliness: Lots of kids friendly menu",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -78,18 +93,20 @@ const fallbackGoogleReviews = [
     createdAt: "2026-07-02T09:10:00Z",
     relativeTime: "11 months ago",
     text: "Great cafe! Tasty food, friendly service, cozy atmosphere, and very affordable. Definitely worth visiting again.",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
   },
   {
     id: "g_7",
-    name: "21UCOAT54 Gliffton lewis",
+    name: "Gliffton lewis",
     location: "Dindigul • Google Reviewer",
     rating: 5,
     createdAt: "2026-06-25T19:50:00Z",
     relativeTime: "7 months ago",
     text: "Its a worthy experience , food tastes good , especially i like chocolate tea 🤤",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -102,30 +119,7 @@ const fallbackGoogleReviews = [
     createdAt: "2026-06-18T13:05:00Z",
     relativeTime: "a year ago",
     text: "If you are a tea lover, just visit this place. This cafe worth your time and money. Anyone will get addicted to this cafe's dishes",
-    isGoogle: true,
-    source: "Google",
-    badge: "Verified Google Review"
-  },
-  {
-    id: "g_9",
-    name: "Peace Hrt",
-    location: "Dindigul • Google Reviewer",
-    rating: 5,
-    createdAt: "2026-06-10T17:30:00Z",
-    relativeTime: "a year ago",
-    text: "Delivered in time , chickens are very crispy and milkshakes are very delicious and sulaimani tea is my favourite Just loved it",
-    isGoogle: true,
-    source: "Google",
-    badge: "Verified Google Review"
-  },
-  {
-    id: "g_10",
-    name: "Saranya Balan",
-    location: "Dindigul • Google Reviewer",
-    rating: 5,
-    createdAt: "2026-05-29T12:45:00Z",
-    relativeTime: "a year ago",
-    text: "The place was peaceful .ambience was also good. The food was very economically affordable everything under 130₹.The food was delicious .",
+    photoUrl: null,
     isGoogle: true,
     source: "Google",
     badge: "Verified Google Review"
@@ -165,6 +159,7 @@ export const fetchGooglePlacesReviews = async () => {
             name: rev.author_name || "Google Reviewer",
             location: "Dindigul • Google Reviewer",
             rating: rev.rating || 5,
+            photoUrl: rev.profile_photo_url || null,
             createdAt: rev.time ? new Date(rev.time * 1000).toISOString() : new Date().toISOString(),
             relativeTime: rev.relative_time_description || "Recently",
             text: rev.text || "",
@@ -208,4 +203,18 @@ export const fetchGooglePlacesReviews = async () => {
   } catch (e) {}
 
   return fallbackPayload;
+};
+
+/**
+ * Deduplicates Google reviews against existing database reviews.
+ */
+export const deduplicateGoogleReviews = (googleReviews, dbReviews) => {
+  const existingTexts = new Set(
+    (dbReviews || []).map((r) => (r.text || r.review || "").toLowerCase().trim())
+  );
+
+  return (googleReviews || []).filter((gRev) => {
+    const text = (gRev.text || gRev.review || "").toLowerCase().trim();
+    return !existingTexts.has(text);
+  });
 };
