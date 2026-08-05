@@ -88,18 +88,18 @@ const Reviews = () => {
     return () => { isMounted = false; };
   }, []);
 
-  // 2. Real-time Cloud Database Listener (Firestore onSnapshot)
+  // 2. Real-time Cloud Database Listener (Supabase)
   // Ensures every visitor on every device sees identical live updates
   useEffect(() => {
     let isMounted = true;
     setIsLoading(true);
 
-    console.log("Subscribing to Firestore Cloud Database onSnapshot...");
+    console.log("Subscribing to Supabase Cloud Database...");
 
     const unsubscribe = subscribeToCloudReviews(
       (fetchedCloudReviews, lastDoc) => {
         if (!isMounted) return;
-        console.log(`Loaded ${fetchedCloudReviews.length} reviews from Firestore`);
+        console.log(`Loaded ${fetchedCloudReviews.length} reviews from Supabase`);
         setCloudReviews(fetchedCloudReviews);
         setLastDocState(lastDoc);
         setFirestorePermissionError(null);
@@ -107,11 +107,8 @@ const Reviews = () => {
       },
       (error) => {
         console.error("Cloud DB Connection Error:", error);
-        if (error?.code === "permission-denied" || error?.message?.includes("PERMISSION_DENIED")) {
-          setFirestorePermissionError("Firestore Security Rules PERMISSION_DENIED: Please allow public read/create rules on 'reviews' collection.");
-        }
-        if (!cloudReviews.length) {
-          setCloudReviews(seedReviewsFallback);
+        if (error?.message?.includes("PERMISSION_DENIED") || error?.message?.includes("RLS")) {
+          setFirestorePermissionError("Supabase RLS Policy Error: Please allow public read/insert policies on 'reviews' table.");
         }
         setIsLoading(false);
       },
@@ -163,7 +160,7 @@ const Reviews = () => {
     return { totalCount, avgRating, dist };
   }, [googleData, cloudReviews]);
 
-  // Load More Handler (Cursor-based pagination from Firestore)
+  // Load More Handler (Cursor-based pagination from Supabase)
   const handleLoadMore = useCallback(async () => {
     if (visibleLimit < displayedReviews.length) {
       setVisibleLimit(prev => prev + 10);
@@ -186,7 +183,7 @@ const Reviews = () => {
   }, [visibleLimit, displayedReviews.length, lastDocState, hasMoreCloud]);
 
   // Direct Cloud Database Write Handler
-  // Saves to Firebase Cloud Database first, then displays write confirmation
+  // Saves to Supabase Cloud Database first, then displays write confirmation
   const handleSubmitReview = useCallback(async (e) => {
     e.preventDefault();
     setSubmitState({ type: null, message: "" });
@@ -209,10 +206,10 @@ const Reviews = () => {
     }
 
     setIsSubmitting(true);
-    console.log("Submitting review...");
+    console.log("Submitting review to Supabase...");
 
     try {
-      // 1. Post to Firebase Firestore Cloud Database first
+      // 1. Post to Supabase Cloud Database
       const savedResult = await postCloudReview({
         name: trimmedName,
         text: trimmedReview,
@@ -220,17 +217,21 @@ const Reviews = () => {
         location: "Dindigul Guest"
       });
 
-      console.log("Generated document ID:", savedResult.id);
+      console.log("Generated Supabase ID:", savedResult.id);
 
       // 2. Database write confirmed
-      setSubmitState({ type: "success", message: `Review saved to Cloud Database! Doc ID: ${savedResult.id}` });
+      setSubmitState({ type: "success", message: "Thank you! Your review has been saved to the database." });
       setFormName("");
       setFormReview("");
       setFormRating(5);
+      
+      // 3. Update local state immediately as well
+      setCloudReviews(prev => [savedResult, ...prev.filter(r => r.id !== savedResult.id)]);
+      
       setTimeout(() => setSubmitState({ type: null, message: "" }), 6000);
     } catch (err) {
-      console.error("Firestore database write error:", err.code, err.message, err);
-      setSubmitState({ type: "error", message: `Failed to save review: ${err.message || "Permission Denied"}` });
+      console.error("Supabase database write error:", err.message || err);
+      setSubmitState({ type: "error", message: `Failed to save review: ${err.message || "Database write failed"}` });
     } finally {
       setIsSubmitting(false);
     }

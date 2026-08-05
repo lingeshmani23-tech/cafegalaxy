@@ -1,204 +1,198 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  onSnapshot,
-  query,
-  orderBy,
-  limit,
-  startAfter,
-  getDocs
-} from "firebase/firestore";
+import { getSupabaseClient } from "./db.js";
 import { getInitials } from "../components/InitialsAvatar";
 
-// Read Firebase Configuration from environment variables
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyCafegalaxyRealtimeKey2026Db",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "cafegalaxy-dindigul.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "cafegalaxy-dindigul",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "cafegalaxy-dindigul.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "9360151808",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:9360151808:web:cafegalaxy2026db"
-};
-
-// Verify presence of environment variables
-export const verifyFirebaseEnv = () => {
-  const requiredKeys = [
-    "VITE_FIREBASE_API_KEY",
-    "VITE_FIREBASE_PROJECT_ID",
-    "VITE_FIREBASE_APP_ID",
-    "VITE_FIREBASE_AUTH_DOMAIN",
-    "VITE_FIREBASE_STORAGE_BUCKET"
-  ];
-  const missing = requiredKeys.filter((key) => !import.meta.env[key]);
-  if (missing.length > 0) {
-    console.warn("Missing Firebase environment variables:", missing.join(", "));
-  } else {
-    console.log("All Firebase environment variables verified.");
-  }
-  return missing;
-};
-
-// Initialize Firebase App instance
-let app;
-try {
-  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-  console.log("Firebase App Initialized successfully with Project ID:", firebaseConfig.projectId);
-} catch (e) {
-  console.error("Firebase Initialization Error:", e);
-}
-
-export const db = getFirestore(app);
-const REVIEWS_COLLECTION = "reviews";
+const TABLE_NAME = "reviews";
 
 /**
- * Real-time listener for reviews from Cloud Database (Firestore).
- * - NO localStorage or sessionStorage used.
- * - Streams live updates to every connected visitor on every device instantly via Firestore onSnapshot.
+ * Maps a Supabase database row to the review object structure used in the UI.
+ */
+const mapRowToReview = (row) => {
+  if (!row) return null;
+  const name = row.name || "Anonymous Guest";
+  return {
+    id: row.id,
+    name: name,
+    initials: row.initials || getInitials(name),
+    location: row.location || "Dindigul",
+    rating: Number(row.rating) || 5,
+    review: row.review || row.text || "",
+    text: row.text || row.review || "",
+    createdAt: row.created_at || row.createdAt || new Date().toISOString(),
+    approved: row.approved !== undefined ? row.approved : true,
+    source: row.source || "website",
+    badge: row.badge
+  };
+};
+
+/**
+ * Environment variable verification helper for Supabase connection.
+ */
+export const verifyFirebaseEnv = () => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    console.warn("[Supabase] Client not initialized. Please verify environment variables.");
+    return ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY"];
+  }
+  console.log("[Supabase] Client and environment variables verified successfully.");
+  return [];
+};
+
+/**
+ * Fetches all reviews from Supabase table sorted by newest first (created_at DESC).
+ */
+export const fetchCloudReviews = async (pageSize = 50, offset = 0) => {
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Supabase client is not initialized");
+  }
+
+  const { data, error, count } = await supabase
+    .from(TABLE_NAME)
+    .select("*", { count: "exact" })
+    .order("created_at", { ascending: false })
+    .range(offset, offset + pageSize - 1);
+
+  if (error) {
+    console.error("[Supabase Error] Failed to fetch reviews:", error);
+    throw error;
+  }
+
+  const reviewsList = (data || []).map(mapRowToReview).filter(Boolean);
+  return {
+    reviews: reviewsList,
+    totalCount: count || reviewsList.length,
+    hasMore: (data || []).length === pageSize
+  };
+};
+
+/**
+ * Subscribes to real-time reviews from Supabase.
+ * Always uses Supabase as the single source of truth and streams live updates.
  */
 export const subscribeToCloudReviews = (onSuccess, onError, initialSeed = [], pageSize = 50) => {
-  try {
-    const reviewsRef = collection(db, REVIEWS_COLLECTION);
-    const q = query(reviewsRef, orderBy("createdAt", "desc"), limit(pageSize));
-
-    console.log("Connecting to Firebase Cloud Database (Firestore)...");
-
-    const unsubscribe = onSnapshot(
-      q,
-      async (snapshot) => {
-        console.log(`Loaded ${snapshot.docs.length} reviews from Firestore.`);
-
-        if (snapshot.empty && initialSeed.length > 0) {
-          console.log("Database is empty. Seeding initial verified reviews to Cloud Database...");
-          try {
-            for (const review of initialSeed.slice().reverse()) {
-              const name = review.name || "Anonymous Guest";
-              await addDoc(reviewsRef, {
-                name: name,
-                initials: getInitials(name),
-                location: review.location || "Dindigul",
-                rating: Number(review.rating) || 5,
-                review: review.text || review.review || "",
-                text: review.text || review.review || "",
-                createdAt: review.createdAt || new Date().toISOString(),
-                approved: true,
-                source: "website"
-              });
-            }
-          } catch (seedErr) {
-            console.warn("Seeding deferred:", seedErr);
-          }
-          return;
-        }
-
-        const reviewsList = snapshot.docs.map((doc) => {
-          const data = doc.data();
-          const name = data.name || "Anonymous Guest";
-          return {
-            id: doc.id,
-            name: name,
-            initials: data.initials || getInitials(name),
-            location: data.location || "Dindigul",
-            rating: Number(data.rating) || 5,
-            review: data.review || data.text || "",
-            text: data.text || data.review || "",
-            createdAt: data.createdAt?.toDate
-              ? data.createdAt.toDate().toISOString()
-              : data.createdAt || new Date().toISOString(),
-            approved: data.approved !== undefined ? data.approved : true,
-            source: data.source || "website"
-          };
-        });
-
-        onSuccess(reviewsList, snapshot.docs[snapshot.docs.length - 1]);
-      },
-      (error) => {
-        console.error("Firestore onSnapshot error:", error.code, error.message);
-        if (onError) onError(error);
-      }
-    );
-
-    return unsubscribe;
-  } catch (err) {
-    console.error("Failed to establish real-time Firestore subscription:", err);
-    if (onError) onError(err);
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    console.warn("[Supabase] Client unavailable for real-time subscription.");
+    if (onError) onError(new Error("Supabase client unavailable"));
     return () => {};
   }
+
+  let isSubscribed = true;
+
+  // 1. Initial async fetch from Supabase
+  const loadInitialData = async () => {
+    try {
+      console.log("[Supabase] Fetching initial reviews from database...");
+      const { reviews } = await fetchCloudReviews(pageSize, 0);
+      if (isSubscribed) {
+        console.log(`[Supabase] Loaded ${reviews.length} reviews from Supabase.`);
+        onSuccess(reviews, pageSize);
+      }
+    } catch (err) {
+      console.error("[Supabase Subscription Error]:", err);
+      if (isSubscribed && onError) onError(err);
+    }
+  };
+
+  loadInitialData();
+
+  // 2. Set up Supabase Realtime channel for live multi-device synchronization
+  const channel = supabase
+    .channel("public-reviews-realtime")
+    .on(
+      "postgres_changes",
+      { event: "*", schema: "public", table: TABLE_NAME },
+      async (payload) => {
+        console.log("[Supabase Realtime] Change detected in reviews table:", payload.eventType);
+        try {
+          const { reviews } = await fetchCloudReviews(pageSize, 0);
+          if (isSubscribed) {
+            onSuccess(reviews, pageSize);
+          }
+        } catch (err) {
+          console.error("[Supabase Realtime Error] Refresh failed:", err);
+        }
+      }
+    )
+    .subscribe((status) => {
+      console.log(`[Supabase Realtime] Subscription status: ${status}`);
+    });
+
+  // Return unsubscribe cleanup function
+  return () => {
+    isSubscribed = false;
+    supabase.removeChannel(channel);
+  };
 };
 
 /**
- * Paginated cursor fetch for loading additional reviews from Firestore
+ * Paginated fetch for loading additional reviews from Supabase.
  */
-export const fetchMoreCloudReviews = async (lastDoc, pageSize = 10) => {
+export const fetchMoreCloudReviews = async (currentOffset = 10, pageSize = 10) => {
   try {
-    const reviewsRef = collection(db, REVIEWS_COLLECTION);
-    let q;
-    if (lastDoc) {
-      q = query(reviewsRef, orderBy("createdAt", "desc"), startAfter(lastDoc), limit(pageSize));
-    } else {
-      q = query(reviewsRef, orderBy("createdAt", "desc"), limit(pageSize));
-    }
-
-    const snapshot = await getDocs(q);
-    const newItems = snapshot.docs.map((doc) => {
-      const data = doc.data();
-      const name = data.name || "Anonymous Guest";
-      return {
-        id: doc.id,
-        name: name,
-        initials: data.initials || getInitials(name),
-        location: data.location || "Dindigul",
-        rating: Number(data.rating) || 5,
-        review: data.review || data.text || "",
-        text: data.text || data.review || "",
-        createdAt: data.createdAt?.toDate
-          ? data.createdAt.toDate().toISOString()
-          : data.createdAt || new Date().toISOString(),
-        approved: data.approved !== undefined ? data.approved : true,
-        source: data.source || "website"
-      };
-    });
+    const offset = typeof currentOffset === "number" ? currentOffset : 10;
+    const { reviews, hasMore } = await fetchCloudReviews(pageSize, offset);
 
     return {
-      reviews: newItems,
-      lastDoc: snapshot.docs[snapshot.docs.length - 1],
-      hasMore: snapshot.docs.length === pageSize
+      reviews,
+      lastDoc: offset + reviews.length,
+      hasMore
     };
   } catch (err) {
-    console.error("Failed to fetch more cloud reviews:", err);
-    return { reviews: [], lastDoc: null, hasMore: false };
+    console.error("[Supabase Error] Failed to fetch more reviews:", err);
+    return { reviews: [], lastDoc: currentOffset, hasMore: false };
   }
 };
 
 /**
- * Writes a new review directly to Cloud Database (Firestore).
- * Saves to Firestore first, then broadcasts to all connected devices in real time.
+ * Inserts a new review permanently into the Supabase database.
+ * Validates fields and uses async/await.
  */
 export const postCloudReview = async (reviewData) => {
-  const reviewsRef = collection(db, REVIEWS_COLLECTION);
-  const name = reviewData.name.trim();
-  const text = reviewData.text.trim();
-  
+  const supabase = getSupabaseClient();
+  if (!supabase) {
+    throw new Error("Supabase client is not initialized.");
+  }
+
+  const name = (reviewData.name || "").trim();
+  const text = (reviewData.text || reviewData.review || "").trim();
+  const rating = Number(reviewData.rating) || 5;
+
+  if (!name) {
+    throw new Error("Please enter your name.");
+  }
+  if (!text) {
+    throw new Error("Please write your review.");
+  }
+  if (rating < 1 || rating > 5) {
+    throw new Error("Rating must be between 1 and 5.");
+  }
+
   const payload = {
     name: name,
     initials: getInitials(name),
-    location: reviewData.location || "Dindigul Guest",
-    rating: Number(reviewData.rating),
+    location: (reviewData.location || "Dindigul Guest").trim(),
+    rating: rating,
     review: text,
     text: text,
-    createdAt: new Date().toISOString(),
+    created_at: new Date().toISOString(),
     approved: true,
     source: "website"
   };
 
-  console.log("Submitting review...", payload);
-  try {
-    const docRef = await addDoc(reviewsRef, payload);
-    console.log("Successfully written to Firebase Cloud Database with Doc ID:", docRef.id);
-    return { id: docRef.id, ...payload };
-  } catch (err) {
-    console.error("Firestore write failure:", err.code, err.message, err);
-    throw err;
+  console.log("[Supabase] Inserting review into Supabase...", payload);
+
+  const { data, error } = await supabase
+    .from(TABLE_NAME)
+    .insert([payload])
+    .select();
+
+  if (error) {
+    console.error("[Supabase Insert Error]:", error.message || error);
+    throw new Error(error.message || "Failed to submit review to database.");
   }
+
+  const insertedRow = Array.isArray(data) ? data[0] : data;
+  console.log("[Supabase] Successfully inserted review into database with ID:", insertedRow?.id);
+  return mapRowToReview(insertedRow);
 };
