@@ -49,7 +49,7 @@ const About = () => {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center space-y-4">
           <span className="text-[#FFC107] uppercase tracking-[0.3em] text-xs font-bold">
-            Since 2014
+            Since 2025
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-[#FAFAFA]">
             About Cafe Galaxy
