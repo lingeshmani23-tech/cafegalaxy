@@ -1,84 +1,69 @@
 // Auto-generated dynamic menu data
 export const menuCategories = [
   {
+    "id": "kappi",
+    "name": "☕ Filter Kappi & Coffee",
+    "value": "Kappi"
+  },
+  {
     "id": "tea",
-    "name": "☕ Tea",
+    "name": "🍵 Special Teas",
     "value": "Tea"
   },
   {
-    "id": "milkshakes",
-    "name": "🥤 Milkshakes",
-    "value": "Milkshakes"
-  },
-  {
-    "id": "mojitos",
-    "name": "🍹 Mojitos",
-    "value": "Mojitos"
-  },
-  {
     "id": "burgers",
-    "name": "🍔 Burgers",
+    "name": "🍔 Gourmet Burgers",
     "value": "Burgers"
   },
   {
     "id": "sandwiches",
-    "name": "🥪 Sandwiches",
+    "name": "🥪 Artisanal Sandwiches",
     "value": "Sandwiches"
   },
   {
-    "id": "fries",
-    "name": "🍟 Fries",
-    "value": "Fries"
-  },
-  {
     "id": "fried-chicken",
-    "name": "🍗 Fried Chicken",
+    "name": "🍗 Crispy Fried Chicken",
     "value": "Fried Chicken"
   },
   {
     "id": "fried-momos",
-    "name": "🥟 Fried Momos",
+    "name": "🥟 Golden Fried Momos",
     "value": "Fried Momos"
   },
   {
-    "id": "soft-drinks",
-    "name": "🥤 Soft Drinks",
-    "value": "Soft Drinks"
+    "id": "fries",
+    "name": "🍟 Crispy Fries & Wedges",
+    "value": "Fries"
   },
   {
-    "id": "kappi",
-    "name": "☕ Kappi",
-    "value": "Kappi"
+    "id": "waffles",
+    "name": "🧇 Belgian Waffles",
+    "value": "Waffles"
   },
   {
-    "id": "hot-milk",
-    "name": "🥛 Hot Milk",
-    "value": "Hot Milk"
+    "id": "milkshakes",
+    "name": "🥤 Thick Milkshakes",
+    "value": "Milkshakes"
+  },
+  {
+    "id": "mojitos",
+    "name": "🍹 Refreshing Mojitos",
+    "value": "Mojitos"
   },
   {
     "id": "puffs",
-    "name": "🧁 Puffs",
+    "name": "🧁 Fresh Oven Puffs",
     "value": "Puffs"
   },
   {
     "id": "maggi",
-    "name": "🍜 Maggi",
+    "name": "🍜 Galaxy Maggi",
     "value": "Maggi"
   },
   {
-    "id": "waffles",
-    "name": "🧇 Waffles",
-    "value": "Waffles"
-  },
-  {
-    "id": "daisy-tea",
-    "name": "🍵 Daisy Tea",
-    "value": "Daisy Tea"
-  },
-  {
-    "id": "black-tea",
-    "name": "🫖 Black Tea",
-    "value": "Black Tea"
+    "id": "soft-drinks",
+    "name": "🥤 Chilled Beverages",
+    "value": "Soft Drinks"
   }
 ];
 
@@ -90,7 +75,7 @@ export const menuItems = [
     "description": "Premium Veg Sandwich crafted with perfection at Cafe Galaxy.",
     "price": 50,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_1.jpg"
   },
   {
@@ -120,7 +105,7 @@ export const menuItems = [
     "description": "Premium Grilled Veg Cheese Sandwich crafted with perfection at Cafe Galaxy.",
     "price": 70,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_4.jpg"
   },
   {
@@ -160,7 +145,7 @@ export const menuItems = [
     "description": "Premium Grilled Chicken Cheese Sandwich crafted with perfection at Cafe Galaxy.",
     "price": 110,
     "isVeg": false,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_8.jpg"
   },
   {
@@ -200,7 +185,7 @@ export const menuItems = [
     "description": "Premium French Fries crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_12.jpg"
   },
   {
@@ -240,7 +225,7 @@ export const menuItems = [
     "description": "Premium Peri Peri Fries crafted with perfection at Cafe Galaxy.",
     "price": 70,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_16.jpg"
   },
   {
@@ -270,7 +255,7 @@ export const menuItems = [
     "description": "Premium Veg Burger crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_19.jpg"
   },
   {
@@ -310,7 +295,7 @@ export const menuItems = [
     "description": "Premium Chicken Burger crafted with perfection at Cafe Galaxy.",
     "price": 90,
     "isVeg": false,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_23.jpg"
   },
   {
@@ -330,7 +315,7 @@ export const menuItems = [
     "description": "Premium Vanilla Milkshake crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_25.jpg"
   },
   {
@@ -380,7 +365,7 @@ export const menuItems = [
     "description": "Premium Oreo Milkshake crafted with perfection at Cafe Galaxy.",
     "price": 80,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_30.jpg"
   },
   {
@@ -390,7 +375,7 @@ export const menuItems = [
     "description": "Premium Mint Mojito crafted with perfection at Cafe Galaxy.",
     "price": 60,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_31.jpg"
   },
   {
@@ -440,7 +425,7 @@ export const menuItems = [
     "description": "Premium Paneer Momos crafted with perfection at Cafe Galaxy.",
     "price": 80,
     "isVeg": true,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_36.jpg"
   },
   {
@@ -470,7 +455,7 @@ export const menuItems = [
     "description": "Premium Hot & Crunchy crafted with perfection at Cafe Galaxy.",
     "price": 80,
     "isVeg": false,
-    "isPopular": false,
+    "isPopular": true,
     "image": "/images/menu/menu_39.jpg"
   },
   {
@@ -575,7 +560,7 @@ export const menuItems = [
   },
   {
     "id": "menu_50",
-    "category": "Daisy Tea",
+    "category": "Tea",
     "name": "Nattu Shakarai Tea",
     "description": "Premium Nattu Shakarai Tea crafted with perfection at Cafe Galaxy.",
     "price": 15,
@@ -585,7 +570,7 @@ export const menuItems = [
   },
   {
     "id": "menu_51",
-    "category": "Daisy Tea",
+    "category": "Tea",
     "name": "Karupatti Tea",
     "description": "Premium Karupatti Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -595,7 +580,7 @@ export const menuItems = [
   },
   {
     "id": "menu_52",
-    "category": "Daisy Tea",
+    "category": "Tea",
     "name": "Chukku Tea",
     "description": "Premium Chukku Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -605,7 +590,7 @@ export const menuItems = [
   },
   {
     "id": "menu_53",
-    "category": "Daisy Tea",
+    "category": "Tea",
     "name": "Hibiscus Tea",
     "description": "Premium Hibiscus Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -615,7 +600,7 @@ export const menuItems = [
   },
   {
     "id": "menu_54",
-    "category": "Daisy Tea",
+    "category": "Tea",
     "name": "Green Tea",
     "description": "Premium Green Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -625,7 +610,7 @@ export const menuItems = [
   },
   {
     "id": "menu_55",
-    "category": "Black Tea",
+    "category": "Tea",
     "name": "Black Tea",
     "description": "Premium Black Tea crafted with perfection at Cafe Galaxy.",
     "price": 15,
@@ -635,7 +620,7 @@ export const menuItems = [
   },
   {
     "id": "menu_56",
-    "category": "Black Tea",
+    "category": "Tea",
     "name": "Lemon Tea",
     "description": "Premium Lemon Tea crafted with perfection at Cafe Galaxy.",
     "price": 15,
@@ -645,7 +630,7 @@ export const menuItems = [
   },
   {
     "id": "menu_57",
-    "category": "Black Tea",
+    "category": "Tea",
     "name": "Lemon Ginger Tea",
     "description": "Premium Lemon Ginger Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -655,7 +640,7 @@ export const menuItems = [
   },
   {
     "id": "menu_58",
-    "category": "Black Tea",
+    "category": "Tea",
     "name": "Lemon Mint Tea",
     "description": "Premium Lemon Mint Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -665,7 +650,7 @@ export const menuItems = [
   },
   {
     "id": "menu_59",
-    "category": "Black Tea",
+    "category": "Tea",
     "name": "Sulaimani Tea",
     "description": "Premium Sulaimani Tea crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -675,7 +660,7 @@ export const menuItems = [
   },
   {
     "id": "menu_60",
-    "category": "Hot Milk",
+    "category": "Kappi",
     "name": "Hot Milk",
     "description": "Premium Hot Milk crafted with perfection at Cafe Galaxy.",
     "price": 10,
@@ -685,7 +670,7 @@ export const menuItems = [
   },
   {
     "id": "menu_61",
-    "category": "Hot Milk",
+    "category": "Kappi",
     "name": "Badham Milk",
     "description": "Premium Badham Milk crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -695,7 +680,7 @@ export const menuItems = [
   },
   {
     "id": "menu_62",
-    "category": "Hot Milk",
+    "category": "Kappi",
     "name": "Boost",
     "description": "Premium Boost crafted with perfection at Cafe Galaxy.",
     "price": 20,
@@ -720,7 +705,7 @@ export const menuItems = [
     "description": "Premium Sukku Kappi crafted with perfection at Cafe Galaxy.",
     "price": 15,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_64.jpg"
   },
   {
@@ -740,7 +725,7 @@ export const menuItems = [
     "description": "Premium Chocolate Kappi crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_66.jpg"
   },
   {
@@ -760,7 +745,7 @@ export const menuItems = [
     "description": "Premium Veg Puff crafted with perfection at Cafe Galaxy.",
     "price": 15,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_68.jpg"
   },
   {
@@ -770,7 +755,7 @@ export const menuItems = [
     "description": "Premium Egg Puff crafted with perfection at Cafe Galaxy.",
     "price": 20,
     "isVeg": false,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_69.jpg"
   },
   {
@@ -820,7 +805,7 @@ export const menuItems = [
     "description": "Premium Chocolate Overloaded Waffle crafted with perfection at Cafe Galaxy.",
     "price": 130,
     "isVeg": true,
-    "isPopular": true,
+    "isPopular": false,
     "image": "/images/menu/menu_74.jpg"
   },
   {
